@@ -5,7 +5,7 @@ import { io } from "socket.io-client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { MessageCircle, X, Send, Phone, User, Bot } from "lucide-react"
+import { MessageCircle, X, Send, Phone, User, Bot, Mic } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { content } from "@/lib/content"
 
@@ -19,10 +19,14 @@ export function ChatWidget() {
     const [isTyping, setIsTyping] = useState(false)
     const [isConnected, setIsConnected] = useState(false)
     const [adminStatus, setAdminStatus] = useState("offline")
+    const [isDragging, setIsDragging] = useState(false)
+    const [isRecording, setIsRecording] = useState(false)
+
     const socketRef = useRef(null)
     const messagesEndRef = useRef(null)
     const typingTimeoutRef = useRef(null)
     const fileInputRef = useRef(null)
+    const mediaRecorderRef = useRef(null)
 
     const { direct_contact } = content.contact
     const suggestedMessages = ["Hi! I need a website.", "What are your rates?", "Can we schedule a call?", "Do you do SEO?"]
@@ -152,7 +156,8 @@ export function ChatWidget() {
         const isImage = file.type.startsWith('image/')
         const newMsg = {
             id: Date.now(),
-            text: isImage ? URL.createObjectURL(file) : `📄 Sent file: ${file.name}`,
+            text: URL.createObjectURL(file), // Create Blob URL for all files (images & docs)
+            name: file.name,
             sender: "user",
             type: isImage ? "image" : "file",
             status: 'sent'
@@ -165,12 +170,78 @@ export function ChatWidget() {
         })
 
         if (socketRef.current) {
-            socketRef.current.emit("file_upload", { name: file.name, buffer: file })
+            // Convert to ArrayBuffer to ensure binary data is sent correctly
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                const arrayBuffer = evt.target.result;
+                console.log(`[Client] Sending file: ${file.name}, Size: ${arrayBuffer.byteLength} bytes`);
+                socketRef.current.emit("file_upload", { name: file.name, buffer: arrayBuffer });
+            };
+            reader.readAsArrayBuffer(file);
+
             setTimeout(() => {
                 setMessages(prev => prev.map(m => m.id === newMsg.id ? { ...m, status: 'delivered' } : m))
             }, 500)
         }
     }
+
+    // Voice Recording Logic
+    const startRecording = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+            // Check supported MIME types for mobile compatibility
+            // User requested OGG. We prioritize OGG, then WebM (often OGG container), then MP4 (iOS fallback).
+            let mimeType = 'audio/webm';
+            let extension = 'ogg'; // Default to .ogg as requested
+
+            if (MediaRecorder.isTypeSupported('audio/ogg; codecs=opus')) {
+                mimeType = 'audio/ogg; codecs=opus';
+                extension = 'ogg';
+            } else if (MediaRecorder.isTypeSupported('audio/ogg')) {
+                mimeType = 'audio/ogg';
+                extension = 'ogg';
+            } else if (MediaRecorder.isTypeSupported('audio/webm; codecs=opus')) {
+                mimeType = 'audio/webm; codecs=opus';
+                extension = 'ogg'; // Force .ogg extension for WebM/Opus (Discord plays this better)
+            } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+                mimeType = 'audio/mp4';
+                extension = 'm4a'; // iOS requires .m4a or .mp4
+            }
+
+            const mediaRecorder = new MediaRecorder(stream, { mimeType });
+            mediaRecorderRef.current = mediaRecorder;
+            const chunks = [];
+
+            mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) chunks.push(e.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(chunks, { type: mimeType });
+                const file = new File([blob], `voice_note.${extension}`, { type: mimeType });
+
+                // Manually trigger upload since we're creating the file programmatically
+                handleFileUpload({ target: { files: [file] } });
+
+                // Stop all tracks
+                stream.getTracks().forEach(track => track.stop());
+            };
+
+            mediaRecorder.start();
+            setIsRecording(true);
+        } catch (err) {
+            console.error("Error accessing microphone:", err);
+            alert("Could not access microphone. Please allow permissions.");
+        }
+    };
+
+    const stopRecording = () => {
+        if (mediaRecorderRef.current && isRecording) {
+            mediaRecorderRef.current.stop();
+            setIsRecording(false);
+        }
+    };
 
     const openWhatsApp = () => {
         window.open(`https://wa.me/${direct_contact.whatsapp.replace(/\D/g, '')}`, '_blank')
@@ -204,8 +275,8 @@ export function ChatWidget() {
                                         <div className="h-10 w-10 rounded-full bg-background/20 flex items-center justify-center">
                                             {/* <Bot className="h-6 w-6" />
                                              */}
-                                                <img src="/logo.png" alt="Khateeb.dev Logo" className="h-8 w-auto dark:invert" />
-                    
+                                            <img src="/logo.png" alt="Khateeb.dev Logo" className="h-8 w-auto dark:invert" />
+
                                         </div>
                                         <span className={`absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white ${getStatusColor()}`} />
                                     </div>
@@ -231,7 +302,25 @@ export function ChatWidget() {
                             </div>
 
                             {/* Messages */}
-                            <div className="h-[350px] overflow-y-auto p-4 space-y-4 bg-muted/30 flex flex-col">
+                            <div
+                                className="h-[350px] overflow-y-auto p-4 space-y-4 bg-muted/30 flex flex-col relative"
+                                onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                                onDragLeave={() => setIsDragging(false)}
+                                onDrop={(e) => {
+                                    e.preventDefault();
+                                    setIsDragging(false);
+                                    const file = e.dataTransfer.files[0];
+                                    if (file) handleFileUpload({ target: { files: [file] } });
+                                }}
+                            >
+                                {isDragging && (
+                                    <div className="absolute inset-0 bg-primary/80 z-50 flex items-center justify-center rounded-lg backdrop-blur-sm">
+                                        <div className="text-white font-bold text-lg flex flex-col items-center animate-bounce">
+                                            <Send className="h-10 w-10 mb-2" />
+                                            Drop file to send
+                                        </div>
+                                    </div>
+                                )}
                                 {messages.length === 0 && (
                                     <div className="flex-1 flex flex-col items-center justify-center space-y-4 opacity-70">
                                         <Bot className="h-12 w-12 text-muted-foreground" />
@@ -262,6 +351,22 @@ export function ChatWidget() {
                                         >
                                             {msg.type === 'image' ? (
                                                 <img src={msg.text} alt="Attachment" className="rounded-lg max-w-full" />
+                                            ) : msg.type === 'audio' ? (
+                                                <audio controls src={msg.text} className="max-w-full" />
+                                            ) : msg.type === 'video' ? (
+                                                <video controls src={msg.text} className="rounded-lg max-w-full" />
+                                            ) : msg.type === 'file' ? (
+                                                <a href={msg.text} target="_blank" rel="noopener noreferrer" title={msg.name} className="flex items-center gap-3 p-3 bg-background/10 rounded-xl hover:bg-background/20 transition-all border border-white/10 group">
+                                                    <div className="bg-background/20 p-2.5 rounded-lg group-hover:bg-background/30 transition-colors">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></svg>
+                                                    </div>
+                                                    <div className="flex flex-col overflow-hidden min-w-[120px]">
+                                                        <span className="font-medium text-sm truncate w-full">{msg.name || 'Attachment'}</span>
+                                                        <span className="text-[10px] opacity-70 flex items-center gap-1">
+                                                            Download <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+                                                        </span>
+                                                    </div>
+                                                </a>
                                             ) : (
                                                 <div dangerouslySetInnerHTML={{ __html: msg.text.replace(/\n/g, '<br/>') }} />
                                             )}
@@ -299,7 +404,6 @@ export function ChatWidget() {
                                     ref={fileInputRef}
                                     className="hidden"
                                     onChange={handleFileUpload}
-                                // accept="image/*" // Removed to allow all files
                                 />
                                 <Button
                                     type="button"
@@ -310,13 +414,30 @@ export function ChatWidget() {
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" /></svg>
                                 </Button>
+
+                                {/* Voice Recorder Button */}
+                                <Button
+                                    type="button"
+                                    size="icon"
+                                    variant="ghost"
+                                    className={`${isRecording ? 'text-red-500 animate-pulse' : 'text-muted-foreground hover:text-foreground'}`}
+                                    onMouseDown={startRecording}
+                                    onMouseUp={stopRecording}
+                                    onTouchStart={startRecording}
+                                    onTouchEnd={stopRecording}
+                                    title="Hold to Record"
+                                >
+                                    <Mic className="h-5 w-5" />
+                                </Button>
+
                                 <Input
                                     value={inputText}
                                     onChange={(e) => setInputText(e.target.value)}
-                                    placeholder="Type a message..."
+                                    placeholder={isRecording ? "Recording..." : "Type a message..."}
                                     className="flex-1"
+                                    disabled={isRecording}
                                 />
-                                <Button type="submit" size="icon" disabled={!inputText.trim()}>
+                                <Button type="submit" size="icon" disabled={!inputText.trim() && !isRecording}>
                                     <Send className="h-4 w-4" />
                                 </Button>
                             </form>

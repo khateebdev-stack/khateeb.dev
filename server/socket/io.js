@@ -33,8 +33,9 @@ function initialize(io) {
 
         socket.on('file_upload', (data) => {
             // data: { name: 'image.png', buffer: <Buffer> }
-            console.log(`[Socket] File from ${sessionId}: ${data.name}`);
-            sendToDiscord(sessionId, `[FILE] ${data.name}`, ip, data.buffer);
+            const size = data.buffer ? data.buffer.length : 0;
+            console.log(`[Socket] File from ${sessionId}: ${data.name} (Size: ${size} bytes)`);
+            sendToDiscord(sessionId, `[FILE] ${data.name}`, ip, data.buffer, data.name);
         });
 
         socket.on('disconnect', () => {

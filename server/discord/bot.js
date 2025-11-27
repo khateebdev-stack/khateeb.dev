@@ -63,9 +63,16 @@ client.on('messageCreate', async message => {
             if (message.attachments.size > 0) {
                 message.attachments.forEach(attachment => {
                     console.log(`[Discord] Forwarding attachment to ${socketId}: ${attachment.url}`);
+
+                    let type = 'file';
+                    if (attachment.contentType?.startsWith('image/')) type = 'image';
+                    else if (attachment.contentType?.startsWith('audio/')) type = 'audio';
+                    else if (attachment.contentType?.startsWith('video/')) type = 'video';
+
                     io.to(socketId).emit('admin_message', {
-                        text: attachment.url, // Frontend will detect URL and render image
-                        type: 'image',
+                        text: attachment.url,
+                        type: type,
+                        name: attachment.name,
                         sender: 'Khateeb',
                         timestamp: new Date().toISOString()
                     });
@@ -231,57 +238,6 @@ async function fetchHistory(sessionId) {
         const messages = await thread.messages.fetch({ limit: 50 });
         const history = [];
 
-        messages.forEach(msg => {
-            // Check for attachments (Images/Files)
-            let attachmentUrl = null;
-            let msgType = 'text';
-
-            if (msg.attachments.size > 0) {
-                attachmentUrl = msg.attachments.first().url;
-                msgType = 'image'; // For now, assume all attachments are images or handled as links
-            }
-
-            if (msg.author.bot && msg.author.id === client.user.id) {
-                // Visitor Message (via Bot)
-                if (msg.content.startsWith('**Visitor:**')) {
-                    let text = msg.content.replace('**Visitor:** ', '');
-
-                    // If it's a file upload message, use the attachment URL
-                    if (attachmentUrl) {
-                        text = attachmentUrl;
-                        msgType = 'image';
-                    }
-
-                    history.push({
-                        id: msg.id,
-                        text: text,
-                        type: msgType,
-                        sender: 'user',
-                        timestamp: msg.createdAt,
-                        status: 'read'
-                    });
-                }
-            } else if (!msg.author.bot) {
-                // Admin Message
-                let text = msg.content;
-
-                // If there's an attachment and no text, or if we want to show the attachment
-                if (attachmentUrl) {
-                    text = attachmentUrl; // Prioritize showing the image/file
-                    msgType = 'image';
-                }
-
-                history.push({
-                    id: msg.id,
-                    text: text,
-                    type: msgType,
-                    sender: 'agent',
-                    timestamp: msg.createdAt,
-                    status: 'read'
-                });
-            }
-        });
-
         return history.reverse();
 
     } catch (error) {
@@ -295,7 +251,7 @@ const { findAnswer } = require('../chatbot/logic');
 // ... (Existing code)
 
 // Function to send visitor message to Discord
-async function sendToDiscord(socketId, text, ip, fileBuffer = null) {
+async function sendToDiscord(socketId, text, ip, fileBuffer = null, fileName = 'upload.png') {
     console.log(`[Discord] Processing message from ${socketId}: ${text}`);
 
     // 1. Check Admin Status
@@ -340,8 +296,8 @@ async function sendToDiscord(socketId, text, ip, fileBuffer = null) {
             if (thread) {
                 if (fileBuffer) {
                     await thread.send({
-                        content: `**Visitor:** Sent a file:`,
-                        files: [{ attachment: fileBuffer, name: 'upload.png' }]
+                        content: `**Visitor:** Sent a file: ${fileName}`,
+                        files: [{ attachment: fileBuffer, name: fileName }]
                     });
                 } else {
                     await thread.send(`**Visitor:** ${text}`);
