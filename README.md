@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Khateeb.dev - The Ultimate Portfolio & Chat App
 
-## Getting Started
+A cutting-edge personal portfolio website built with **Next.js 14**, featuring a "Hacker Stack" communication system that integrates **Discord**, **WhatsApp**, and a **Smart AI Chatbot**.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🎨 Frontend (Next.js 14 + Tailwind CSS)
+*   **Modern UI/UX:** Glassmorphism, dark/light mode, and smooth animations using Framer Motion.
+*   **Responsive Design:** Mobile-first approach ensuring a perfect experience on all devices.
+*   **Dynamic Content:** JSON-driven data for easy updates to Portfolio, Services, and Resume.
+*   **Rich Media:** Support for file sharing, image previews, and interactive elements.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🤖 The "Hacker Stack" (Backend Communication)
+A custom Node.js server (`server/server.js`) powers the real-time communication layer:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1.  **Live Chat Widget (Socket.io):**
+    *   **True Persistence:** Chat history is synced from Discord threads upon connection.
+    *   **Real-time Status:** Instantly reflects the Admin's Discord status (Online/DND/Offline).
+    *   **Smart Chatbot:** "Engagement First" logic answers visitor queries from a JSON knowledge base when the Admin is offline.
+    *   **Rich Media:** Supports file uploads (drag & drop) and emoji reactions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Discord Admin Bridge (discord.js):**
+    *   **Discord as Admin Panel:** Every visitor gets a dedicated thread in a private Discord channel.
+    *   **Two-Way Sync:** Messages sent in Discord appear on the website instantly, and vice versa.
+    *   **Slash Commands:** Manage tickets, generate invoices, and schedule meetings directly from Discord.
 
-## Learn More
+3.  **WhatsApp Integration (whatsapp-web.js):**
+    *   (Optional) Bridges communication to WhatsApp for mobile admin access.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Framework:** Next.js 14 (App Router)
+*   **Styling:** Tailwind CSS, ShadCN UI
+*   **Backend:** Node.js, Express
+*   **Real-time:** Socket.io
+*   **Bots:** discord.js, whatsapp-web.js
+*   **Deployment:** Vercel (Frontend), VPS/Heroku (Backend)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Installation
 
-## Deploy on Vercel
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/khateebdev-stack/khateeb.dev.git
+    cd khateeb.dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3.  **Setup Environment Variables:**
+    Create a `.env.local` file with the following:
+    ```env
+    # Discord Bot
+    DISCORD_TOKEN=your_bot_token
+    DISCORD_GUILD_ID=your_server_id
+    DISCORD_CHANNEL_ID=your_channel_id
+    
+    # Socket.io
+    NEXT_PUBLIC_SOCKET_URL=http://localhost:3001
+    ```
+
+4.  **Run the Development Server:**
+    ```bash
+    # Terminal 1: Frontend
+    npm run dev
+
+    # Terminal 2: Custom Backend
+    node server/server.js
+    ```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.

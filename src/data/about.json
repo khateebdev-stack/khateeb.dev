@@ -1,0 +1,37 @@
+{
+    "hero": {
+        "headline": "Building Digital Systems That Turn Your Expertise Into a Scalable Brand",
+        "subheadline": "I help coaches, small business owners, and fast-growing entrepreneurs build high-performance digital ecosystems—websites, mobile apps, CRMs, automations, and branding—that elevate authority and accelerate revenue.",
+        "cta": "Work With Me",
+        "signature_intro": [
+            "People don't hire me for generic development. They hire me because I understand business at a deeper level—visibility, trust, conversions, positioning, automation, and long-term digital strategy.",
+            "My work blends technology + brand strategy + growth psychology to create digital assets that perform, convert, and scale."
+        ]
+    },
+    "mission": {
+        "statement": "To empower ambitious experts with systems that eliminate complexity, increase authority, and create predictable business growth.",
+        "quote": "Your brand deserves more than just a website—It deserves a digital engine that works even when you’re not."
+    },
+    "why_trust_me": [
+        {
+            "title": "Conversion-First Mindset",
+            "desc": "Everything I build is designed to sell—from the structure to the content flow to the user experience."
+        },
+        {
+            "title": "Complete Digital Transformation",
+            "desc": "Website, mobile app, CRM, SEO, automations, funnels—everything works together like a single growth machine."
+        },
+        {
+            "title": "Technical Range",
+            "desc": "Web Development • Mobile Apps • Blockchain • Smart Contracts • SEO • DevOps • Digital Marketing • DApps • Branding • Automations • AI Integrations"
+        },
+        {
+            "title": "Processes That Save Time",
+            "desc": "I streamline your operations so you work less while your systems work more."
+        },
+        {
+            "title": "Results That Compound",
+            "desc": "My systems don’t just look premium—they deliver premium."
+        }
+    ]
+}

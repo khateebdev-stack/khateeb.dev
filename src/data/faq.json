@@ -1,0 +1,32 @@
+{
+    "faqs": [
+        {
+            "question": "What is your hourly rate?",
+            "answer": "My rates depend on the project complexity. For consulting, I start at $100/hr. For development, I prefer fixed-price project quotes to ensure transparency."
+        },
+        {
+            "question": "Do you work with agencies?",
+            "answer": "Yes, I often white-label for agencies. I can integrate seamlessly into your team or handle entire projects independently."
+        },
+        {
+            "question": "What is your tech stack?",
+            "answer": "I specialize in the MERN stack (MongoDB, Express, React, Node.js), Next.js for SEO-heavy sites, and React Native for mobile apps."
+        },
+        {
+            "question": "How long does a website take?",
+            "answer": "A standard 5-page business website takes about 1-2 weeks. Complex web apps with databases can take 4-8 weeks."
+        },
+        {
+            "question": "Do you offer maintenance?",
+            "answer": "Yes, I offer monthly maintenance packages that include server monitoring, security updates, and content changes."
+        },
+        {
+            "question": "Can you fix my existing site?",
+            "answer": "Absolutely. I can audit your current codebase, fix bugs, and optimize performance."
+        },
+        {
+            "question": "Where are you located?",
+            "answer": "I work remotely with clients worldwide. My core hours are flexible to overlap with US and European time zones."
+        }
+    ]
+}

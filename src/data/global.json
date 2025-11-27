@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Khateeb Ur Rehman - Full Stack Developer & Systems Architect",
+    "description": "I build high-performance digital products for coaches, small businesses, and startups.",
+    "url": "https://khateeb.dev"
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Portfolio", "href": "/portfolio" },
+    { "label": "Case Studies", "href": "/case-studies" },
+    { "label": "Technical Profile", "href": "/technical" },
+    { "label": "Resume", "href": "/resume" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "brand": {
+      "name": "Khateeb Ur Rehman",
+      "title": "Full Stack Developer, Blockchain Engineer & Digital Systems Architect",
+      "bio": "I build high-performance digital products for coaches, small businesses, and startups — websites, apps, CRMs, and blockchain systems that drive real results."
+    },
+    "copyright": "© 2025 Khateeb Ur Rehman — All Rights Reserved. Built with passion, precision, and clean engineering."
+  },
+  "contact_info": {
+    "email": "khateeburrehman6627@gmail.com",
+    "whatsapp": "+923280027530",
+    "location": "Islamabad, Pakistan (Working globally)"
+  }
+}

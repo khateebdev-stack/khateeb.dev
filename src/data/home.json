@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "headline": "I build high-performance websites, apps, CRMs, and learning platforms — engineered to elevate brands, increase conversions, and accelerate business growth.",
+    "subheadline": "Empowering coaches, small business owners, and startup founders with conversion-first digital systems that drive sales, visibility, and operational efficiency.",
+    "cta_primary": "Start Your Project",
+    "cta_secondary": "View Portfolio"
+  },
+  "value_props": [
+    "5+ years delivering scalable, revenue-focused digital solutions",
+    "Expert in Web, Mobile Apps, CRM systems, LMS platforms, SEO & Digital Marketing",
+    "Backed by a specialized team for blockchain, smart contracts & enterprise-level builds",
+    "Fast communication, clean documentation, and long-term support"
+  ],
+  "services_snapshot": {
+    "title": "Core Services",
+    "list": [
+      "Web & App Development",
+      "Custom CRM + Business Automation",
+      "Learning Platforms (LMS)",
+      "SEO & Digital Marketing",
+      "E-Commerce Solutions",
+      "Educational Training & Mentorship",
+      "Blockchain & DApp Development (Team Delivered)"
+    ],
+    "cta": "Explore All Services"
+  },
+  "free_tools_teaser": {
+    "headline": "Free Resources to Grow Your Business",
+    "tools": [
+      "Startup Budget Calculator",
+      "Website Speed Checker",
+      "SEO Quick Audit"
+    ],
+    "cta": "Try Free Tools"
+  },
+  "conversion_banner": {
+    "text": "Ready to take your business to the next level?",
+    "cta": "Book a free strategy call"
+  }
+}

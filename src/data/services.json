@@ -1,0 +1,229 @@
+{
+    "hero": {
+        "headline": "Services That Scale",
+        "subheadline": "I don't just write code; I build digital assets that grow your business, automate your workflows, and elevate your brand authority."
+    },
+    "services_list": [
+        {
+            "title": "Web & App Development",
+            "slug": "web-app-development",
+            "description": "High-performance websites and mobile apps built with modern frameworks like Next.js and React Native.",
+            "includes": [
+                "Custom UI/UX Design",
+                "SEO Optimization",
+                "Fast Loading Speeds",
+                "Secure Authentication"
+            ],
+            "process_steps": [
+                "Discovery & Strategy",
+                "Wireframing & Design",
+                "Development & Integration",
+                "Testing & Launch"
+            ],
+            "pricing_tiers": [
+                {
+                    "name": "Starter",
+                    "price": "$1,500",
+                    "features": [
+                        "5 Pages",
+                        "Basic SEO",
+                        "Contact Form"
+                    ]
+                },
+                {
+                    "name": "Pro",
+                    "price": "$3,000",
+                    "features": [
+                        "10 Pages",
+                        "CMS Integration",
+                        "Advanced Animations"
+                    ]
+                },
+                {
+                    "name": "Enterprise",
+                    "price": "Custom",
+                    "features": [
+                        "Full Custom App",
+                        "API Integration",
+                        "Priority Support"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Mobile App Development",
+            "slug": "mobile-app-development",
+            "description": "Native-quality iOS and Android apps built with React Native for seamless cross-platform performance.",
+            "includes": [
+                "iOS & Android Support",
+                "Push Notifications",
+                "Offline Functionality",
+                "App Store Submission"
+            ],
+            "process_steps": [
+                "Concept Validation",
+                "UI/UX Prototyping",
+                "Cross-Platform Dev",
+                "Store Deployment"
+            ],
+            "pricing_tiers": [
+                {
+                    "name": "MVP",
+                    "price": "$2,500",
+                    "features": [
+                        "Core Features",
+                        "iOS & Android",
+                        "Basic UI"
+                    ]
+                },
+                {
+                    "name": "Growth",
+                    "price": "$5,000",
+                    "features": [
+                        "Advanced UI",
+                        "Push Notifs",
+                        "Analytics"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Custom CRM & Business Systems",
+            "slug": "custom-crm-systems",
+            "description": "Tailored software solutions to automate your business operations and manage customer relationships.",
+            "includes": [
+                "Lead Management",
+                "Automated Workflows",
+                "Reporting Dashboards",
+                "Role-Based Access"
+            ],
+            "process_steps": [
+                "Workflow Analysis",
+                "Database Design",
+                "Dashboard Build",
+                "Staff Training"
+            ],
+            "pricing_tiers": [
+                {
+                    "name": "Basic CRM",
+                    "price": "$3,000",
+                    "features": [
+                        "Lead Tracking",
+                        "Email Integration",
+                        "Mobile Access"
+                    ]
+                },
+                {
+                    "name": "Enterprise ERP",
+                    "price": "Custom",
+                    "features": [
+                        "Full Automation",
+                        "Inventory Mgmt",
+                        "HR Module"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Learning Platforms (LMS)",
+            "slug": "lms-development",
+            "description": "Scalable education platforms for course creators and institutions, featuring video hosting and student tracking.",
+            "includes": [
+                "Course Management",
+                "Student Portals",
+                "Payment Gateways",
+                "Quiz & Certification"
+            ],
+            "process_steps": [
+                "Curriculum Structure",
+                "Video Platform Setup",
+                "Payment Integration",
+                "Launch"
+            ],
+            "pricing_tiers": [
+                {
+                    "name": "Course Launch",
+                    "price": "$2,000",
+                    "features": [
+                        "Video Hosting",
+                        "Stripe Payment",
+                        "Student Dashboard"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "SEO & Digital Marketing",
+            "slug": "seo-digital-marketing",
+            "description": "Data-driven strategies to increase your visibility, drive traffic, and convert visitors into paying clients.",
+            "includes": [
+                "Technical SEO Audit",
+                "Keyword Strategy",
+                "Content Optimization",
+                "Performance Tracking"
+            ],
+            "process_steps": [
+                "Site Audit",
+                "Keyword Research",
+                "On-Page Optimization",
+                "Monthly Reporting"
+            ],
+            "pricing_tiers": [
+                {
+                    "name": "Audit",
+                    "price": "$500",
+                    "features": [
+                        "Full Site Audit",
+                        "Action Plan"
+                    ]
+                },
+                {
+                    "name": "Monthly Growth",
+                    "price": "$1,000/mo",
+                    "features": [
+                        "Content Creation",
+                        "Backlink Building",
+                        "Weekly Reports"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Blockchain & Decentralized Apps",
+            "slug": "blockchain-dapps",
+            "description": "Secure and transparent blockchain solutions, from smart contracts to full decentralized applications.",
+            "includes": [
+                "Smart Contract Dev",
+                "Wallet Integration",
+                "Token Creation",
+                "DApp Interfaces"
+            ],
+            "process_steps": [
+                "Architecture Design",
+                "Smart Contract Dev",
+                "Security Audit",
+                "Mainnet Launch"
+            ],
+            "pricing_tiers": [
+                {
+                    "name": "Smart Contract",
+                    "price": "$1,500",
+                    "features": [
+                        "ERC-20/721",
+                        "Unit Tests",
+                        "Deployment"
+                    ]
+                },
+                {
+                    "name": "Full DApp",
+                    "price": "Custom",
+                    "features": [
+                        "Frontend",
+                        "Wallet Connect",
+                        "Indexing"
+                    ]
+                }
+            ]
+        }
+    ]
+}

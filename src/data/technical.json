@@ -1,0 +1,51 @@
+{
+    "hero": {
+        "headline": "Senior Full Stack Developer & Systems Architect",
+        "subheadline": "Specializing in scalable architecture, clean code, and high-performance systems. 5+ years of experience delivering enterprise-grade solutions.",
+        "cta_primary": "Download Technical Resume",
+        "cta_secondary": "View GitHub"
+    },
+    "expertise": [
+        {
+            "area": "Frontend Architecture",
+            "skills": [
+                "Next.js (SSR/ISR)",
+                "React Patterns",
+                "State Management (Redux/Zustand)",
+                "Performance Optimization"
+            ]
+        },
+        {
+            "area": "Backend Engineering",
+            "skills": [
+                "Node.js Microservices",
+                "API Design (REST/GraphQL)",
+                "Database Scaling (PostgreSQL/MongoDB)"
+            ]
+        },
+        {
+            "area": "DevOps & Cloud",
+            "skills": [
+                "AWS (EC2, S3, Lambda)",
+                "Docker",
+                "CI/CD Pipelines (GitHub Actions)",
+                "Security Best Practices"
+            ]
+        },
+        {
+            "area": "Blockchain",
+            "skills": [
+                "Smart Contract Development (Solidity)",
+                "Web3 Integration",
+                "DApp Architecture"
+            ]
+        }
+    ],
+    "case_studies": [
+        {
+            "challenge": "Scale API to handle 10k+ concurrent requests.",
+            "solution": "Implemented Redis caching layer and optimized database indexing.",
+            "result": "Reduced latency by 60%."
+        }
+    ]
+}

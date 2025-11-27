@@ -1,0 +1,71 @@
+{
+    "hero": {
+        "headline": "Let’s Build Something Remarkable",
+        "subheadline": "If you’re a coach, small business owners, or entrepreneur ready to elevate your brand... I’d love to hear from you.",
+        "cta": "Start Your Project"
+    },
+    "form": {
+        "fields": [
+            {
+                "name": "fullName",
+                "label": "Full Name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "name": "businessName",
+                "label": "Business / Brand Name",
+                "type": "text",
+                "required": false
+            },
+            {
+                "name": "email",
+                "label": "Email",
+                "type": "email",
+                "required": true
+            },
+            {
+                "name": "phone",
+                "label": "Phone",
+                "type": "tel",
+                "required": true
+            },
+            {
+                "name": "service",
+                "label": "Service You Need",
+                "type": "select",
+                "options": [
+                    "Web Development",
+                    "Mobile App",
+                    "CRM/Automation",
+                    "Blockchain",
+                    "SEO/Marketing",
+                    "Educational Support"
+                ]
+            },
+            {
+                "name": "budget",
+                "label": "Budget Range",
+                "type": "select",
+                "options": [
+                    "$500 - $1k",
+                    "$1k - $3k",
+                    "$3k - $5k",
+                    "$5k+"
+                ]
+            },
+            {
+                "name": "description",
+                "label": "Project Description",
+                "type": "textarea",
+                "required": true
+            }
+        ],
+        "submit_text": "Send Message"
+    },
+    "direct_contact": {
+        "email": "khateeburrehman6627@gmail.com",
+        "whatsapp": "+923280027530",
+        "cta_strategy": "Book a Strategy Call"
+    }
+}

@@ -1,0 +1,122 @@
+{
+    "hero": {
+        "headline": "Selected Works",
+        "subheadline": "A collection of high-impact digital systems built for scale, performance, and conversion.",
+        "cta": "Start Your Project"
+    },
+    "categories": [
+        "All",
+        "Web Development",
+        "Mobile Apps",
+        "Blockchain",
+        "SaaS",
+        "Automation"
+    ],
+    "projects": [
+        {
+            "id": 1,
+            "slug": "insightexus-ai-platform",
+            "title": "Insightexus AI Platform",
+            "category": "SaaS",
+            "role": "Lead Architect",
+            "duration": "4 Months",
+            "team_size": "3 Developers",
+            "solution": "An AI-powered analytics dashboard for e-commerce businesses to predict trends and optimize inventory.",
+            "long_description": "Insightexus is a comprehensive AI analytics platform designed to help e-commerce store owners make data-driven decisions. By integrating with Shopify and WooCommerce, it analyzes sales patterns, predicts inventory needs, and suggests pricing strategies to maximize profit margins. The system processes millions of data points daily using a serverless architecture.",
+            "challenges": [
+                "Processing large datasets in real-time without latency.",
+                "Integrating with multiple third-party e-commerce APIs securely.",
+                "Designing a user-friendly dashboard for non-technical users."
+            ],
+            "results": [
+                "Processed over $1M in transaction data in the first month.",
+                "Reduced inventory waste by 25% for beta users.",
+                "Achieved sub-200ms response times for complex queries."
+            ],
+            "tech_stack": [
+                "Next.js",
+                "Python",
+                "TensorFlow",
+                "AWS"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "gallery": [
+                "/images/projects/insightexus-1.jpg",
+                "/images/projects/insightexus-2.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "slug": "crypto-exchange-pro",
+            "title": "CryptoExchange Pro",
+            "category": "Blockchain",
+            "role": "Smart Contract Engineer",
+            "duration": "6 Months",
+            "team_size": "5 Developers",
+            "solution": "A decentralized exchange (DEX) interface with real-time trading charts and wallet integration.",
+            "long_description": "CryptoExchange Pro is a high-performance decentralized trading interface built for speed and security. It features real-time order book updates, TradingView chart integration, and seamless connection with MetaMask and WalletConnect for secure, non-custodial trading. Audited by top firms, it ensures zero-vulnerability smart contract interactions.",
+            "challenges": [
+                "Ensuring millisecond-latency for order book updates.",
+                "Handling complex state management for wallet connections.",
+                "Optimizing gas estimation for smart contract interactions."
+            ],
+            "results": [
+                "Supported 10,000+ daily active users during peak traffic.",
+                "Zero security incidents reported during audit.",
+                "Executed trades 30% faster than competitor interfaces."
+            ],
+            "tech_stack": [
+                "React",
+                "Web3.js",
+                "Solidity",
+                "Node.js"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "gallery": [
+                "/images/projects/crypto-1.jpg",
+                "/images/projects/crypto-2.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "slug": "edutech-lms",
+            "title": "EduTech LMS",
+            "category": "Web Development",
+            "role": "Full Stack Developer",
+            "duration": "3 Months",
+            "team_size": "2 Developers",
+            "solution": "A custom Learning Management System for a university, featuring live classes and assignment tracking.",
+            "long_description": "EduTech LMS is a robust learning platform built to support hybrid education. It combines live video classrooms, automated assignment grading, and student progress tracking into a single, cohesive portal for students and faculty. The system supports role-based access control for Admins, Teachers, and Students.",
+            "challenges": [
+                "Scaling video streaming for 500+ concurrent students.",
+                "Building a secure, cheat-proof examination module.",
+                "Migrating legacy data from an old system without downtime."
+            ],
+            "results": [
+                "Adopted by 3 major departments within the first semester.",
+                "Reduced administrative grading time by 40%.",
+                "Maintained 99.9% uptime during finals week."
+            ],
+            "tech_stack": [
+                "Vue.js",
+                "Firebase",
+                "WebRTC",
+                "Express"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "gallery": [
+                "/images/projects/lms-1.jpg",
+                "/images/projects/lms-2.jpg"
+            ]
+        }
+    ]
+}

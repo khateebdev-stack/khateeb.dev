@@ -1,0 +1,103 @@
+{
+    "header": {
+        "name": "Khateeb Ur Rehman",
+        "title": "Full Stack Architect & Digital Systems Expert",
+        "contact": {
+            "email": "contact@khateeb.dev",
+            "phone": "+92 300 0000000",
+            "location": "Remote / Global",
+            "linkedin": "linkedin.com/in/khateeb",
+            "github": "github.com/khateeb"
+        }
+    },
+    "summary": "Senior Full Stack Architect with 5+ years of experience building scalable, high-performance web and mobile applications. Expert in Next.js, React Native, and Cloud Architecture. Proven track record of delivering enterprise-grade solutions that drive business growth and operational efficiency.",
+    "skills": {
+        "Languages": [
+            "JavaScript (ES6+)",
+            "TypeScript",
+            "Python",
+            "Solidity",
+            "SQL"
+        ],
+        "Frontend": [
+            "React",
+            "Next.js",
+            "React Native",
+            "Tailwind CSS",
+            "Redux"
+        ],
+        "Backend": [
+            "Node.js",
+            "Express",
+            "NestJS",
+            "GraphQL",
+            "REST APIs"
+        ],
+        "Database": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Firebase"
+        ],
+        "DevOps": [
+            "AWS",
+            "Docker",
+            "CI/CD",
+            "Vercel",
+            "Linux"
+        ],
+        "Tools": [
+            "Git",
+            "Jira",
+            "Figma",
+            "Postman"
+        ]
+    },
+    "experience": [
+        {
+            "role": "Senior Full Stack Engineer",
+            "company": "TechFlow Solutions",
+            "location": "Remote",
+            "dates": "2022 - Present",
+            "description": [
+                "Architected and led the development of a SaaS platform serving 10k+ users, reducing load times by 40%.",
+                "Implemented a microservices architecture using Node.js and Docker, improving system scalability.",
+                "Mentored a team of 4 junior developers, conducting code reviews and enforcing best practices."
+            ]
+        },
+        {
+            "role": "Full Stack Developer",
+            "company": "Creative Digital Agency",
+            "location": "Hybrid",
+            "dates": "2020 - 2022",
+            "description": [
+                "Developed 15+ custom websites and e-commerce stores for high-ticket clients using Next.js and Shopify.",
+                "Integrated complex third-party APIs (Stripe, Twilio, HubSpot) to automate business workflows.",
+                "Optimized database queries, reducing server costs by 25%."
+            ]
+        },
+        {
+            "role": "Junior Web Developer",
+            "company": "StartUp Inc.",
+            "location": "On-site",
+            "dates": "2019 - 2020",
+            "description": [
+                "Assisted in the development of a React-based dashboard for internal data visualization.",
+                "Collaborated with UI/UX designers to implement responsive, pixel-perfect interfaces.",
+                "Maintained and debugged legacy codebases, resolving 50+ critical bugs."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Science in Computer Science",
+            "university": "University of Technology",
+            "dates": "2015 - 2019",
+            "details": "Graduated with Honors. Capstone Project: AI-driven Traffic Management System."
+        }
+    ],
+    "certifications": [
+        "AWS Certified Solutions Architect – Associate",
+        "Meta Front-End Developer Professional Certificate"
+    ]
+}
