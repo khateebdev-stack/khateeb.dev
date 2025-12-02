@@ -5,6 +5,7 @@ import { content } from "@/lib/content"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function PortfolioSection() {
     const { hero, projects, categories } = content.portfolio
@@ -35,9 +36,16 @@ export function PortfolioSection() {
                             className="group overflow-hidden rounded-xl border bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-1"
                         >
                             <div className="aspect-video w-full bg-muted flex items-center justify-center text-muted-foreground relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                {/* <span>Project Preview</span> */}
-                                <img src={project.featured_image} alt={project.title} />    
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                                <div className="relative w-full h-full">
+                                    <Image
+                                        src={project.featured_image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    />
+                                </div>
                             </div>
                             <div className="p-6">
                                 <div className="mb-2 flex items-center justify-between">

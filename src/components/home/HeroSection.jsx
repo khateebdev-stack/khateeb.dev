@@ -22,9 +22,6 @@ export function HeroSection() {
 
                     {/* Text Content */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
                         className="flex flex-col justify-center space-y-8"
                     >
                         <div className="space-y-4">
@@ -78,10 +75,10 @@ export function HeroSection() {
                                     <span className="text-foreground">owner:</span> <span className="text-green-600 dark:text-green-400">"Khateeb Ur Rehman"</span>,
                                 </div>
                                 <div className="pl-4">
-                                    <span className="text-foreground">role:</span> <span className="text-green-600 dark:text-green-400">"Full Stack Architect"</span>,
+                                    <span className="text-foreground">role:</span> <span className="text-green-600 dark:text-green-400">"Full Stack Developer"</span>,
                                 </div>
                                 <div className="pl-4">
-                                    <span className="text-foreground">stack:</span> [<span className="text-green-600 dark:text-green-400">"Next.js"</span>, <span className="text-green-600 dark:text-green-400">"React Native"</span>, <span className="text-green-600 dark:text-green-400">"Blockchain"</span>],
+                                    <span className="text-foreground">stack:</span> [<span className="text-green-600 dark:text-green-400">"Next.js"</span>, <span className="text-green-600 dark:text-green-400">"React Native"</span>],
                                 </div>
                                 <div className="pl-4">
                                     <span className="text-foreground">mission:</span> <span className="text-green-600 dark:text-green-400">"Build Scalable Systems"</span>
