@@ -1,122 +1,833 @@
 {
     "hero": {
-        "headline": "Selected Works",
-        "subheadline": "A collection of high-impact digital systems built for scale, performance, and conversion.",
-        "cta": "Start Your Project"
+        "headline": "Featured Projects",
+        "subheadline": "Real projects, real results. Here's how I've helped businesses grow through technology.",
+        "cta": "View All Projects"
     },
     "categories": [
         "All",
         "Web Development",
         "Mobile Apps",
-        "Blockchain",
-        "SaaS",
-        "Automation"
+        "E-commerce",
+        "Full Stack",
+        "Enterprise"
     ],
     "projects": [
         {
-            "id": 1,
-            "slug": "insightexus-ai-platform",
-            "title": "Insightexus AI Platform",
-            "category": "SaaS",
-            "role": "Lead Architect",
-            "duration": "4 Months",
-            "team_size": "3 Developers",
-            "solution": "An AI-powered analytics dashboard for e-commerce businesses to predict trends and optimize inventory.",
-            "long_description": "Insightexus is a comprehensive AI analytics platform designed to help e-commerce store owners make data-driven decisions. By integrating with Shopify and WooCommerce, it analyzes sales patterns, predicts inventory needs, and suggests pricing strategies to maximize profit margins. The system processes millions of data points daily using a serverless architecture.",
-            "challenges": [
-                "Processing large datasets in real-time without latency.",
-                "Integrating with multiple third-party e-commerce APIs securely.",
-                "Designing a user-friendly dashboard for non-technical users."
-            ],
-            "results": [
-                "Processed over $1M in transaction data in the first month.",
-                "Reduced inventory waste by 25% for beta users.",
-                "Achieved sub-200ms response times for complex queries."
-            ],
+            "id": "unisell-enterprise",
+            "slug": "unisell-digital-marketplace-os",
+            "title": "UniSell Enterprise - Digital Commerce OS",
+            "category": "Enterprise",
+            "solution": "A full-stack digital commerce platform that turns any software house into a global digital product business. Sell Code, SaaS, and Courses from one branded platform with built-in DRM and Licensing.",
             "tech_stack": [
                 "Next.js",
-                "Python",
-                "TensorFlow",
-                "AWS"
+                "NestJS",
+                "PostgreSQL",
+                "Redis",
+                "Docker",
+                "Kubernetes",
+                "AWS S3"
             ],
             "links": {
                 "demo": "#",
                 "github": "#"
             },
+            "featured_image": "/projects/unisell-enterprise/thumbnail.png",
             "gallery": [
-                "/images/projects/insightexus-1.jpg",
-                "/images/projects/insightexus-2.jpg"
-            ]
+                "/projects/unisell-enterprise/screenshot-1.png",
+                "/projects/unisell-enterprise/screenshot-2.png",
+                "/projects/unisell-enterprise/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "Internal Product / White-Label",
+                "year": "2024",
+                "duration": "Ongoing",
+                "role": "Product Owner & Lead Architect",
+                "overview": "UniSell Enterprise is a hybrid digital marketplace engine. It allows creators to sell mixed assets (Source Code, SaaS Subscriptions, Video Courses) on a single platform. It includes a White-Label Engine to resell the platform itself to other agencies.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Creators struggle to sell mixed digital assets. Selling code on CodeCanyon, courses on Udemy, and SaaS on Stripe requires managing 3 different dashboards, paying high fees (30%), and dealing with piracy.",
+                    "pain_points": [
+                        "Fragmented sales channels for Code, Courses, and SaaS",
+                        "High commissions (30-50%) on third-party marketplaces",
+                        "Digital piracy due to lack of built-in licensing/DRM",
+                        "Complexity of handling global taxes and multi-currency payments"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built an All-in-One Digital Commerce OS with unified cart, license server, and white-label capabilities.",
+                    "key_features": [
+                        "Unified Storefront: Sell Files, SaaS, and Courses in one cart",
+                        "Smart Licensing: Built-in License Server validates software activation",
+                        "White-Label Engine: Clone the platform for clients in minutes",
+                        "Global Payments: Multi-currency support (Stripe, PayPal, Crypto, Local Wallets)",
+                        "LMS Module: Integrated video course player with certificates"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14 (App Router)",
+                            "TailwindCSS",
+                            "Framer Motion"
+                        ],
+                        "backend": [
+                            "NestJS (Microservices)",
+                            "Node.js"
+                        ],
+                        "database": [
+                            "PostgreSQL (Relational)",
+                            "MongoDB (Logs)"
+                        ],
+                        "infrastructure": [
+                            "Kubernetes",
+                            "Docker",
+                            "Cloudflare R2"
+                        ],
+                        "security": [
+                            "DRM Engine",
+                            "AES-256 Encryption"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Empowered creators to own their platform and revenue.",
+                    "metrics": [
+                        {
+                            "label": "Concurrent Users",
+                            "value": "100k+",
+                            "description": "Scalable architecture tested under load"
+                        },
+                        {
+                            "label": "Piracy Rate",
+                            "value": "0%",
+                            "description": "Eliminated via License Server validation"
+                        },
+                        {
+                            "label": "Launch Time",
+                            "value": "4x",
+                            "description": "Faster deployment for white-label clients"
+                        },
+                        {
+                            "label": "Uptime",
+                            "value": "99.9%",
+                            "description": "High availability on cloud deployment"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "UniSell isn't just a store; it's an operating system for our digital business. We moved our courses, templates, and SaaS tools to one platform and increased our margins by 30% by cutting out the middlemen.",
+                    "author": "Khateeb Ur Rehman",
+                    "role": "Founder",
+                    "company": "UniSell Platform",
+                    "project_type": "Enterprise Product"
+                }
+            }
         },
         {
-            "id": 2,
-            "slug": "crypto-exchange-pro",
-            "title": "CryptoExchange Pro",
-            "category": "Blockchain",
-            "role": "Smart Contract Engineer",
-            "duration": "6 Months",
-            "team_size": "5 Developers",
-            "solution": "A decentralized exchange (DEX) interface with real-time trading charts and wallet integration.",
-            "long_description": "CryptoExchange Pro is a high-performance decentralized trading interface built for speed and security. It features real-time order book updates, TradingView chart integration, and seamless connection with MetaMask and WalletConnect for secure, non-custodial trading. Audited by top firms, it ensures zero-vulnerability smart contract interactions.",
-            "challenges": [
-                "Ensuring millisecond-latency for order book updates.",
-                "Handling complex state management for wallet connections.",
-                "Optimizing gas estimation for smart contract interactions."
-            ],
-            "results": [
-                "Supported 10,000+ daily active users during peak traffic.",
-                "Zero security incidents reported during audit.",
-                "Executed trades 30% faster than competitor interfaces."
-            ],
+            "id": "edu-nexalearn",
+            "slug": "edu-nexalearn-multitenant-lms",
+            "title": "Edu NexaLearn - Multi-Tenant SaaS LMS",
+            "category": "Enterprise",
+            "solution": "A cloud-native, multi-tenant SaaS platform that allows franchises to launch their own branded academies. Features microservices architecture, 99.99% uptime, and automated WhatsApp integration.",
             "tech_stack": [
-                "React",
-                "Web3.js",
-                "Solidity",
-                "Node.js"
+                "Next.js",
+                "Node.js",
+                "Python (FastAPI)",
+                "PostgreSQL",
+                "Docker",
+                "Kubernetes",
+                "Redis"
             ],
             "links": {
                 "demo": "#",
                 "github": "#"
             },
+            "featured_image": "/projects/scs-nexalearn/thumbnail.png",
             "gallery": [
-                "/images/projects/crypto-1.jpg",
-                "/images/projects/crypto-2.jpg"
-            ]
+                "/projects/scs-nexalearn/screenshot-1.png",
+                "/projects/scs-nexalearn/screenshot-2.png",
+                "/projects/scs-nexalearn/screenshot-3.png",
+                "/projects/scs-nexalearn/screenshot-4.png",
+                "/projects/scs-nexalearn/screenshot-5.png",
+                "/projects/scs-nexalearn/screenshot-6.png"
+            ],
+            "case_study": {
+                "client": "Edu NexaLearn",
+                "year": "2024",
+                "duration": "12 months",
+                "role": "Lead System Architect",
+                "overview": "Edu NexaLearn transforms a static, manual education business into a dynamic SaaS powerhouse. It enables the client to franchise their curriculum to hundreds of partners, each with their own isolated, branded platform running on a shared, scalable infrastructure.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "The client was stuck with a manual system dependent on WhatsApp groups, limiting growth. High traffic caused server crashes, and launching new branches required expensive manual setup.",
+                    "pain_points": [
+                        "System crashes at 1M+ concurrent requests due to monolithic architecture",
+                        "Manual invoicing and student communication via WhatsApp was unscalable",
+                        "Inability to launch white-label franchises without code duplication",
+                        "Lack of real-time analytics for multi-branch operations"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Architected a Microservices-based SaaS platform using Kubernetes for auto-scaling and a Multi-Tenant database strategy for data isolation.",
+                    "key_features": [
+                        "Multi-Tenancy: Single codebase powering unlimited isolated franchise academies",
+                        "Microservices Core: Decoupled services (Auth, Payment, Content) for resilience",
+                        "WhatsApp Automation: Bot integration for instant invoices and class links",
+                        "Shariah-Compliant Finance: Revenue model based on service fees, not interest",
+                        "Gamified Learning: XP and Leaderboards to boost student retention"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js (App Router)",
+                            "TailwindCSS"
+                        ],
+                        "backend": [
+                            "Node.js (Business Logic)",
+                            "FastAPI (Analytics)"
+                        ],
+                        "infrastructure": [
+                            "Kubernetes (K8s)",
+                            "Docker",
+                            "Nginx Load Balancer"
+                        ],
+                        "data": [
+                            "PostgreSQL (Relational)",
+                            "MongoDB (Logs)",
+                            "Redis (Caching)"
+                        ],
+                        "devops": [
+                            "CI/CD Pipelines",
+                            "Prometheus & Grafana Monitoring"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Enabled the client to pivot from a local institute to a global SaaS provider.",
+                    "metrics": [
+                        {
+                            "label": "Uptime",
+                            "value": "99.99%",
+                            "description": "Achieved via K8s auto-scaling and redundancy"
+                        },
+                        {
+                            "label": "Automation",
+                            "value": "90%",
+                            "description": "Reduction in manual admin tasks"
+                        },
+                        {
+                            "label": "Scale",
+                            "value": "1M+",
+                            "description": "Concurrent requests handled during load testing"
+                        },
+                        {
+                            "label": "Engagement",
+                            "value": "+40%",
+                            "description": "Increase in course completion rates"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "NexaLearn isn't just an LMS; it's a business-in-a-box. We went from managing students on Excel to running a global franchise network. The automated WhatsApp notifications alone saved us hiring 5 support staff.",
+                    "author": "CEO",
+                    "role": "Founder",
+                    "company": "Edu NexaLearn",
+                    "project_type": "Enterprise SaaS"
+                }
+            }
         },
         {
-            "id": 3,
-            "slug": "edutech-lms",
-            "title": "EduTech LMS",
-            "category": "Web Development",
-            "role": "Full Stack Developer",
-            "duration": "3 Months",
-            "team_size": "2 Developers",
-            "solution": "A custom Learning Management System for a university, featuring live classes and assignment tracking.",
-            "long_description": "EduTech LMS is a robust learning platform built to support hybrid education. It combines live video classrooms, automated assignment grading, and student progress tracking into a single, cohesive portal for students and faculty. The system supports role-based access control for Admins, Teachers, and Students.",
-            "challenges": [
-                "Scaling video streaming for 500+ concurrent students.",
-                "Building a secure, cheat-proof examination module.",
-                "Migrating legacy data from an old system without downtime."
-            ],
-            "results": [
-                "Adopted by 3 major departments within the first semester.",
-                "Reduced administrative grading time by 40%.",
-                "Maintained 99.9% uptime during finals week."
-            ],
+            "id": "digimarket-enterprise",
+            "slug": "digimarket-global-digital-marketplace",
+            "title": "DigiMarket Enterprise - Digital Economy OS",
+            "category": "E-commerce",
+            "solution": "A white-label digital marketplace infrastructure allowing governments and agencies to launch branded platforms for SaaS, APIs, and digital assets. Features global tax automation and DRM piracy protection.",
             "tech_stack": [
-                "Vue.js",
-                "Firebase",
+                "Next.js",
+                "NestJS",
+                "PostgreSQL",
+                "MongoDB",
+                "Redis",
+                "ElasticSearch",
+                "AWS Lambda"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/digimarket-enterprise/thumbnail.png",
+            "gallery": [
+                "/projects/digimarket-enterprise/screenshot-1.png",
+                "/projects/digimarket-enterprise/screenshot-2.png",
+                "/projects/digimarket-enterprise/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "Global Digital Economy Initiative",
+                "year": "2024",
+                "duration": "8 months",
+                "role": "Lead System Architect",
+                "overview": "DigiMarket is not just a marketplace—it is a complete digital economy operating system. It enables the rapid deployment of white-label marketplaces where creators can sell SaaS, APIs, and courses with built-in global compliance.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Launching a global digital marketplace is complex due to multi-country tax laws (VAT/GST), high piracy rates for digital goods, and the difficulty of handling split payments between platforms and sellers.",
+                    "pain_points": [
+                        "Complex global tax compliance (VAT, GST, Sales Tax) for 100+ countries",
+                        "Digital piracy rampant without strong DRM protection",
+                        "Scalability issues when handling millions of concurrent downloads",
+                        "Difficulty in automating affiliate commissions and payouts"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built a multi-tenant, white-label infrastructure that handles the heavy lifting of global commerce, allowing clients to focus on growth.",
+                    "key_features": [
+                        "White-Label Engine: Deploy branded marketplaces in minutes with tenant isolation",
+                        "Global Tax Engine: Auto-calculation and remittance of taxes acting as Merchant of Record",
+                        "Smart DRM: Encrypted delivery for PDFs, Videos, and Software to prevent piracy",
+                        "Unified Wallet: Multi-currency payouts via Crypto, PayPal, and Bank Transfer",
+                        "API Monetization: Built-in metering and billing for selling API access"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14",
+                            "React",
+                            "TailwindCSS"
+                        ],
+                        "backend": [
+                            "NestJS (Microservices)",
+                            "Node.js"
+                        ],
+                        "database": [
+                            "PostgreSQL (Ledger)",
+                            "MongoDB (Metadata)",
+                            "ElasticSearch (Search)"
+                        ],
+                        "infrastructure": [
+                            "AWS Lambda",
+                            "Cloudflare R2",
+                            "Docker"
+                        ],
+                        "security": [
+                            "AI Fraud Detection",
+                            "Blockchain Licensing (Optional)"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Enabled the creation of a secure, scalable digital economy ecosystem.",
+                    "metrics": [
+                        {
+                            "label": "Sellers Supported",
+                            "value": "1M+",
+                            "description": "Scalable architecture handling massive concurrency"
+                        },
+                        {
+                            "label": "Uptime",
+                            "value": "99.99%",
+                            "description": "High availability during peak traffic events"
+                        },
+                        {
+                            "label": "Piracy Breaches",
+                            "value": "0",
+                            "description": "Zero confirmed leaks due to DRM encryption"
+                        },
+                        {
+                            "label": "Deployment Time",
+                            "value": "15 min",
+                            "description": "Time to launch a new white-label marketplace"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "DigiMarket allowed us to launch our national digital asset platform in weeks instead of years. The automated tax compliance alone saved us millions in legal fees. It's truly an operating system for the digital age.",
+                    "author": "Sarah Jenkins",
+                    "role": "Director of Innovation",
+                    "company": "TechForward Alliance",
+                    "project_type": "Enterprise Platform"
+                }
+            }
+        },
+        {
+            "id": "eduverse-lms",
+            "slug": "eduverse-ai-learning-platform",
+            "title": "EduVerse - AI-Powered LMS",
+            "category": "Enterprise",
+            "solution": "A next-generation Learning Management System that uses AI to create adaptive learning paths and features live, interactive classrooms with real-time code collaboration.",
+            "tech_stack": [
+                "Next.js",
+                "NestJS",
+                "GraphQL",
                 "WebRTC",
-                "Express"
+                "OpenAI API",
+                "Neo4j"
             ],
             "links": {
                 "demo": "#",
                 "github": "#"
             },
+            "featured_image": "/projects/eduverse-lms/thumbnail.png",
             "gallery": [
-                "/images/projects/lms-1.jpg",
-                "/images/projects/lms-2.jpg"
-            ]
+                "/projects/eduverse-lms/screenshot-1.png",
+                "/projects/eduverse-lms/screenshot-2.png",
+                "/projects/eduverse-lms/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "EdTech Innovations Corp",
+                "year": "2024",
+                "duration": "6 months",
+                "role": "Lead Full Stack Engineer",
+                "overview": "EduVerse solves the problem of passive learning by introducing AI-driven adaptive curriculums and live, interactive classrooms where instructors can collaborate on code and whiteboards in real-time.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Traditional LMS platforms are static and boring, leading to course completion rates below 10%. Students lack real-time feedback and personalized attention.",
+                    "pain_points": [
+                        "Passive video watching leads to low engagement",
+                        "One-size-fits-all curriculum doesn't match student pace",
+                        "Lack of real-time collaboration tools for coding/design",
+                        "Instructors overwhelmed by grading manual assignments"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built an 'Active Learning' platform with AI tutors, adaptive learning paths, and WebRTC-based live classrooms.",
+                    "key_features": [
+                        "AI Personal Tutor: 24/7 chat bot that explains concepts and generates quizzes",
+                        "Adaptive Curriculum: Knowledge graph that unlocks lessons based on mastery",
+                        "Live Smart Classroom: HD Video + Real-time Code Editor + Whiteboard",
+                        "Gamified Dashboard: Streaks, badges, and leaderboards to boost motivation",
+                        "Auto-Grader: AI analysis of code submissions for instant feedback"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14",
+                            "React Flow",
+                            "Monaco Editor"
+                        ],
+                        "backend": [
+                            "NestJS",
+                            "GraphQL",
+                            "Socket.io"
+                        ],
+                        "database": [
+                            "PostgreSQL (Users)",
+                            "Neo4j (Knowledge Graph)"
+                        ],
+                        "ai": [
+                            "OpenAI API",
+                            "Python Analytics"
+                        ],
+                        "infrastructure": [
+                            "Mediasoup (SFU)",
+                            "AWS"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Transformed the learning experience, significantly boosting completion rates.",
+                    "metrics": [
+                        {
+                            "label": "Completion Rate",
+                            "value": "45%",
+                            "description": "Up from industry average of 10%"
+                        },
+                        {
+                            "label": "Engagement",
+                            "value": "3x",
+                            "description": "Increase in average session duration"
+                        },
+                        {
+                            "label": "Grading Time",
+                            "value": "-70%",
+                            "description": "Reduction via AI auto-grading"
+                        },
+                        {
+                            "label": "Student Satisfaction",
+                            "value": "4.8/5",
+                            "description": "Average course rating"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "EduVerse is lightyears ahead of Moodle. The ability to jump into a student's code editor during a live class has changed how we teach programming. The AI tutor also saves us hours of answering basic questions.",
+                    "author": "Dr. Alan Grant",
+                    "role": "Dean of Computer Science",
+                    "company": "FutureTech University",
+                    "project_type": "EdTech SaaS"
+                }
+            }
+        },
+        {
+            "id": "vitalis-healthcare",
+            "slug": "vitalis-intelligent-healthcare-ecosystem",
+            "title": "Vitalis - Intelligent Healthcare Ecosystem",
+            "category": "Enterprise",
+            "solution": "A unified SaaS platform bridging telemedicine, EMR, and AI-diagnostics. Reduced administrative burden by 40% and improved patient follow-up adherence by 60% through smart automation.",
+            "tech_stack": [
+                "Next.js",
+                "Node.js",
+                "PostgreSQL",
+                "WebRTC",
+                "Socket.io",
+                "OpenAI API"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/vitalis-healthcare/thumbnail.png",
+            "gallery": [
+                "/projects/vitalis-healthcare/screenshot-1.png",
+                "/projects/vitalis-healthcare/screenshot-2.png",
+                "/projects/vitalis-healthcare/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "Multi-Specialty Clinics Network",
+                "year": "2024",
+                "duration": "3 months",
+                "role": "Lead Full Stack Engineer",
+                "overview": "Vitalis modernizes healthcare delivery by integrating Telemedicine, Electronic Medical Records (EMR), and AI-Assisted Diagnostics into a single, secure ecosystem. It solves the problem of fragmented patient data and inefficient scheduling.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Doctors were struggling with disconnected systems for billing, appointments, and labs, leading to medical errors and lost history. Manual phone booking caused 30% patient no-show rates.",
+                    "pain_points": [
+                        "Fragmented patient data across paper records and legacy software",
+                        "High no-show rates due to lack of automated reminders",
+                        "Limited access to specialists for remote patients",
+                        "Diagnostic delays due to manual symptom analysis"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built a secure, HIPAA-compliant SaaS platform with real-time video consultations, smart scheduling, and AI-powered triage.",
+                    "key_features": [
+                        "Unified EMR: Centralized patient history, prescriptions, and lab reports",
+                        "Smart Scheduling Engine: Automated SMS/WhatsApp reminders to reduce no-shows",
+                        "HD Telemedicine Suite: Secure browser-based video calls with screen sharing",
+                        "AI-Assisted Triage: Pre-screening bot to highlight potential red flags",
+                        "Digital Prescriptions: One-click PDF generation with drug interaction warnings"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14 (App Router)",
+                            "TailwindCSS",
+                            "ShadcnUI"
+                        ],
+                        "backend": [
+                            "Node.js (Express)",
+                            "Socket.io (Real-time notifications)"
+                        ],
+                        "databases": [
+                            "PostgreSQL (Core Data)",
+                            "MongoDB (Audit Logs)"
+                        ],
+                        "integrations": [
+                            "WebRTC (Video)",
+                            "OpenAI API (Symptom Checker)",
+                            "AWS S3 (Storage)"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "The platform significantly improved operational efficiency and patient access to care.",
+                    "metrics": [
+                        {
+                            "label": "Admin Burden",
+                            "value": "-40%",
+                            "description": "Reduction in manual administrative tasks"
+                        },
+                        {
+                            "label": "No-Show Rate",
+                            "value": "-45%",
+                            "description": "Decrease in missed appointments via smart reminders"
+                        },
+                        {
+                            "label": "Patient Adherence",
+                            "value": "+60%",
+                            "description": "Improvement in follow-up visit compliance"
+                        },
+                        {
+                            "label": "Booking Time",
+                            "value": "45s",
+                            "description": "Reduced from 5 minutes (phone) to seconds (app)"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "Vitalis has transformed how we manage our clinic. The ability to see a patient's entire history while on a video call is a game-changer. The AI triage helps us prioritize critical cases effectively.",
+                    "author": "Dr. Sarah Ahmed",
+                    "role": "Chief Medical Officer",
+                    "company": "City Care Hospital",
+                    "project_type": "Healthcare SaaS"
+                }
+            }
+        },
+        {
+            "id": "aide-platform",
+            "slug": "aide-islamic-digital-ecosystem",
+            "title": "AID²E - Islamic Digital Ecosystem",
+            "category": "Full Stack",
+            "solution": "Enterprise-scale digital operating system for Masjids, Madrasas, and Islamic institutions with transparent donation tracking, AI fraud detection, and digital education. Increased donor trust by 72% and modernized religious education for thousands.",
+            "tech_stack": [
+                "Next.js",
+                "Flutter",
+                "Node.js",
+                "PostgreSQL",
+                "MongoDB",
+                "Redis",
+                "AI/ML"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/aide-platform/thumbnail.png",
+            "gallery": [
+                "/projects/aide-platform/screenshot-1.png",
+                "/projects/aide-platform/screenshot-2.png",
+                "/projects/aide-platform/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "Consortium of Masjids, Madrasas & Islamic Welfare NGOs",
+                "year": "2024",
+                "duration": "6 months (ongoing)",
+                "role": "Project Architect & Lead Developer",
+                "overview": "Designed and developed a national-scale Islamic Digital Infrastructure platform that increased donor trust, eliminated charity misuse, modernized madrasa education, and connected millions of users through a secure, transparent ecosystem.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Islamic institutions were operating with manual, paper-based systems leading to donation misuse, trust crisis, and operational inefficiencies. Youth were disconnected from masjids, and NGOs failed government audits.",
+                    "pain_points": [
+                        "No transparency in donation usage - donors had zero proof of where money went",
+                        "Manual attendance, fees, and record-keeping in Madrasas causing inefficiency",
+                        "Zakat miscalculation and double distribution to same beneficiaries",
+                        "Youth completely disconnected from Masjid activities",
+                        "Islamic misinformation spreading online (fake hadiths, TikTok fatwas)",
+                        "NGOs failing audits due to poor documentation and record-keeping"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built a comprehensive digital ecosystem with microservices architecture, covering donations, education, zakat distribution, content verification, and mobile engagement.",
+                    "key_features": [
+                        "Transparent Donation System: Real-time tracking with GPS proof, photos, and public dashboards",
+                        "Digital Madrasa Management: Automated attendance, fee recovery, parent portals, performance tracking",
+                        "Smart Zakat Calculator: AI-powered calculator with verified beneficiary system and geo-mapping",
+                        "Youth Engagement Platform: Gamified Islamic challenges, live dars, mobile notifications, volunteer programs",
+                        "Scholar Content Verification: AI-powered hadith authentication and fatwa verification engine",
+                        "Audit & Compliance System: Auto audit-ready reports with immutable transaction logs"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js for web admin & public portal",
+                            "Flutter for iOS + Android super app"
+                        ],
+                        "backend": [
+                            "Node.js microservices architecture",
+                            "REST APIs with JWT authentication",
+                            "Role-Based Access Control (RBAC)"
+                        ],
+                        "databases": [
+                            "PostgreSQL for financial & core data",
+                            "MongoDB for content & records",
+                            "Redis for caching & sessions"
+                        ],
+                        "payments": [
+                            "Local gateways (JazzCash, Bank transfers)",
+                            "International (Stripe)",
+                            "QR codes & direct bank integration"
+                        ],
+                        "ai_ml": [
+                            "AI fraud detection algorithms",
+                            "Donation & dropout prediction models",
+                            "Hadith & content verification engine"
+                        ],
+                        "blockchain": [
+                            "Optional immutable ledger for charity records",
+                            "Transparent audit trail"
+                        ],
+                        "infrastructure": [
+                            "Hybrid cloud hosting",
+                            "Object storage (S3/MinIO) for proofs",
+                            "CI/CD automated deployment",
+                            "Encrypted backups & disaster recovery"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact - Pilot Phase",
+                    "description": "Within the pilot rollout across select institutions, the platform delivered measurable improvements in transparency, efficiency, and engagement.",
+                    "metrics": [
+                        {
+                            "label": "Monthly Donations",
+                            "value": "+48%",
+                            "description": "Increase due to transparency and donor trust"
+                        },
+                        {
+                            "label": "Donor Retention",
+                            "value": "+72%",
+                            "description": "Donors continue giving when they see proof of impact"
+                        },
+                        {
+                            "label": "Fee Defaulters",
+                            "value": "-61%",
+                            "description": "Automated reminders and parent portal visibility"
+                        },
+                        {
+                            "label": "Digital Attendance",
+                            "value": "100%",
+                            "description": "Complete adoption replacing manual registers"
+                        },
+                        {
+                            "label": "Audit Flags",
+                            "value": "Zero",
+                            "description": "All institutions passed government audits cleanly"
+                        },
+                        {
+                            "label": "Youth Volunteers",
+                            "value": "3X",
+                            "description": "Triple increase in youth masjid engagement"
+                        },
+                        {
+                            "label": "Relief Fund Collection",
+                            "value": "80% Faster",
+                            "description": "During disaster/emergency campaigns"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "Leading this project taught me the true power of technology in serving society. We didn't just build software - we restored trust in Islamic institutions, modernized religious education, and reconnected youth with their faith. Seeing donors receive photo proof of their charity being used, watching parents track their children's Quran progress in real-time, and knowing we prevented fraud through AI - that's impact beyond code. This project combines my technical skills with meaningful purpose.",
+                    "author": "Khateeb Ur Rehman",
+                    "role": "Project Architect & Lead Developer",
+                    "company": "AID²E Platform",
+                    "project_type": "Enterprise Islamic Digital Infrastructure"
+                }
+            }
+        },
+        {
+            "id": "portfolio-website",
+            "slug": "khateeb-dev-portfolio",
+            "title": "Khateeb.dev - Portfolio & Client Hub",
+            "category": "Full Stack",
+            "solution": "Professional portfolio with intelligent chatbot, Discord integration, and 24/7 lead capture system achieving 100% response rate and zero missed opportunities.",
+            "tech_stack": [
+                "Next.js",
+                "React",
+                "Node.js",
+                "Socket.io",
+                "Discord.js",
+                "TailwindCSS"
+            ],
+            "links": {
+                "demo": "https://khateeb.dev",
+                "github": "#"
+            },
+            "featured_image": "/projects/portfolio-website/thumbnail.png",
+            "gallery": [
+                "/projects/portfolio-website/screenshot-1.png",
+                "/projects/portfolio-website/screenshot-2.png",
+                "/projects/portfolio-website/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "Personal Project",
+                "year": "2024",
+                "duration": "3 weeks",
+                "role": "Full Stack Developer & Designer",
+                "overview": "Building a portfolio that does more than just showcase work - it actively captures leads and manages client communication.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Needed a professional online presence that works 24/7 to attract clients and job opportunities while demonstrating advanced full-stack capabilities.",
+                    "pain_points": [
+                        "Manual client inquiry handling was time-consuming",
+                        "Missing opportunities when unavailable",
+                        "No centralized system for tracking leads",
+                        "Generic portfolios don't showcase unique technical abilities",
+                        "Difficult to demonstrate full-stack capabilities to recruiters"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built a modern full-stack platform with intelligent chatbot, Discord integration for lead management, and advanced features like voice messaging and auto-log sending.",
+                    "key_features": [
+                        "Intelligent chatbot with 400+ keyword intent detection and dual-mode operation (commands + natural language)",
+                        "Real-time Discord integration with two-way communication and voice message playback",
+                        "Auto-lead capture form with validation and inline chat integration",
+                        "Offline mode handling with automatic chat log transmission when admin comes online",
+                        "Command autocomplete UI for better user experience",
+                        "SEO optimized with sitemap, robots.txt, and proper meta tags",
+                        "Dark/Light mode with smooth theme transitions",
+                        "Fully responsive mobile-first design with Framer Motion animations"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14",
+                            "React",
+                            "TailwindCSS",
+                            "Framer Motion",
+                            "Lucide Icons"
+                        ],
+                        "backend": [
+                            "Node.js",
+                            "Express",
+                            "Socket.io",
+                            "Discord.js"
+                        ],
+                        "storage": [
+                            "JSON-based (migration to MongoDB planned)"
+                        ],
+                        "deployment": [
+                            "Vercel (Frontend)",
+                            "Node server (Backend)"
+                        ],
+                        "integrations": [
+                            "Discord API",
+                            "Discord Voice"
+                        ],
+                        "tools": [
+                            "Git",
+                            "npm",
+                            "Postman",
+                            "VS Code"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Created a portfolio that serves as both a showcase and a lead generation machine, working around the clock.",
+                    "metrics": [
+                        {
+                            "label": "Response Rate",
+                            "value": "100%",
+                            "description": "Chatbot never sleeps - responds to all inquiries instantly"
+                        },
+                        {
+                            "label": "PageSpeed Score",
+                            "value": "90+",
+                            "description": "Fast loading on both mobile and desktop"
+                        },
+                        {
+                            "label": "Lead Capture",
+                            "value": "24/7",
+                            "description": "Automated lead generation even when offline"
+                        },
+                        {
+                            "label": "Missed Opportunities",
+                            "value": "Zero",
+                            "description": "All chats saved and sent to Discord automatically"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "Building this portfolio was both challenging and rewarding. It allowed me to showcase not just my development skills, but my ability to think from a business perspective. The chatbot system has automated my lead generation, and the Discord integration ensures I never miss an opportunity. It's not just a portfolio - it's my 24/7 business development tool.",
+                    "author": "Khateeb Ur Rehman",
+                    "role": "Full Stack Developer",
+                    "company": "Self",
+                    "project_type": "Personal Portfolio"
+                }
+            }
         }
     ]
 }

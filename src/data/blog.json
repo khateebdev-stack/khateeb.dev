@@ -1,0 +1,160 @@
+{
+    "articles": [
+        {
+            "id": "react-vs-nextjs-2024",
+            "title": "React vs Next.js: Which Should You Choose in 2024?",
+            "slug": "react-vs-nextjs-guide",
+            "category": "Web Development",
+            "tags": [
+                "React",
+                "Next.js",
+                "JavaScript",
+                "Framework"
+            ],
+            "excerpt": "Choosing between React and Next.js for your project? This comprehensive guide breaks down the key differences, use cases, and helps you make the right decision based on your project requirements.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-11-15",
+            "read_time": "8 min read",
+            "featured_image": "/blog/react-vs-nextjs.jpg",
+            "content_preview": "React and Next.js are both powerful tools, but they serve different purposes. React is a library for building user interfaces, while Next.js is a framework built on top of React...",
+            "views": 1250,
+            "is_featured": true
+        },
+        {
+            "id": "mobile-app-cost-guide",
+            "title": "How Much Does It Really Cost to Build a Mobile App?",
+            "slug": "mobile-app-development-cost-guide",
+            "category": "Mobile Development",
+            "tags": [
+                "Mobile Apps",
+                "React Native",
+                "Pricing",
+                "Business"
+            ],
+            "excerpt": "Planning to build a mobile app? Learn about the factors that affect development costs, average pricing for different app types, and how to budget effectively for your mobile app project.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-11-10",
+            "read_time": "10 min read",
+            "featured_image": "/blog/mobile-app-costs.jpg",
+            "content_preview": "The cost of building a mobile app can range from $3,000 to over $100,000. Here's what determines the price...",
+            "views": 890,
+            "is_featured": true
+        },
+        {
+            "id": "seo-basics-developers",
+            "title": "SEO Basics Every Developer Should Know",
+            "slug": "seo-basics-for-developers",
+            "category": "SEO",
+            "tags": [
+                "SEO",
+                "Web Development",
+                "Performance",
+                "Google"
+            ],
+            "excerpt": "SEO isn't just for marketers. As a developer, understanding these basic SEO principles will help you build websites that rank well and attract organic traffic.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-11-05",
+            "read_time": "7 min read",
+            "featured_image": "/blog/seo-basics.jpg",
+            "content_preview": "Search Engine Optimization starts with good development practices. Meta tags, page speed, mobile responsiveness...",
+            "views": 670,
+            "is_featured": false
+        },
+        {
+            "id": "choosing-tech-stack-2024",
+            "title": "Choosing the Right Tech Stack for Your Startup in 2024",
+            "slug": "choosing-tech-stack-startups",
+            "category": "Tech Stack",
+            "tags": [
+                "Startups",
+                "Technology",
+                "Full Stack",
+                "Strategy"
+            ],
+            "excerpt": "Your tech stack can make or break your startup. This guide helps founders and CTOs choose technologies that balance speed, scalability, and cost-effectiveness.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-10-28",
+            "read_time": "12 min read",
+            "featured_image": "/blog/tech-stack.jpg",
+            "content_preview": "For most startups, the best tech stack is one that allows you to move fast without accumulating technical debt...",
+            "views": 1100,
+            "is_featured": true
+        },
+        {
+            "id": "react-native-vs-flutter",
+            "title": "React Native vs Flutter: A Developer's Honest Comparison",
+            "slug": "react-native-vs-flutter-comparison",
+            "category": "Mobile Development",
+            "tags": [
+                "React Native",
+                "Flutter",
+                "Mobile Apps",
+                "Comparison"
+            ],
+            "excerpt": "Should you build your mobile app with React Native or Flutter? Here's an honest comparison from someone who's worked with both frameworks.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-10-20",
+            "read_time": "9 min read",
+            "featured_image": "/blog/rn-vs-flutter.jpg",
+            "content_preview": "Both React Native and Flutter are excellent choices for cross-platform development, but they have distinct advantages...",
+            "views": 820,
+            "is_featured": false
+        },
+        {
+            "id": "website-speed-optimization",
+            "title": "10 Quick Wins to Improve Your Website Speed Today",
+            "slug": "website-speed-optimization-tips",
+            "category": "Performance",
+            "tags": [
+                "Performance",
+                "Web Development",
+                "PageSpeed",
+                "Optimization"
+            ],
+            "excerpt": "Website speed directly impacts user experience and SEO. Here are 10 actionable optimizations you can implement today to make your site blazing fast.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-10-12",
+            "read_time": "6 min read",
+            "featured_image": "/blog/speed-optimization.jpg",
+            "content_preview": "A slow website kills conversions. Here's how to fix it: Image optimization, lazy loading, code splitting...",
+            "views": 950,
+            "is_featured": false
+        }
+    ],
+    "categories": [
+        {
+            "name": "Web Development",
+            "count": 12
+        },
+        {
+            "name": "Mobile Development",
+            "count": 8
+        },
+        {
+            "name": "SEO",
+            "count": 5
+        },
+        {
+            "name": "Tech Stack",
+            "count": 4
+        },
+        {
+            "name": "Performance",
+            "count": 6
+        },
+        {
+            "name": "Business",
+            "count": 3
+        }
+    ],
+    "popular_tags": [
+        "React",
+        "Next.js",
+        "Mobile Apps",
+        "SEO",
+        "JavaScript",
+        "React Native",
+        "Performance",
+        "Startups"
+    ]
+}

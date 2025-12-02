@@ -52,3 +52,13 @@ build_log.txt
 # system
 Thumbs.db
 Desktop.ini
+
+# Ignore all markdown files except README and Project Assets
+*.md
+!README.md
+!readme.md
+!SRS.md
+!PROMPTS.md
+!CASE_STUDY.md
+!json_data.md
+!PROJECT_PROMPT.md

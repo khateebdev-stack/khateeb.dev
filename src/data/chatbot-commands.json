@@ -1,0 +1,654 @@
+{
+    "commands": [
+        {
+            "keyword": "price",
+            "aliases": [
+                "pricing",
+                "cost",
+                "rate",
+                "budget"
+            ],
+            "description": "Quick pricing info",
+            "response": "auto",
+            "category": "quick"
+        },
+        {
+            "keyword": "contact",
+            "aliases": [
+                "connect",
+                "reach",
+                "talk"
+            ],
+            "description": "Contact information",
+            "response": "auto",
+            "category": "quick"
+        },
+        {
+            "keyword": "portfolio",
+            "aliases": [
+                "projects",
+                "work",
+                "samples"
+            ],
+            "description": "View projects",
+            "response": "auto",
+            "category": "quick"
+        },
+        {
+            "keyword": "services",
+            "aliases": [
+                "what",
+                "offer",
+                "do"
+            ],
+            "description": "Available services",
+            "response": "auto",
+            "category": "quick"
+        },
+        {
+            "keyword": "about",
+            "aliases": [
+                "who",
+                "experience",
+                "skills"
+            ],
+            "description": "About Khateeb",
+            "response": "auto",
+            "category": "quick"
+        },
+        {
+            "keyword": "timeline",
+            "aliases": [
+                "time",
+                "duration",
+                "delivery"
+            ],
+            "description": "Project timeline",
+            "response": "auto",
+            "category": "quick"
+        }
+    ],
+    "intents": {
+        "pricing": {
+            "keywords": [
+                "price",
+                "pricing",
+                "cost",
+                "rate",
+                "charge",
+                "fee",
+                "budget",
+                "much",
+                "expensive",
+                "cheap",
+                "afford",
+                "payment",
+                "pay",
+                "invest",
+                "quote",
+                "estimate",
+                "dollar",
+                "rupee",
+                "paisa",
+                "qeemat",
+                "kitna",
+                "lagega",
+                "kharcha",
+                "value",
+                "worth",
+                "discount",
+                "offer"
+            ],
+            "suggestedOptions": [
+                "Get Custom Quote",
+                "View Services",
+                "Talk to Expert",
+                "Payment Plans"
+            ],
+            "confidence_threshold": 0.5
+        },
+        "contact": {
+            "keywords": [
+                "contact",
+                "connect",
+                "talk",
+                "speak",
+                "reach",
+                "call",
+                "email",
+                "whatsapp",
+                "message",
+                "discuss",
+                "rabta",
+                "baat",
+                "number",
+                "phone",
+                "chat",
+                "messenger",
+                "telegram",
+                "skype",
+                "meeting",
+                "meet",
+                "appointment",
+                "schedule",
+                "available",
+                "online",
+                "reply",
+                "respond"
+            ],
+            "suggestedOptions": [
+                "WhatsApp Now",
+                "Send Email",
+                "Schedule Call",
+                "View Contact"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "portfolio": {
+            "keywords": [
+                "portfolio",
+                "project",
+                "work",
+                "example",
+                "sample",
+                "previous",
+                "past",
+                "built",
+                "made",
+                "created",
+                "kaam",
+                "design",
+                "website",
+                "app",
+                "showcase",
+                "demo",
+                "live",
+                "client",
+                "case study",
+                "testimonial",
+                "review",
+                "feedback"
+            ],
+            "suggestedOptions": [
+                "E-commerce Sites",
+                "Web Apps",
+                "Mobile Apps",
+                "View All Projects"
+            ],
+            "confidence_threshold": 0.5
+        },
+        "services": {
+            "keywords": [
+                "service",
+                "what do you",
+                "can you",
+                "develop",
+                "build",
+                "create",
+                "make",
+                "offer",
+                "website",
+                "app",
+                "mobile",
+                "web",
+                "ecommerce",
+                "cms",
+                "api",
+                "backend",
+                "frontend",
+                "full stack",
+                "database",
+                "hosting",
+                "maintenance",
+                "support",
+                "update",
+                "redesign"
+            ],
+            "suggestedOptions": [
+                "Custom Web App",
+                "E-commerce Site",
+                "Mobile App",
+                "See All Services"
+            ],
+            "confidence_threshold": 0.5
+        },
+        "experience": {
+            "keywords": [
+                "experience",
+                "about",
+                "who",
+                "background",
+                "yourself",
+                "skills",
+                "expert",
+                "qualified",
+                "resume",
+                "cv",
+                "portfolio",
+                "years",
+                "professional",
+                "developer",
+                "programmer",
+                "engineer",
+                "expertise",
+                "knowledge",
+                "specialization",
+                "tajurba"
+            ],
+            "suggestedOptions": [
+                "View Resume",
+                "See Skills",
+                "View Projects",
+                "Hire Me"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "timeline": {
+            "keywords": [
+                "timeline",
+                "time",
+                "long",
+                "process",
+                "duration",
+                "delivery",
+                "when",
+                "fast",
+                "quick",
+                "kitna waqt",
+                "mahina",
+                "week",
+                "day",
+                "month",
+                "deadline",
+                "urgent",
+                "rush",
+                "asap",
+                "soon",
+                "ready",
+                "complete",
+                "finish",
+                "jaldi"
+            ],
+            "suggestedOptions": [
+                "Describe Project",
+                "Rush Delivery",
+                "Standard Timeline",
+                "Get Started"
+            ],
+            "confidence_threshold": 0.5
+        },
+        "technology": {
+            "keywords": [
+                "tech",
+                "technology",
+                "stack",
+                "language",
+                "framework",
+                "react",
+                "nextjs",
+                "node",
+                "javascript",
+                "python",
+                "database",
+                "mysql",
+                "mongodb",
+                "aws",
+                "cloud",
+                "docker",
+                "typescript",
+                "vue",
+                "angular",
+                "laravel",
+                "php",
+                "wordpress",
+                "shopify",
+                "woocommerce",
+                "platform",
+                "cms",
+                "headless",
+                "jamstack",
+                "api",
+                "rest",
+                "graphql"
+            ],
+            "suggestedOptions": [
+                "Modern Stack",
+                "Best Tech for You",
+                "Custom Solution",
+                "Discuss Tech"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "seo": {
+            "keywords": [
+                "seo",
+                "search engine",
+                "ranking",
+                "google",
+                "traffic",
+                "organic",
+                "keywords",
+                "optimization",
+                "visibility",
+                "search",
+                "top",
+                "page one",
+                "meta",
+                "sitemap",
+                "analytics",
+                "performance",
+                "speed",
+                "mobile",
+                "responsive"
+            ],
+            "suggestedOptions": [
+                "SEO Services",
+                "Speed Optimization",
+                "Mobile Optimization",
+                "Get Audit"
+            ],
+            "confidence_threshold": 0.7
+        },
+        "design": {
+            "keywords": [
+                "design",
+                "ui",
+                "ux",
+                "interface",
+                "user experience",
+                "look",
+                "appearance",
+                "style",
+                "theme",
+                "color",
+                "layout",
+                "modern",
+                "beautiful",
+                "professional",
+                "attractive",
+                "responsive",
+                "mobile friendly",
+                "branding",
+                "logo",
+                "graphics",
+                "figma",
+                "adobe"
+            ],
+            "suggestedOptions": [
+                "Modern Designs",
+                "Custom UI/UX",
+                "Responsive Design",
+                "View Samples"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "ecommerce": {
+            "keywords": [
+                "ecommerce",
+                "e-commerce",
+                "shop",
+                "store",
+                "online store",
+                "cart",
+                "checkout",
+                "payment",
+                "stripe",
+                "paypal",
+                "product",
+                "inventory",
+                "shopping",
+                "sell online",
+                "products",
+                "orders",
+                "woocommerce",
+                "shopify",
+                "magento"
+            ],
+            "suggestedOptions": [
+                "E-commerce Package",
+                "Payment Integration",
+                "Store Features",
+                "Get Quote"
+            ],
+            "confidence_threshold": 0.7
+        },
+        "mobile_app": {
+            "keywords": [
+                "mobile app",
+                "android",
+                "ios",
+                "react native",
+                "flutter",
+                "app development",
+                "mobile development",
+                "smartphone",
+                "tablet",
+                "cross platform",
+                "native app",
+                "app store",
+                "play store",
+                "mobile"
+            ],
+            "suggestedOptions": [
+                "Mobile App Services",
+                "Cross-Platform",
+                "Native Apps",
+                "Discuss Idea"
+            ],
+            "confidence_threshold": 0.7
+        },
+        "hosting": {
+            "keywords": [
+                "hosting",
+                "server",
+                "domain",
+                "deploy",
+                "deployment",
+                "live",
+                "publish",
+                "launch",
+                "aws",
+                "vercel",
+                "netlify",
+                "heroku",
+                "cloud",
+                "uptime",
+                "ssl",
+                "security",
+                "backup"
+            ],
+            "suggestedOptions": [
+                "Hosting Options",
+                "Cloud Solutions",
+                "Domain Help",
+                "Setup Guide"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "payment_methods": {
+            "keywords": [
+                "payment method",
+                "how to pay",
+                "payment option",
+                "installment",
+                "advance",
+                "milestone",
+                "escrow",
+                "payoneer",
+                "wise",
+                "bank transfer",
+                "crypto",
+                "bitcoin",
+                "paypal",
+                "stripe account"
+            ],
+            "suggestedOptions": [
+                "Payment Options",
+                "Installment Plan",
+                "Get Invoice",
+                "Payment Terms"
+            ],
+            "confidence_threshold": 0.7
+        },
+        "urgency": {
+            "keywords": [
+                "urgent",
+                "asap",
+                "emergency",
+                "rush",
+                "immediately",
+                "today",
+                "tomorrow",
+                "this week",
+                "fast delivery",
+                "quick turnaround",
+                "need now",
+                "deadline",
+                "critical",
+                "jaldi chahiye"
+            ],
+            "suggestedOptions": [
+                "Rush Service Available",
+                "Priority Support",
+                "Express Delivery",
+                "Contact Now"
+            ],
+            "confidence_threshold": 0.7
+        },
+        "comparison": {
+            "keywords": [
+                "vs",
+                "versus",
+                "compare",
+                "difference",
+                "better",
+                "which",
+                "wordpress or",
+                "shopify or",
+                "best",
+                "recommend",
+                "suggestion",
+                "choose",
+                "select",
+                "prefer",
+                "opinion"
+            ],
+            "suggestedOptions": [
+                "Tech Comparison",
+                "Best for Your Need",
+                "Consult Expert",
+                "See Options"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "maintenance": {
+            "keywords": [
+                "maintain",
+                "maintenance",
+                "update",
+                "support",
+                "fix",
+                "bug",
+                "issue",
+                "problem",
+                "broken",
+                "not working",
+                "error",
+                "help",
+                "assist",
+                "ongoing",
+                "monthly",
+                "yearly"
+            ],
+            "suggestedOptions": [
+                "Maintenance Plans",
+                "Support Packages",
+                "Fix Existing Site",
+                "Get Help"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "custom_features": {
+            "keywords": [
+                "custom",
+                "specific",
+                "unique",
+                "special",
+                "feature",
+                "functionality",
+                "integration",
+                "api integration",
+                "third party",
+                "automation",
+                "chatbot",
+                "ai",
+                "machine learning",
+                "advanced",
+                "complex"
+            ],
+            "suggestedOptions": [
+                "Custom Development",
+                "API Integration",
+                "Advanced Features",
+                "Discuss Needs"
+            ],
+            "confidence_threshold": 0.6
+        },
+        "greeting": {
+            "keywords": [
+                "hi",
+                "hello",
+                "hey",
+                "salam",
+                "assalam",
+                "greetings",
+                "good morning",
+                "good evening",
+                "namaste",
+                "kia hal",
+                "kaise ho",
+                "sup",
+                "yo"
+            ],
+            "suggestedOptions": [
+                "View Services",
+                "Get Quote",
+                "See Portfolio",
+                "Contact"
+            ],
+            "confidence_threshold": 0.8
+        }
+    },
+    "leadCapture": {
+        "enabled": true,
+        "trigger": "chat_start",
+        "fields": [
+            {
+                "name": "name",
+                "label": "Your Name",
+                "required": true,
+                "placeholder": "John Doe"
+            },
+            {
+                "name": "email",
+                "label": "Email Address",
+                "required": true,
+                "placeholder": "john@example.com"
+            },
+            {
+                "name": "phone",
+                "label": "Phone Number (Optional)",
+                "required": false,
+                "placeholder": "+1 234 567 8900"
+            }
+        ],
+        "welcomeMessage": "Hi! Before we start, I'd love to know who I'm talking to. This helps us provide better assistance!",
+        "thankYouMessage": "Thanks {name}! How can I help you today?"
+    },
+    "offlineMode": {
+        "enabled": true,
+        "message": "I'm currently offline, but my AI assistant can help you with common questions. For complex inquiries, please leave your details and I'll get back to you within 2-4 hours.",
+        "suggestOptions": true,
+        "createTicket": true
+    }
+}

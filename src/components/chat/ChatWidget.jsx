@@ -7,6 +7,8 @@ import { io } from 'socket.io-client'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import contactContent from '@/data/contact.json'
+import LeadCaptureModal from './LeadCaptureModal'
+import commandsData from '@/data/chatbot-commands.json'
 
 const SOCKET_URL = "http://localhost:3001"
 
@@ -23,16 +25,28 @@ export default function ChatWidget() {
     const [showEmojiPicker, setShowEmojiPicker] = useState(false)
     const [isDragging, setIsDragging] = useState(false)
 
+    // Lead Capture & Advanced Features
+    const [showLeadCapture, setShowLeadCapture] = useState(false)
+    const [userInfo, setUserInfo] = useState(null)
+    const [showCommandMenu, setShowCommandMenu] = useState(false)
+    const [commandFilter, setCommandFilter] = useState('')
+
     const messagesEndRef = useRef(null)
     const fileInputRef = useRef(null)
     const socketRef = useRef(null)
     const typingTimeoutRef = useRef(null)
-
     const mediaRecorderRef = useRef(null)
     const isCancelledRef = useRef(false)
 
     const { direct_contact } = contactContent
     const suggestedMessages = ["Hi! I need a website.", "What are your rates?", "Can we schedule a call?", "Do you do SEO?"]
+
+    // Show lead capture on first open if no user info
+    useEffect(() => {
+        if (isOpen && !userInfo && !localStorage.getItem("chat_user_info")) {
+            setShowLeadCapture(true)
+        }
+    }, [isOpen, userInfo])
 
     // Sound Effect (Web Audio API)
     const playNotificationSound = (type = 'receive') => {
@@ -71,6 +85,7 @@ export default function ChatWidget() {
         }
     };
 
+
     useEffect(() => {
         // Load messages from localStorage
         const savedMessages = localStorage.getItem("chat_history")
@@ -81,6 +96,12 @@ export default function ChatWidget() {
             setMessages([])
         }
 
+        // Load user info if exists
+        const savedUserInfo = localStorage.getItem("chat_user_info")
+        if (savedUserInfo) {
+            setUserInfo(JSON.parse(savedUserInfo))
+        }
+
         // Get or Create Session ID
         let sessionId = localStorage.getItem("chat_session_id")
         if (!sessionId) {
@@ -88,9 +109,12 @@ export default function ChatWidget() {
             localStorage.setItem("chat_session_id", sessionId)
         }
 
-        // Initialize Socket with Session ID
+        // Initialize Socket with Session ID and User Info
         socketRef.current = io(SOCKET_URL, {
-            auth: { sessionId }
+            auth: {
+                sessionId,
+                userInfo: savedUserInfo ? JSON.parse(savedUserInfo) : {}
+            }
         })
 
         socketRef.current.on("connect", () => {
@@ -208,6 +232,53 @@ export default function ChatWidget() {
         }
 
         setInputText("")
+    }
+
+    // Lead Capture Handlers
+    const handleLeadCapture = (formData) => {
+        setUserInfo(formData)
+        localStorage.setItem("chat_user_info", JSON.stringify(formData))
+        setShowLeadCapture(false)
+
+        // Reconnect socket with user info
+        if (socketRef.current) {
+            const sessionId = localStorage.getItem("chat_session_id")
+            socketRef.current.disconnect()
+            socketRef.current = io(SOCKET_URL, {
+                auth: {
+                    sessionId,
+                    userInfo: formData
+                }
+            })
+        }
+    }
+
+    const handleSkipLeadCapture = () => {
+        setShowLeadCapture(false)
+        // Continue without user info (IP will still be sent to Discord)
+    }
+
+    // Command Autocomplete Logic
+    const handleInputChange = (e) => {
+        const value = e.target.value
+        setInputText(value)
+
+        // Auto-resize textarea
+        e.target.style.height = 'auto';
+        e.target.style.height = e.target.scrollHeight + 'px';
+
+        // Check if user typed `/` for command menu
+        if (value.startsWith('/') && value.length >= 1) {
+            setShowCommandMenu(true)
+            setCommandFilter(value.slice(1).toLowerCase())
+        } else {
+            setShowCommandMenu(false)
+        }
+    }
+
+    const selectCommand = (command) => {
+        setInputText(`/${command} `)
+        setShowCommandMenu(false)
     }
 
     const handleFileUpload = (e) => {
@@ -399,22 +470,74 @@ export default function ChatWidget() {
                                         </div>
                                     </div>
                                 )}
+
                                 {messages.length === 0 && (
-                                    <div className="flex-1 flex flex-col items-center justify-center space-y-4 opacity-70">
-                                        <Bot className="h-12 w-12 text-muted-foreground" />
-                                        <p className="text-sm text-muted-foreground">Ask me anything!</p>
-                                        <div className="flex flex-wrap justify-center gap-2 px-4">
-                                            {suggestedMessages.map((msg, i) => (
-                                                <button
-                                                    key={i}
-                                                    onClick={() => sendMessage(msg)}
-                                                    className="text-xs bg-background border px-3 py-1.5 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
-                                                >
-                                                    {msg}
-                                                </button>
-                                            ))}
+                                    showLeadCapture ? (
+                                        // Inline Lead Capture Form
+                                        <div className="flex-1 flex flex-col items-center justify-center space-y-4 p-6">
+                                            <div className="w-full max-w-sm bg-card border rounded-xl p-6 shadow-lg">
+                                                <h3 className="text-xl font-bold text-foreground mb-2">
+                                                    👋 Let's Connect!
+                                                </h3>
+                                                <p className="text-sm text-muted-foreground mb-4">
+                                                    Quick intro so I can assist you better
+                                                </p>
+
+                                                <form onSubmit={(e) => { e.preventDefault(); handleLeadCapture({ name: e.target.name.value, email: e.target.email.value, phone: e.target.phone.value }); }} className="space-y-3">
+                                                    <input
+                                                        name="name"
+                                                        type="text"
+                                                        placeholder="Your Name *"
+                                                        required
+                                                        className="w-full px-4 py-2.5 rounded-lg border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none text-sm"
+                                                    />
+                                                    <input
+                                                        name="email"
+                                                        type="email"
+                                                        placeholder="Email Address *"
+                                                        required
+                                                        className="w-full px-4 py-2.5 rounded-lg border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none text-sm"
+                                                    />
+                                                    <input
+                                                        name="phone"
+                                                        type="tel"
+                                                        placeholder="Phone (Optional)"
+                                                        className="w-full px-4 py-2.5 rounded-lg border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none text-sm"
+                                                    />
+
+                                                    <div className="flex gap-2 pt-2">
+                                                        <Button type="submit" className="flex-1">
+                                                            Start Chatting
+                                                        </Button>
+                                                        <Button type="button" onClick={handleSkipLeadCapture} variant="outline" className="px-6">
+                                                            Skip
+                                                        </Button>
+                                                    </div>
+
+                                                    <p className="text-xs text-center text-muted-foreground mt-2">
+                                                        Your info helps me assist you better
+                                                    </p>
+                                                </form>
+                                            </div>
                                         </div>
-                                    </div>
+                                    ) : (
+                                        // Default empty state
+                                        <div className="flex-1 flex flex-col items-center justify-center space-y-4 opacity-70">
+                                            <Bot className="h-12 w-12 text-muted-foreground" />
+                                            <p className="text-sm text-muted-foreground">Ask me anything!</p>
+                                            <div className="flex flex-wrap justify-center gap-2 px-4">
+                                                {suggestedMessages.map((msg, i) => (
+                                                    <button
+                                                        key={i}
+                                                        onClick={() => sendMessage(msg)}
+                                                        className="text-xs bg-background border px-3 py-1.5 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                                                    >
+                                                        {msg}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )
                                 )}
                                 {messages.map((msg) => (
                                     <div
@@ -529,13 +652,49 @@ export default function ChatWidget() {
                                     </Button>
                                 </div>
 
+                                {/* Command Autocomplete Dropdown */}
+                                <AnimatePresence>
+                                    {showCommandMenu && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: 10 }}
+                                            className="absolute bottom-full mb-2 w-full bg-card border shadow-xl rounded-lg overflow-hidden z-50 max-h-64 overflow-y-auto"
+                                        >
+                                            {commandsData.commands
+                                                .filter(cmd =>
+                                                    cmd.keyword.includes(commandFilter) ||
+                                                    (cmd.aliases && cmd.aliases.some(a => a.includes(commandFilter)))
+                                                )
+                                                .map((cmd, i) => (
+                                                    <button
+                                                        key={i}
+                                                        type="button"
+                                                        onClick={() => selectCommand(cmd.keyword)}
+                                                        className="w-full px-4 py-3 text-left hover:bg-muted flex items-center gap-3 transition-colors border-b last:border-b-0"
+                                                    >
+                                                        <span className="font-mono text-primary font-semibold">/{cmd.keyword}</span>
+                                                        <span className="text-sm text-muted-foreground">{cmd.description}</span>
+                                                    </button>
+                                                ))
+                                            }
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                {/* Textarea */}
                                 <textarea
                                     value={inputText}
-                                    onChange={(e) => {
-                                        setInputText(e.target.value);
-                                        e.target.style.height = 'auto';
-                                        e.target.style.height = e.target.scrollHeight + 'px';
-                                    }}
+                                    onChange={handleInputChange}  // ⚠️ Make sure this is handleInputChange, not the old handler
+
+
+                                    // <textarea
+                                    //     value={inputText}
+                                    //     onChange={(e) => {
+                                    //         setInputText(e.target.value);
+                                    //         e.target.style.height = 'auto';
+                                    //         e.target.style.height = e.target.scrollHeight + 'px';
+                                    //     }}
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter' && !e.shiftKey) {
                                             e.preventDefault();
@@ -543,7 +702,7 @@ export default function ChatWidget() {
                                             e.target.style.height = 'auto'; // Reset height
                                         }
                                     }}
-                                    placeholder={isRecording ? "Recording..." : "Type a message..."}
+                                    placeholder={isRecording ? "Recording..." : "press / to use commands or Type a message..."}
                                     className="flex-1 min-h-[40px] max-h-[120px] resize-none bg-transparent border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 scrollbar-hide"
                                     disabled={isRecording}
                                     rows={1}

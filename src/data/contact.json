@@ -1,7 +1,7 @@
 {
     "hero": {
-        "headline": "Let’s Build Something Remarkable",
-        "subheadline": "If you’re a coach, small business owners, or entrepreneur ready to elevate your brand... I’d love to hear from you.",
+        "headline": "Let's Build Something Remarkable",
+        "subheadline": "If you're a coach, small business owners, or entrepreneur ready to elevate your brand... I'd love to hear from you.",
         "cta": "Start Your Project"
     },
     "form": {
@@ -65,6 +65,7 @@
     },
     "direct_contact": {
         "email": "khateeburrehman6627@gmail.com",
+        "phone": "+92 328 0027530",
         "whatsapp": "+923280027530",
         "cta_strategy": "Book a Strategy Call"
     }

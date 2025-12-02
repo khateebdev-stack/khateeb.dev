@@ -1,51 +1,73 @@
 {
     "hero": {
-        "headline": "Senior Full Stack Developer & Systems Architect",
-        "subheadline": "Specializing in scalable architecture, clean code, and high-performance systems. 5+ years of experience delivering enterprise-grade solutions.",
-        "cta_primary": "Download Technical Resume",
+        "headline": "Full Stack Developer with Strong Technical Foundation",
+        "subheadline": "3 years of hands-on experience building modern web and mobile applications using React, Next.js, React Native, and Node.js. Focused on writing clean, maintainable code and delivering quality solutions.",
+        "cta_primary": "Download Resume",
         "cta_secondary": "View GitHub"
     },
     "expertise": [
         {
-            "area": "Frontend Architecture",
+            "area": "Frontend Development",
             "skills": [
-                "Next.js (SSR/ISR)",
-                "React Patterns",
-                "State Management (Redux/Zustand)",
-                "Performance Optimization"
+                "React.js & Hooks",
+                "Next.js (SSR, SSG)",
+                "Responsive Design",
+                "TailwindCSS",
+                "JavaScript ES6+"
             ]
         },
         {
-            "area": "Backend Engineering",
+            "area": "Mobile Development",
             "skills": [
-                "Node.js Microservices",
-                "API Design (REST/GraphQL)",
-                "Database Scaling (PostgreSQL/MongoDB)"
+                "React Native",
+                "Cross-platform iOS/Android",
+                "React Navigation",
+                "Native APIs Integration"
             ]
         },
         {
-            "area": "DevOps & Cloud",
+            "area": "Backend Development",
             "skills": [
-                "AWS (EC2, S3, Lambda)",
-                "Docker",
-                "CI/CD Pipelines (GitHub Actions)",
-                "Security Best Practices"
+                "Node.js & Express",
+                "RESTful API Design",
+                "JWT Authentication",
+                "MongoDB & MySQL"
             ]
         },
         {
-            "area": "Blockchain",
+            "area": "Tools & Deployment",
             "skills": [
-                "Smart Contract Development (Solidity)",
-                "Web3 Integration",
-                "DApp Architecture"
+                "Git & GitHub",
+                "Vercel, Netlify, Heroku",
+                "Postman for API Testing",
+                "Basic DevOps Knowledge"
             ]
         }
     ],
-    "case_studies": [
+    "technical_highlights": [
         {
-            "challenge": "Scale API to handle 10k+ concurrent requests.",
-            "solution": "Implemented Redis caching layer and optimized database indexing.",
-            "result": "Reduced latency by 60%."
+            "title": "Performance Optimization",
+            "description": "Consistently achieve 90+ Google PageSpeed scores through code splitting, lazy loading, and image optimization."
+        },
+        {
+            "title": "Clean Code Practices",
+            "description": "Write reusable, well-documented code following industry best practices and design patterns."
+        },
+        {
+            "title": "Problem Solving",
+            "description": "Strong debugging skills and ability to find efficient solutions to complex technical challenges."
+        }
+    ],
+    "project_examples": [
+        {
+            "challenge": "Build e-commerce platform with real-time inventory",
+            "solution": "Implemented with Next.js frontend, Node.js backend, MongoDB database, and Stripe payment integration",
+            "result": "Successfully handling 500+ daily transactions with 99.9% uptime"
+        },
+        {
+            "challenge": "Create mobile app for both iOS and Android on tight timeline",
+            "solution": "Used React Native for cross-platform development, reduced development time by 60%",
+            "result": "Delivered on schedule with 5000+ downloads in first month"
         }
     ]
 }

@@ -1,0 +1,24 @@
+{
+  "sessionId": "vcn3pogr2ra6ve7af5",
+  "userInfo": {},
+  "ip": "::1",
+  "startTime": "2025-11-30T07:32:18.065Z",
+  "messages": [
+    {
+      "text": "What are your rates?",
+      "sender": "user",
+      "userInfo": {},
+      "timestamp": "2025-11-30T07:32:53.460Z"
+    },
+    {
+      "text": "potfolio",
+      "sender": "user",
+      "userInfo": {},
+      "timestamp": "2025-11-30T07:33:08.288Z"
+    }
+  ],
+  "adminStatus": "offline",
+  "endTime": "2025-11-30T07:38:58.695Z",
+  "sentToAdmin": true,
+  "sentAt": "2025-11-30T16:55:21.565Z"
+}

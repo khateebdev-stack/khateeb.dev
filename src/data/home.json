@@ -1,40 +1,65 @@
 {
   "hero": {
-    "headline": "I build high-performance websites, apps, CRMs, and learning platforms — engineered to elevate brands, increase conversions, and accelerate business growth.",
-    "subheadline": "Empowering coaches, small business owners, and startup founders with conversion-first digital systems that drive sales, visibility, and operational efficiency.",
-    "cta_primary": "Start Your Project",
-    "cta_secondary": "View Portfolio"
+    "headline": "Full Stack Developer Building Complete Digital Solutions",
+    "subheadline": "3 years of turning ideas into reality. I develop modern websites and mobile apps, design engaging user experiences, and optimize for growth. Whether you're hiring or building your business, let's create something exceptional together.",
+    "badge": "Open for Projects & Opportunities",
+    "cta_primary": "View Portfolio",
+    
+    "cta_secondary": "Start a Project"
   },
-  "value_props": [
-    "5+ years delivering scalable, revenue-focused digital solutions",
-    "Expert in Web, Mobile Apps, CRM systems, LMS platforms, SEO & Digital Marketing",
-    "Backed by a specialized team for blockchain, smart contracts & enterprise-level builds",
-    "Fast communication, clean documentation, and long-term support"
+  "stats": [
+    {
+      "value": "25+",
+      "label": "Projects Delivered"
+    },
+    {
+      "value": "15+",
+      "label": "Satisfied Clients"
+    },
+    {
+      "value": "3",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "On-Time Delivery"
+    }
   ],
-  "services_snapshot": {
-    "title": "Core Services",
-    "list": [
-      "Web & App Development",
-      "Custom CRM + Business Automation",
-      "Learning Platforms (LMS)",
-      "SEO & Digital Marketing",
-      "E-Commerce Solutions",
-      "Educational Training & Mentorship",
-      "Blockchain & DApp Development (Team Delivered)"
-    ],
-    "cta": "Explore All Services"
-  },
-  "free_tools_teaser": {
-    "headline": "Free Resources to Grow Your Business",
-    "tools": [
-      "Startup Budget Calculator",
-      "Website Speed Checker",
-      "SEO Quick Audit"
-    ],
-    "cta": "Try Free Tools"
-  },
-  "conversion_banner": {
-    "text": "Ready to take your business to the next level?",
-    "cta": "Book a free strategy call"
+  "features": [
+    {
+      "icon": "💻",
+      "title": "Web Development",
+      "description": "Modern, responsive websites built with React and Next.js. Fast, SEO-optimized, and built to convert visitors into customers."
+    },
+    {
+      "icon": "📱",
+      "title": "Mobile Applications",
+      "description": "Cross-platform iOS and Android apps using React Native. Native performance, single codebase, faster time-to-market."
+    },
+    {
+      "icon": "🛒",
+      "title": "E-commerce Solutions",
+      "description": "Complete online stores with secure payments, inventory management, and analytics. Built to scale with your business."
+    },
+    {
+      "icon": "🎨",
+      "title": "Design & Strategy",
+      "description": "User-centered design, brand-consistent interfaces, and digital strategy that aligns technology with your business goals."
+    },
+    {
+      "icon": "⚡",
+      "title": "Performance & SEO",
+      "description": "Lightning-fast load times, Google-friendly optimization, and technical improvements that drive organic traffic."
+    },
+    {
+      "icon": "🔧",
+      "title": "Ongoing Support",
+      "description": "Maintenance, updates, and support packages to keep your digital assets running smoothly and securely."
+    }
+  ],
+  "about_preview": {
+    "heading": "Why Work With Me",
+    "text": "I'm a full-stack developer with 3 years of real-world experience building digital solutions for businesses. I don't just code - I solve problems. I combine technical expertise with design thinking and business understanding to create products that work beautifully and serve your goals. Whether you're a company looking for a reliable developer or a business owner with a vision, I bring commitment, quality, and results.",
+    "cta": "More About Me"
   }
 }

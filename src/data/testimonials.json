@@ -1,0 +1,78 @@
+{
+    "hero": {
+        "title": "What Clients Say",
+        "subtitle": "Trusted by businesses and organizations to deliver high-impact digital solutions."
+    },
+    "stats": {
+        "total_reviews": "50+",
+        "average_rating": "5.0"
+    },
+    "reviews": [
+        {
+            "id": 1,
+            "name": "Ch. Bashir Ahmed",
+            "role": "President",
+            "company": "Punjab Farmers Association",
+            "project": "AgriVision Platform",
+            "rating": 5,
+            "image": "/testimonials/bashir.jpg",
+            "review": "AgriVision is a revolution. We used to guess when to water our crops, but now the satellite alerts tell us exactly which sector needs attention. The direct marketplace has also helped us get fair prices for our wheat harvest.",
+            "date": "2024-11-20"
+        },
+        {
+            "id": 2,
+            "name": "Dr. Sarah Ahmed",
+            "role": "Chief Medical Officer",
+            "company": "City Care Hospital",
+            "project": "Vitalis Healthcare Ecosystem",
+            "rating": 5,
+            "image": "/testimonials/sarah.jpg",
+            "review": "Vitalis has transformed how we manage our clinic. The ability to see a patient's entire history while on a video call is a game-changer. The AI triage helps us prioritize critical cases effectively. Khateeb's understanding of medical workflows is impressive.",
+            "date": "2024-11-15"
+        },
+        {
+            "id": 3,
+            "name": "Mufti Abdul Rehman",
+            "role": "Director",
+            "company": "Islamic Welfare Consortium",
+            "project": "AID²E Platform",
+            "rating": 5,
+            "image": "/testimonials/abdul.jpg",
+            "review": "We needed a system that could handle complex Zakat calculations and ensure absolute transparency for our donors. Khateeb delivered a platform that not only met our technical needs but respected our values. Donor trust has increased significantly.",
+            "date": "2024-10-02"
+        },
+        {
+            "id": 4,
+            "name": "James Wilson",
+            "role": "CTO",
+            "company": "TechStart Inc.",
+            "project": "Portfolio & Brand Identity",
+            "rating": 5,
+            "image": "/testimonials/james.jpg",
+            "review": "I hired Khateeb to help with our frontend architecture, and I was blown away by his own portfolio. He brought that same level of polish and performance to our project. His code is clean, well-documented, and scalable.",
+            "date": "2024-09-20"
+        },
+        {
+            "id": 5,
+            "name": "Ayesha Khan",
+            "role": "Principal",
+            "company": "Al-Noor Academy",
+            "project": "AID²E - Education Module",
+            "rating": 5,
+            "image": "/testimonials/ayesha.jpg",
+            "review": "The digital attendance and parent portal features have saved our teachers hours of administrative work every week. Parents love being able to track their children's progress in real-time. Highly recommended.",
+            "date": "2024-10-25"
+        },
+        {
+            "id": 6,
+            "name": "Michael Chen",
+            "role": "Operations Manager",
+            "company": "MediFast Clinics",
+            "project": "Vitalis - Scheduling System",
+            "rating": 5,
+            "image": "/testimonials/michael.jpg",
+            "review": "Our no-show rates dropped by 40% within the first month of using the smart scheduling system. The automated WhatsApp reminders are a lifesaver. Khateeb is a developer who truly solves business problems.",
+            "date": "2024-11-05"
+        }
+    ]
+}

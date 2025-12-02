@@ -29,7 +29,8 @@ export default function CaseStudiesPage() {
                             className="group grid md:grid-cols-2 gap-8 items-center rounded-2xl border bg-card p-6 shadow-sm hover:shadow-md transition-all"
                         >
                             <div className="aspect-video w-full bg-muted rounded-xl flex items-center justify-center text-muted-foreground">
-                                Project Preview
+                                {/* Project Preview */}
+                                <img src={project.featured_image} alt={project.title} />
                             </div>
                             <div className="space-y-4">
                                 <div className="flex flex-wrap gap-2 mb-2">

@@ -36,7 +36,8 @@ export function PortfolioSection() {
                         >
                             <div className="aspect-video w-full bg-muted flex items-center justify-center text-muted-foreground relative overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <span>Project Preview</span>
+                                {/* <span>Project Preview</span> */}
+                                <img src={project.featured_image} alt={project.title} />    
                             </div>
                             <div className="p-6">
                                 <div className="mb-2 flex items-center justify-between">

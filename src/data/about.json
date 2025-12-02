@@ -1,37 +1,61 @@
 {
     "hero": {
-        "headline": "Building Digital Systems That Turn Your Expertise Into a Scalable Brand",
-        "subheadline": "I help coaches, small business owners, and fast-growing entrepreneurs build high-performance digital ecosystems—websites, mobile apps, CRMs, automations, and branding—that elevate authority and accelerate revenue.",
-        "cta": "Work With Me",
+        "headline": "Full Stack Developer Crafting Complete Digital Solutions",
+        "subheadline": "With 3 years of focused development experience, I build modern web and mobile applications while offering comprehensive digital services - from strategy and design to development and optimization. I help businesses establish powerful online presence that converts.",
+        "cta": "Let's Build Something Great",
         "signature_intro": [
-            "People don't hire me for generic development. They hire me because I understand business at a deeper level—visibility, trust, conversions, positioning, automation, and long-term digital strategy.",
-            "My work blends technology + brand strategy + growth psychology to create digital assets that perform, convert, and scale."
+            "I started as a developer, but quickly realized that great technology alone isn't enough. Businesses need complete digital solutions - beautiful design, solid code, search visibility, and strategic thinking.",
+            "That's why I've expanded beyond just writing code. I combine technical expertise with design sense, SEO knowledge, and business understanding to deliver results that matter."
         ]
     },
     "mission": {
-        "statement": "To empower ambitious experts with systems that eliminate complexity, increase authority, and create predictable business growth.",
-        "quote": "Your brand deserves more than just a website—It deserves a digital engine that works even when you’re not."
+        "statement": "To empower businesses with complete digital solutions that not only look great and work flawlessly, but also drive real growth and success.",
+        "quote": "Great digital products are born when technology meets strategy, design meets functionality, and vision meets execution."
     },
     "why_trust_me": [
         {
-            "title": "Conversion-First Mindset",
-            "desc": "Everything I build is designed to sell—from the structure to the content flow to the user experience."
+            "title": "Complete Solution Provider",
+            "desc": "From initial concept to launch and beyond - I handle design, development, SEO, and optimization. One person, complete package, consistent quality."
         },
         {
-            "title": "Complete Digital Transformation",
-            "desc": "Website, mobile app, CRM, SEO, automations, funnels—everything works together like a single growth machine."
+            "title": "Modern Tech Stack",
+            "desc": "React, Next.js for blazing-fast websites. React Native for native-quality mobile apps. Node.js for scalable backends. Always using current, industry-standard tools."
         },
         {
-            "title": "Technical Range",
-            "desc": "Web Development • Mobile Apps • Blockchain • Smart Contracts • SEO • DevOps • Digital Marketing • DApps • Branding • Automations • AI Integrations"
+            "title": "Business-Focused Approach",
+            "desc": "I don't just build features - I build solutions that help your business grow. Every line of code serves a purpose. Every design choice drives results."
         },
         {
-            "title": "Processes That Save Time",
-            "desc": "I streamline your operations so you work less while your systems work more."
+            "title": "Clear Communication",
+            "desc": "Whether you're a tech company evaluating my skills or a business owner with an idea, I communicate clearly, deliver updates regularly, and ensure we're always aligned."
+        }
+    ],
+    "bio": {
+        "short": "Full-stack developer with 3 years of hands-on experience building web and mobile applications. I combine technical skills with design thinking and business strategy to create digital solutions that actually work for real businesses.",
+        "long": "Over the past 3 years, I've transformed from someone who just wrote code to someone who solves complete business problems through technology. I've built 25+ projects ranging from simple landing pages to complex e-commerce platforms and mobile apps. What sets me apart is my holistic approach - I understand that a great website needs more than clean code. It needs smart design, search visibility, fast performance, and most importantly, it needs to serve your business goals. I've learned to think like a developer, design like a user, and strategize like a business owner. This combination allows me to deliver solutions that recruiters value and clients love."
+    },
+    "stats": {
+        "projects": "25+",
+        "clients": "15+",
+        "experience": "3 Years",
+        "satisfaction": "100%"
+    },
+    "skills": [
+        {
+            "category": "Core Development",
+            "items": "React, Next.js, React Native, Node.js, JavaScript (ES6+), MongoDB, MySQL"
         },
         {
-            "title": "Results That Compound",
-            "desc": "My systems don’t just look premium—they deliver premium."
+            "category": "Design & UX",
+            "items": "UI/UX Design, Responsive Layouts, TailwindCSS, Figma, User Experience Optimization"
+        },
+        {
+            "category": "Performance & SEO",
+            "items": "Page Speed Optimization, SEO Best Practices, Schema Markup, Google Analytics"
+        },
+        {
+            "category": "Business Value",
+            "items": "E-commerce Integration, Payment Gateways, API Integration, Digital Strategy"
         }
     ]
 }

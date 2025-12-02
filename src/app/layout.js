@@ -48,7 +48,7 @@ export const metadata = {
     creator: "@khateeb",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo1.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
@@ -74,6 +74,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden w-full`}
       >
+        <meta name="google-site-verification" content="3v-uiQavaGlQc7NDD4GmJl7_0-bnMk9Km9CsK4OCysM" />
         <SpeedInsights />
         <ThemeProvider
           attribute="class"

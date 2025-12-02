@@ -1,0 +1,106 @@
+{
+  "sessionId": "c0bsfltgqhfmdb0770bn1",
+  "userInfo": {
+    "name": "Khateeb Education",
+    "email": "khateeb.stu1@gmail.com",
+    "phone": "+923280027530"
+  },
+  "ip": "localhost",
+  "startTime": "2025-11-30T17:23:17.470Z",
+  "messages": [
+    {
+      "text": "hiiii",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:23:37.463Z"
+    },
+    {
+      "text": "direct contact",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:23:49.901Z"
+    },
+    {
+      "text": "admin khaan ha ?",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:23:59.782Z"
+    },
+    {
+      "text": "kia kr rha ha ",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:24:03.448Z"
+    },
+    {
+      "text": "khateeb",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:24:08.378Z"
+    },
+    {
+      "text": "khateeb",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:24:14.055Z"
+    },
+    {
+      "text": "khateeb",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:24:20.554Z"
+    },
+    {
+      "text": "expereince",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:24:24.475Z"
+    },
+    {
+      "text": "hi",
+      "sender": "user",
+      "userInfo": {
+        "name": "Khateeb Education",
+        "email": "khateeb.stu1@gmail.com",
+        "phone": "+923280027530"
+      },
+      "timestamp": "2025-11-30T17:57:12.491Z"
+    }
+  ],
+  "adminStatus": "offline",
+  "endTime": "2025-11-30T18:03:51.755Z",
+  "sentToAdmin": true,
+  "sentAt": "2025-11-30T18:21:10.310Z"
+}

@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, EmbedBuilder, ChannelType } = require('discord.js');
+const { findAnswer } = require('../chatbot/logic');
 
 const client = new Client({
     intents: [
@@ -79,6 +80,88 @@ client.on('messageCreate', async message => {
                 });
             }
         }
+    }
+});
+
+// Monitor admin presence and send unsent logs when they come online
+client.on('presenceUpdate', async (oldPresence, newPresence) => {
+    try {
+        // Check if this is the admin (not a bot)
+        if (newPresence.user.bot) return;
+
+        const oldStatus = oldPresence?.status || 'offline';
+        const newStatus = newPresence.status;
+
+        // Update cached admin status
+        cachedAdminStatus = newStatus;
+
+        // Broadcast new status to all connected clients
+        if (io) {
+            io.emit('admin_status', newStatus);
+            console.log(`[Discord] Admin status changed: ${oldStatus} → ${newStatus}`);
+        }
+
+        // If admin just came online, send any unsent logs
+        if ((oldStatus === 'offline' || oldStatus === 'dnd') && (newStatus === 'online' || newStatus === 'idle')) {
+            console.log('[Discord] Admin came online! Checking for unsent logs...');
+
+            // Make sure bot is fully ready
+            if (!client.isReady()) {
+                console.log('[Discord] Bot not ready yet, skipping log send');
+                return;
+            }
+
+            const chatLogger = require('../storage/chat-logger');
+            const unsentLogs = chatLogger.getUnsentLogs();
+
+            if (unsentLogs.length > 0) {
+                console.log(`[Discord] Found ${unsentLogs.length} unsent log(s). Sending to admin...`);
+
+                const channel = await client.channels.fetch(CHANNEL_ID);
+
+                for (const log of unsentLogs) {
+                    // Create embed for the log summary
+                    const embed = new EmbedBuilder()
+                        .setColor(0xFF6B35)
+                        .setTitle(`📋 Missed Conversation - ${log.sessionId.substring(0, 8)}`)
+                        .setDescription(`Conversation that occurred while you were offline`)
+                        .addFields(
+                            { name: '👤 Visitor', value: log.userInfo.name || 'Anonymous', inline: true },
+                            { name: '📧 Email', value: log.userInfo.email || 'Not provided', inline: true },
+                            { name: '📱 Phone', value: log.userInfo.phone || 'Not provided', inline: true },
+                            { name: '🌐 IP', value: log.ip || 'Unknown', inline: true },
+                            { name: '⏰ Started', value: new Date(log.startTime).toLocaleString(), inline: true },
+                            { name: '💬 Messages', value: `${log.messages.length} messages`, inline: true }
+                        )
+                        .setTimestamp();
+
+                    // Send summary
+                    await channel.send({ embeds: [embed] });
+
+                    // Send conversation transcript
+                    if (log.messages.length > 0) {
+                        let transcript = `**Conversation Transcript:**\n\`\`\`\n`;
+                        log.messages.forEach(msg => {
+                            const time = new Date(msg.timestamp).toLocaleTimeString();
+                            const sender = msg.sender === 'user' ? 'Visitor' : 'Bot';
+                            transcript += `[${time}] ${sender}: ${msg.text || msg.fileName || '[File]'}\n`;
+                        });
+                        transcript += `\`\`\``;
+
+                        await channel.send(transcript);
+                    }
+
+                    // Mark as sent
+                    chatLogger.markAsSent(log.filename);
+                }
+
+                console.log(`[Discord] ✅ Sent ${unsentLogs.length} unsent log(s) to admin`);
+            } else {
+                console.log('[Discord] No unsent logs found');
+            }
+        }
+    } catch (error) {
+        console.error('[Discord] Error in presenceUpdate:', error);
     }
 });
 
@@ -246,8 +329,6 @@ async function fetchHistory(sessionId) {
     }
 }
 
-const { findAnswer } = require('../chatbot/logic');
-
 // ... (Existing code)
 
 // Function to send visitor message to Discord
@@ -273,10 +354,19 @@ async function sendToDiscord(socketId, text, ip, fileBuffer = null, fileName = '
                         timestamp: new Date().toISOString(),
                         chips: smartReply.chips
                     });
+
+                    // Log bot response if chat is being logged
+                    const chatLogger = require('../storage/chat-logger');
+                    if (chatLogger.isLogging(socketId)) {
+                        chatLogger.addMessage(socketId, {
+                            text: smartReply.text,
+                            sender: 'bot',
+                            chips: smartReply.chips
+                        });
+                    }
                 }, 1500);
             }
-            // Optional: Still log to Discord that bot replied? 
-            // For now, we skip creating a thread to avoid spamming offline admin.
+            // Don't create Discord thread for bot replies (avoid spam)
             return;
         }
     }
