@@ -116,7 +116,7 @@
                     ]
                 },
                 "testimonial": {
-                    "text": "UniSell isn't just a store; it's an operating system for our digital business. We moved our courses, templates, and SaaS tools to one platform and increased our margins by 30% by cutting out the middlemen.",
+                    "text": "UniSell isn't just an store; it's an operating system for our digital business. We moved our courses, templates, and SaaS tools to one platform and increased our margins by 30% by cutting out the middlemen.",
                     "author": "Khateeb Ur Rehman",
                     "role": "Founder",
                     "company": "UniSell Platform",
@@ -235,6 +235,236 @@
                     "role": "Founder",
                     "company": "Edu NexaLearn",
                     "project_type": "Enterprise SaaS"
+                }
+            }
+        },
+        {
+            "id": "jamia-masjid-platform",
+            "slug": "jamia-masjid-digital-ecosystem",
+            "title": "Jamia Masjid Platform - Digital Mosque OS",
+            "category": "Full Stack",
+            "solution": "A comprehensive digital ecosystem for a modern mosque, integrating Online Academy management, Multi-channel Donations (Crypto/Fiat), and Event Management with granular Admin RBAC.",
+            "tech_stack": [
+                "Next.js",
+                "MongoDB",
+                "Next-Auth",
+                "Cryptomus",
+                "Cloudinary",
+                "TailwindCSS"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/jamia-masjid-platform/thumbnail.png",
+            "gallery": [
+                "/projects/jamia-masjid-platform/screenshot-1.png",
+                "/projects/jamia-masjid-platform/screenshot-2.png",
+                "/projects/jamia-masjid-platform/screenshot-3.png",
+                "/projects/jamia-masjid-platform/screenshot-4.png",
+                "/projects/jamia-masjid-platform/screenshot-5.png",
+                "/projects/jamia-masjid-platform/screenshot-6.png",
+                "/projects/jamia-masjid-platform/screenshot-7.png",
+                "/projects/jamia-masjid-platform/screenshot-8.png"
+
+            ],
+            "case_study": {
+                "client": "Jamia Masjid Bait Ur Rehman",
+                "year": "2024",
+                "duration": "4 months",
+                "role": "Lead Full Stack Developer",
+                "overview": "Digitized the operations of a major community mosque. The platform handles student admissions for the Quran Academy, accepts global donations via Crypto and Bank Transfer, and manages community events.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "The mosque was struggling with manual fee collection for 500+ students, leading to revenue leakage. Overseas donors wanted to contribute via Crypto but had no channel. Admin workflows were paper-based and inefficient.",
+                    "pain_points": [
+                        "Cash-based fee collection led to tracking errors and lost funds",
+                        "No system to accept Zakat from international donors via Crypto",
+                        "Manual verification of bank transfers took hours of admin time",
+                        "Lack of transparency in donation usage"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built a secure, RBAC-controlled web platform that automates billing, verifies payments via screenshots, and accepts multi-channel donations.",
+                    "key_features": [
+                        "Hybrid Payments: Accepts Manual Bank Transfer (Screenshot Verification) and Crypto (Cryptomus)",
+                        "Academy Portal: Student registration, course assignment, and auto-invoicing",
+                        "Admin Command Center: Granular permissions (Finance vs Content) for secure operations",
+                        "Digital Receipts: Automated email notifications with PDF receipts",
+                        "Event Management: RSVP system for community gatherings"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14 (App Router)",
+                            "TailwindCSS",
+                            "Lucide Icons"
+                        ],
+                        "backend": [
+                            "Next.js API Routes",
+                            "Mongoose (MongoDB)"
+                        ],
+                        "auth": [
+                            "Next-Auth (Session)",
+                            "Custom RBAC Middleware"
+                        ],
+                        "payments": [
+                            "Cryptomus API",
+                            "Manual Verification Workflow"
+                        ],
+                        "media": [
+                            "Cloudinary (Screenshot Storage)"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Modernized the mosque's operations, increasing revenue and transparency.",
+                    "metrics": [
+                        {
+                            "label": "Fee Collection",
+                            "value": "100%",
+                            "description": "Digital tracking eliminated lost payments"
+                        },
+                        {
+                            "label": "Admin Time",
+                            "value": "-80%",
+                            "description": "Reduction in manual verification work"
+                        },
+                        {
+                            "label": "Global Donations",
+                            "value": "Active",
+                            "description": "Successfully accepting Crypto Zakat"
+                        },
+                        {
+                            "label": "User Trust",
+                            "value": "High",
+                            "description": "Instant digital receipts for all donors"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "This platform has transformed how we run the Masjid. We can now accept Zakat from brothers in the UK and USA instantly via Crypto. The automated student billing has saved our staff countless hours.",
+                    "author": "Imam Sahib",
+                    "role": "Head of Administration",
+                    "company": "Jamia Masjid Bait Ur Rehman",
+                    "project_type": "Non-Profit Platform"
+                }
+            }
+        },
+        {
+            "id": "khateeb-ecosystem",
+            "slug": "khateeb-digital-ecosystem-superapp",
+            "title": "Khateeb Ecosystem - Super App Monorepo",
+            "category": "Full Stack",
+            "solution": "A production-grade Monorepo Super App consolidating a Blog, Multi-Vendor Marketplace, Portfolio, and AI Assistant into a single unified platform with shared authentication and microservices.",
+            "tech_stack": [
+                "Nx Monorepo",
+                "NestJS",
+                "Next.js",
+                "React Native",
+                "RabbitMQ",
+                "Redis",
+                "OpenAI"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/khateeb-ecosystem/thumbnail.png",
+            "gallery": [
+                "/projects/khateeb-ecosystem/screenshot-1.png",
+                "/projects/khateeb-ecosystem/screenshot-2.png",
+                "/projects/khateeb-ecosystem/screenshot-3.png",
+                "/projects/khateeb-ecosystem/screenshot-4.png",
+                "/projects/khateeb-ecosystem/screenshot-5.png",
+                "/projects/khateeb-ecosystem/screenshot-6.png",
+                "/projects/khateeb-ecosystem/screenshot-7.png",
+                "/projects/khateeb-ecosystem/screenshot-8.png"
+               
+            ],
+            "case_study": {
+                "client": "Personal Enterprise",
+                "year": "2024",
+                "duration": "Ongoing",
+                "role": "Principal Architect",
+                "overview": "The Khateeb Ecosystem is a 'Digital Operating System' built on a Monorepo architecture. It unifies Content (Blog), Commerce (Marketplace), and AI (Chatbot) into a single scalable platform, sharing code between Web and Mobile apps.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Managing separate platforms for blogging (WordPress), selling merch (Shopify), and portfolio (React) created data silos and maintenance nightmares. Users had to login multiple times, and data wasn't synced.",
+                    "pain_points": [
+                        "Fragmented user experience across 3 different domains",
+                        "High maintenance cost of running 3 separate tech stacks",
+                        "Lack of unified data for AI personalization",
+                        "Inability to cross-sell products within blog content"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Architected a Unified Microservices Monorepo using Nx, allowing shared types and logic between the Next.js Web App and React Native Mobile App.",
+                    "key_features": [
+                        "Unified Auth (SSO): Single JWT login for Blog, Store, and Chat",
+                        "Hybrid Marketplace: Sells Digital (Code), Physical (Merch), and Affiliate products in one cart",
+                        "AI Concierge: GPT-4 powered assistant with Redis caching (<1.5s latency)",
+                        "Custom Ad Server: Built-in ad engine for direct sponsorship campaigns",
+                        "Omnichannel: Seamless experience across Web and Mobile App"
+                    ],
+                    "technical_architecture": {
+                        "monorepo": [
+                            "Nx (Turborepo)",
+                            "Shared DTOs",
+                            "Shared UI Library"
+                        ],
+                        "backend": [
+                            "NestJS Microservices",
+                            "RabbitMQ (Event Bus)",
+                            "Redis (Cache)"
+                        ],
+                        "frontend": [
+                            "Next.js 14 (App Router)",
+                            "React Native CLI",
+                            "Zustand"
+                        ],
+                        "devops": [
+                            "Docker",
+                            "AWS ECS",
+                            "Cloudflare",
+                            "GitHub Actions"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Created a scalable, self-owned platform that serves as a foundation for all future digital ventures.",
+                    "metrics": [
+                        {
+                            "label": "Code Sharing",
+                            "value": "60%",
+                            "description": "Shared logic between Web and Mobile via Nx"
+                        },
+                        {
+                            "label": "Performance",
+                            "value": "<1.5s",
+                            "description": "Web Core Web Vitals score"
+                        },
+                        {
+                            "label": "AI Latency",
+                            "value": "1.2s",
+                            "description": "Average response time via Redis Semantic Cache"
+                        },
+                        {
+                            "label": "Uptime",
+                            "value": "99.9%",
+                            "description": "High availability via Microservices"
+                        }
+                    ]
+                },
+                "testimonial": {
+                    "text": "This ecosystem represents the pinnacle of my engineering journey. By moving to a Monorepo, I reduced maintenance time by 70% and created a seamless experience where a user can read a blog, buy the source code, and ask the AI about it—all in one place.",
+                    "author": "Khateeb Ur Rehman",
+                    "role": "Principal Architect",
+                    "company": "Khateeb Ecosystem",
+                    "project_type": "Super App Platform"
                 }
             }
         },
