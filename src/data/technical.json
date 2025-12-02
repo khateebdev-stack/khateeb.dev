@@ -1,73 +1,76 @@
 {
     "hero": {
-        "headline": "Full Stack Developer with Strong Technical Foundation",
-        "subheadline": "3 years of hands-on experience building modern web and mobile applications using React, Next.js, React Native, and Node.js. Focused on writing clean, maintainable code and delivering quality solutions.",
+        "headline": "Architecting Scalable Enterprise Solutions",
+        "subheadline": "Specialized in building high-performance, cloud-native platforms using Microservices, AI, and Modern Web Technologies. Transforming complex business requirements into robust software ecosystems.",
         "cta_primary": "Download Resume",
         "cta_secondary": "View GitHub"
     },
     "expertise": [
         {
-            "area": "Frontend Development",
+            "area": "Advanced Frontend Architecture",
             "skills": [
-                "React.js & Hooks",
-                "Next.js (SSR, SSG)",
-                "Responsive Design",
-                "TailwindCSS",
-                "JavaScript ES6+"
+                "Next.js 14 (App Router, Server Actions)",
+                "Micro-Frontends & Module Federation",
+                "State Management (Zustand, Redux Toolkit)",
+                "Performance Profiling & Core Web Vitals",
+                "TailwindCSS & ShadcnUI Design Systems"
             ]
         },
         {
-            "area": "Mobile Development",
+            "area": "Backend & System Design",
             "skills": [
-                "React Native",
-                "Cross-platform iOS/Android",
-                "React Navigation",
-                "Native APIs Integration"
+                "Microservices (NestJS, gRPC)",
+                "Event-Driven Architecture (Kafka, RabbitMQ)",
+                "GraphQL Federation (Apollo)",
+                "Real-time Systems (Socket.io, WebRTC)",
+                "Database Design (PostgreSQL, MongoDB, Redis)"
             ]
         },
         {
-            "area": "Backend Development",
+            "area": "Cloud Native & DevOps",
             "skills": [
-                "Node.js & Express",
-                "RESTful API Design",
-                "JWT Authentication",
-                "MongoDB & MySQL"
+                "Docker & Kubernetes Orchestration",
+                "CI/CD Pipelines (GitHub Actions)",
+                "Cloud Infrastructure (AWS, Cloudflare)",
+                "Infrastructure as Code (Terraform)",
+                "Serverless Computing (Lambda, Edge Functions)"
             ]
         },
         {
-            "area": "Tools & Deployment",
+            "area": "AI Engineering & Security",
             "skills": [
-                "Git & GitHub",
-                "Vercel, Netlify, Heroku",
-                "Postman for API Testing",
-                "Basic DevOps Knowledge"
+                "LLM Integration (OpenAI, LangChain)",
+                "RAG Pipelines & Vector Databases",
+                "Enterprise Security (OAuth2, RBAC)",
+                "Compliance (GDPR, HIPAA Standards)",
+                "Automated Testing (Jest, Cypress)"
             ]
         }
     ],
     "technical_highlights": [
         {
-            "title": "Performance Optimization",
-            "description": "Consistently achieve 90+ Google PageSpeed scores through code splitting, lazy loading, and image optimization."
+            "title": "High-Scale Architecture",
+            "description": "Designed systems handling 1M+ concurrent requests using load balancing, caching strategies, and horizontal scaling."
         },
         {
-            "title": "Clean Code Practices",
-            "description": "Write reusable, well-documented code following industry best practices and design patterns."
+            "title": "Enterprise Security",
+            "description": "Implemented bank-grade security protocols including End-to-End Encryption, Multi-Factor Authentication, and Role-Based Access Control."
         },
         {
-            "title": "Problem Solving",
-            "description": "Strong debugging skills and ability to find efficient solutions to complex technical challenges."
+            "title": "AI-Driven Innovation",
+            "description": "Integrated advanced AI agents for automated customer support, predictive analytics, and personalized user experiences."
         }
     ],
     "project_examples": [
         {
-            "challenge": "Build e-commerce platform with real-time inventory",
-            "solution": "Implemented with Next.js frontend, Node.js backend, MongoDB database, and Stripe payment integration",
-            "result": "Successfully handling 500+ daily transactions with 99.9% uptime"
+            "challenge": "Scale a monolithic LMS to support 100+ franchises",
+            "solution": "Re-architected into a Multi-Tenant Microservices platform using Kubernetes and Subdomain Routing.",
+            "result": "Achieved 99.99% uptime and reduced deployment time for new franchises from days to seconds."
         },
         {
-            "challenge": "Create mobile app for both iOS and Android on tight timeline",
-            "solution": "Used React Native for cross-platform development, reduced development time by 60%",
-            "result": "Delivered on schedule with 5000+ downloads in first month"
+            "challenge": "Secure global digital asset sales against piracy",
+            "solution": "Built a custom License Verification Server with DRM encryption and 'Phone Home' validation.",
+            "result": "Eliminated piracy for premium assets and enabled a secure recurring revenue model."
         }
     ]
 }
