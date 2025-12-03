@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowRight, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { content } from "@/lib/content"
+import { Typewriter } from "@/components/ui/Typewriter"
 
 export function HeroSection() {
     const { hero } = content.home
@@ -22,6 +23,9 @@ export function HeroSection() {
 
                     {/* Text Content */}
                     <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
                         className="flex flex-col justify-center space-y-8"
                     >
                         <div className="space-y-4">
@@ -29,8 +33,12 @@ export function HeroSection() {
                                 <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
                                 Available for new projects
                             </div>
-                            <h1 className="text-3xl font-bold pb-5 tracking-tighter xs:text-2xl sm:text-5xl xl:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-zinc-400">
-                                {hero.headline}
+                            <h1 className="text-3xl font-bold pb-5 tracking-tighter xs:text-2xl sm:text-5xl xl:text-7xl/none text-slate-900 dark:text-white">
+                                Building <br className="hidden sm:block" />
+                                <Typewriter
+                                    words={["Scalable SaaS", "Mobile Apps", "Digital Empires", "Enterprise Systems"]}
+                                    delay={100}
+                                />
                             </h1>
                             <p className="max-w-[600px] text-zinc-500 text-base xs:text-sm sm:text-xl dark:text-zinc-400">
                                 {hero.subheadline}
@@ -52,6 +60,7 @@ export function HeroSection() {
 
                     {/* Visual Content (Code Card) */}
                     <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative mx-auto w-full max-w-[500px] lg:max-w-none hidden md:block"
@@ -97,6 +106,6 @@ export function HeroSection() {
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

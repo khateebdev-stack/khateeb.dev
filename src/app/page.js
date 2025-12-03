@@ -16,9 +16,9 @@ export default function Home() {
             "url": "https://khateeb.dev",
             "jobTitle": "Full Stack Developer",
             "sameAs": [
-              "https://github.com/khateeb",
-              "https://linkedin.com/in/khateeb",
-              "https://twitter.com/khateeb"
+              "https://github.com/khateeb-dev",
+              "https://linkedin.com/in/khateeb-dev",
+              "https://twitter.com/khateeb-dev"
             ],
             "knowsAbout": ["Web Development", "Mobile Apps", "SEO", "Business Automation", "Blockchain"],
             "offers": {
