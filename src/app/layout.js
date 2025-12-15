@@ -100,7 +100,21 @@ export default function RootLayout({ children }) {
           scriptId="google-adsense"
         />
 
-        {/* 2. Monetag (Service Worker Registration for Push Ads) */}
+        {/* 2. Monetag (Push/Multi-Tag) */}
+        <SafeAdContainer
+          scriptSrc="https://al5sm.com/tag.min.js"
+          scriptId="monetag-multitag"
+          attributes={{ 'data-zone': '10327103' }}
+        />
+
+        {/* 3. Monetag (Vignette) */}
+        <SafeAdContainer
+          scriptSrc="https://gizokraijaw.net/vignette.min.js"
+          scriptId="monetag-vignette"
+          attributes={{ 'data-zone': '10327118' }}
+        />
+
+        {/* 4. Monetag (Service Worker Registration for Push Ads) */}
         <SafeAdContainer>
           <script
             dangerouslySetInnerHTML={{

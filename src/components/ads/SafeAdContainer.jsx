@@ -15,11 +15,12 @@ import { useEffect, useRef } from 'react'
  * OR easier usage for scripts:
  * 
  * <SafeAdContainer 
- *    scriptSrc="//locontrast.com/4/3/2/1/script.js" 
- *    scriptId="monetag-vignette" 
+ *    scriptSrc="https://url.com/tag.js" 
+ *    scriptId="monetag-main"
+ *    attributes={{ 'data-zone': '123456' }} 
  * />
  */
-export function SafeAdContainer({ children, scriptSrc, scriptId, className = "" }) {
+export function SafeAdContainer({ children, scriptSrc, scriptId, attributes = {}, className = "" }) {
     const pathname = usePathname()
     const containerRef = useRef(null)
 
@@ -47,8 +48,13 @@ export function SafeAdContainer({ children, scriptSrc, scriptId, className = "" 
             script.id = scriptId
             script.async = true
 
-            // For some networks like Monetag that use data attributes
-            script.setAttribute('data-cfasync', 'false')
+            // Default attribute for some networks
+            script.setAttribute('data-cfasync', 'false') 
+            
+            // Add custom attributes (e.g. data-zone for Monetag)
+            Object.entries(attributes).forEach(([key, value]) => {
+                script.setAttribute(key, value)
+            })
 
             document.body.appendChild(script)
 
@@ -62,7 +68,7 @@ export function SafeAdContainer({ children, scriptSrc, scriptId, className = "" 
                 // if (s) s.remove()
             }
         }
-    }, [isToolPage, pathname, scriptSrc, scriptId])
+    }, [isToolPage, pathname, scriptSrc, scriptId, JSON.stringify(attributes)])
 
     // If not a tool page, render NOTHING (null)
     if (!isToolPage) return null

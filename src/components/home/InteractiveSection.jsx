@@ -1,10 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Check, Calculator, DollarSign, Zap, Search, TrendingUp } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 import Link from "next/link"
+import { toolsData } from "@/data/tools"
 
-export function InteractiveSection() {
+export function InteractiveSection({ limit = null }) {
+    const displayedTools = limit ? toolsData.slice(0, limit) : toolsData
+
     return (
         <section className="container px-4 py-24 md:px-8 max-w-screen-2xl">
             <div className="mb-16 text-center">
@@ -15,82 +18,42 @@ export function InteractiveSection() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                {/* Project Cost Estimator */}
-                <ToolCard
-                    icon={<Calculator className="h-6 w-6" />}
-                    iconBg="bg-primary/10"
-                    iconColor="text-primary"
-                    title="Project Cost Estimator"
-                    description="Get transparent pricing for your web, mobile, or e-commerce project in 30 seconds."
-                    features={[
-                        "All services included",
-                        "Detailed breakdown",
-                        "Instant quote"
-                    ]}
-                    href="/tools/project-estimator"
-                    buttonText="Calculate Cost"
-                />
-
-                {/* Website Speed Analyzer */}
-                <ToolCard
-                    icon={<Zap className="h-6 w-6" />}
-                    iconBg="bg-orange-100 dark:bg-orange-900/20"
-                    iconColor="text-orange-600 dark:text-orange-400"
-                    title="Speed Analyzer"
-                    description="Check your website's performance and get instant optimization recommendations."
-                    features={[
-                        "Google PageSpeed API",
-                        "Mobile & Desktop",
-                        "Actionable insights"
-                    ]}
-                    href="/tools/speed-analyzer"
-                    buttonText="Test Speed"
-                    badge="Popular"
-                />
-
-                {/* ROI Calculator */}
-                <ToolCard
-                    icon={<DollarSign className="h-6 w-6" />}
-                    iconBg="bg-green-100 dark:bg-green-900/20"
-                    iconColor="text-green-600 dark:text-green-400"
-                    title="ROI Calculator"
-                    description="Calculate how much additional revenue an optimized website could generate."
-                    features={[
-                        "Business metrics",
-                        "Revenue projections",
-                        "Payback period"
-                    ]}
-                    href="/tools/roi-calculator"
-                    buttonText="Calculate ROI"
-                />
-
-                {/* SEO Scorecard */}
-                <ToolCard
-                    icon={<Search className="h-6 w-6" />}
-                    iconBg="bg-blue-100 dark:bg-blue-900/20"
-                    iconColor="text-blue-600 dark:text-blue-400"
-                    title="SEO Scorecard"
-                    description="Get a quick SEO audit with instant fixes to improve your search rankings."
-                    features={[
-                        "10-point SEO check",
-                        "Meta tags analysis",
-                        "Quick wins"
-                    ]}
-                    href="/tools/seo-scorecard"
-                    buttonText="Check SEO"
-                />
+                {displayedTools.map((tool) => (
+                    <ToolCard
+                        key={tool.id}
+                        icon={<tool.icon className="h-6 w-6" />}
+                        iconBg={tool.iconBg}
+                        iconColor={tool.iconColor}
+                        title={tool.title}
+                        description={tool.description}
+                        features={tool.features}
+                        href={tool.href}
+                        buttonText={tool.buttonText}
+                        badge={tool.badge}
+                    />
+                ))}
             </div>
 
-            {/* Bottom CTA */}
+            {/* Bottom CTA / View All */}
             <div className="mt-12 text-center">
-                <p className="text-sm text-muted-foreground mb-4">
-                    💡 All tools are 100% free to use. No email required.
-                </p>
-                <Button asChild variant="outline" size="lg">
-                    <Link href="/contact">
-                        Need Custom Analysis? Contact Me <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                </Button>
+                {limit && toolsData.length > limit ? (
+                    <Button asChild size="lg" className="mb-4">
+                        <Link href="/tools">
+                            View All Tools <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                ) : (
+                    <>
+                        <p className="text-sm text-muted-foreground mb-4">
+                            💡 All tools are 100% free to use. No email required.
+                        </p>
+                        <Button asChild variant="outline" size="lg">
+                            <Link href="/contact">
+                                Need Custom Analysis? Contact Me <ArrowRight className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
+                    </>
+                )}
             </div>
         </section>
     )
@@ -131,3 +94,4 @@ function ToolCard({ icon, iconBg, iconColor, title, description, features, href,
         </div>
     )
 }
+

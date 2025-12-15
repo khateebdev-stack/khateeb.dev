@@ -1,4 +1,5 @@
 import { content } from "@/lib/content"
+import { toolsData } from "@/data/tools"
 
 export default function sitemap() {
     const baseUrl = 'https://khateeb.dev'
@@ -8,6 +9,7 @@ export default function sitemap() {
         '',
         '/portfolio',
         '/services',
+        '/tools',
         '/contact',
         '/about',
         '/blog',
@@ -16,6 +18,14 @@ export default function sitemap() {
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: route === '' ? 1 : 0.8,
+    }))
+
+    // Dynamic Tools
+    const tools = toolsData.map((tool) => ({
+        url: `${baseUrl}${tool.href}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9,
     }))
 
     // Dynamic Projects
@@ -34,5 +44,5 @@ export default function sitemap() {
         priority: 0.7,
     }))
 
-    return [...routes, ...projects, ...posts]
+    return [...routes, ...tools, ...projects, ...posts]
 }

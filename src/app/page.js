@@ -36,7 +36,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <PortfolioSection limit={6} />
-      <InteractiveSection />
+      <InteractiveSection limit={4} />
       <ProcessSection />
       <Suspense fallback={<div className="container py-20" />}>
         <ContactSection />
