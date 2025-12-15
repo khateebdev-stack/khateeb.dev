@@ -5,6 +5,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+import { SafeAdContainer } from "@/components/ads/SafeAdContainer"; // DELETE THIS LINE IF PRESENT, BUT I AM ADDING SANITIZER
+import { AdSanitizer } from "@/components/ads/AdSanitizer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -89,6 +92,7 @@ export default function RootLayout({ children }) {
             <Footer />
             {/* <ChatWidget /> */}
           </div>
+          <AdSanitizer />
         </ThemeProvider>
 
       </body>
