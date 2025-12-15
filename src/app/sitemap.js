@@ -1,5 +1,6 @@
 import { content } from "@/lib/content"
 import { toolsData } from "@/data/tools"
+import { getAllPosts } from "@/lib/blog-utils"
 
 export default function sitemap() {
     const baseUrl = 'https://khateeb.dev'
@@ -36,8 +37,9 @@ export default function sitemap() {
         priority: 0.9,
     }))
 
-    // Dynamic Blog Posts
-    const posts = content.blog.articles.map((post) => ({
+    // Dynamic Blog Posts (From File System)
+    const fsPosts = getAllPosts()
+    const posts = fsPosts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.published_date),
         changeFrequency: 'monthly',

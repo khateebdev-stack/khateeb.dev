@@ -61,3 +61,5 @@ Desktop.ini
 !README.md
 !readme.md
 
+
+!src/content/blogs/*.txt

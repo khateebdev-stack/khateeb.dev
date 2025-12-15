@@ -1,0 +1,50 @@
+---
+title: "SEO Basics Every Developer Should Know"
+description: "Stop building invisible websites. Learn how to make Google love your code with these key SEO strategies for developers."
+published_date: "2024-11-05"
+featured_image: "/blog/seo-basics.jpg"
+author: "Khateeb Ur Rehman"
+tags: ["SEO", "Web Development", "Performance"]
+category: "SEO"
+---
+
+# Why SEO is Your Responsibility (Not Just Marketing's)
+
+As developers, we often think our job ends when the website looks good and functions correctly. But if no one can find your website, does it even exist?
+
+**SEO (Search Engine Optimization)** isn't just about keywords and backlinks. It's about **Technical Excellence**. Google's crawlers are essentially reading your code. If your code is messy, slow, or semantically incorrect, your ranking suffers.
+
+## 1. Speed is King (Core Web Vitals)
+Google explicitly states that page speed is a ranking factor.
+- **LCP (Largest Contentful Paint):** How fast does the main content load? Target < 2.5s.
+- **CLS (Cumulative Layout Shift):** Does things jump around? Keep it < 0.1.
+- **INP (Interaction to Next Paint):** Is the site responsive?
+
+**Developer Tip:** Use `next/image` for automatic optimization and avoid heavy hydration on the main thread.
+
+## 2. Semantic HTML: The Foundation
+Stop using `<div>` for everything!
+- Use `<header>`, `<main>`, `<footer>`.
+- Use `<h1>` only once per page.
+- Use `<button>` for actions and `<a>` for navigation.
+
+Semantic HTML helps screen readers AND search engines understand your content structure.
+
+## 3. Metadata: The invisible Sales Pitch
+Your invalid metadata is costing you clicks.
+Always include:
+- `title`: Keep it under 60 chars.
+- `description`: A compelling pitch under 160 chars.
+- `openGraph` tags: Control how your link looks on Twitter/Facebook.
+
+```javascript
+export const metadata = {
+  title: 'My Awesome Post',
+  openGraph: {
+    images: ['/og-image.png'],
+  },
+}
+```
+
+## Conclusion
+Building a website without SEO is like opening a shop in the middle of a desert. No matter how beautiful it is, no one will visit. Start implementing these technical SEO basics today!
