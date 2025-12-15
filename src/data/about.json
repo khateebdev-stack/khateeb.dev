@@ -57,5 +57,59 @@
             "category": "Business Value",
             "items": "E-commerce Integration, Payment Gateways, API Integration, Digital Strategy"
         }
+    ],
+    "process": [
+        {
+            "step": "01",
+            "title": "Discovery & Strategy",
+            "description": "I don't just start coding. I dive deep into your business goals, target audience, and technical requirements to build a roadmap that guarantees success.",
+            "icon": "Search"
+        },
+        {
+            "step": "02",
+            "title": "Design & Prototyping",
+            "description": "We visualize the solution before building it. I create high-fidelity wireframes and interactive prototypes to ensure the UX is intuitive and engaging.",
+            "icon": "PenTool"
+        },
+        {
+            "step": "03",
+            "title": "Agile Development",
+            "description": "I build in two-week sprints, giving you regular updates and testable demos. This ensures we catch issues early and pivot if market needs change.",
+            "icon": "Code"
+        },
+        {
+            "step": "04",
+            "title": "Testing & QA",
+            "description": "No bugs allowed. I perform rigorous automated and manual testing across all devices to ensure pixel-perfect rendering and unbreakable logic.",
+            "icon": "ShieldCheck"
+        },
+        {
+            "step": "05",
+            "title": "Launch & Scale",
+            "description": "I handle the deployment to cloud infrastructure (AWS/Vercel) and set up analytics. But I don't disappear; I monitor performance and help you scale.",
+            "icon": "Rocket"
+        }
+    ],
+    "freelancing": [
+        {
+            "platform": "Fiverr",
+            "url": "https://www.fiverr.com/khateeb_dev",
+            "icon": "fiverr"
+        },
+        {
+            "platform": "Upwork",
+            "url": "https://www.upwork.com/freelancers/~khateebdev",
+            "icon": "upwork"
+        },
+        {
+            "platform": "LinkedIn",
+            "url": "https://www.linkedin.com/in/khateeb-dev",
+            "icon": "linkedin"
+        },
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/khateeb-dev",
+            "icon": "github"
+        }
     ]
 }

@@ -1,6 +1,27 @@
 {
     "articles": [
         {
+            "id": "building-nexuswrite",
+            "title": "Building NexusWrite: How I Built a Gamified Blogging Platform with NestJS",
+            "slug": "building-nexuswrite-gamified-blogging-platform",
+            "category": "Enterprise",
+            "tags": [
+                "NestJS",
+                "Next.js",
+                "Gamification",
+                "SaaS",
+                "Case Study"
+            ],
+            "excerpt": "A deep dive into the architecture of NexusWrite, a blogging platform that rewards engagement with XP and Money. Learn how I handled real-time notifications, wallet transactions, and RBAC.",
+            "author": "Khateeb Ur Rehman",
+            "published_date": "2024-12-03",
+            "read_time": "15 min read",
+            "featured_image": "/projects/nexuswrite-blogging-platform/thumbnail.png",
+            "content_preview": "Blogging is usually a solitary experience. I wanted to change that by turning it into a Multiplayer Game...",
+            "views": 150,
+            "is_featured": true
+        },
+        {
             "id": "react-vs-nextjs-2024",
             "title": "React vs Next.js: Which Should You Choose in 2024?",
             "slug": "react-vs-nextjs-guide",

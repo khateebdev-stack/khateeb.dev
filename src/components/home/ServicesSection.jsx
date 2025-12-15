@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import { content } from "@/lib/content"
 import { Code, Smartphone, BarChart, BookOpen, Search, Link as LinkIcon, GraduationCap, Cloud } from "lucide-react"
+import { Button } from "../ui/button"
+import Link from "next/link"
 
 const icons = {
     "Web & App Development": Code,
@@ -15,8 +17,9 @@ const icons = {
     "DevOps & Cloud Setup": Cloud
 }
 
-export function ServicesSection() {
+export function ServicesSection({ limit = 6, showViewAll = true }) {
     const { services_list, hero } = content.services
+    const displayedServices = limit ? services_list.slice(0, limit) : services_list
 
     return (
         <section id="services" className="container px-4 py-24 xs:py-16 md:px-8 max-w-screen-2xl">
@@ -26,34 +29,43 @@ export function ServicesSection() {
             </div>
 
             <div className="grid gap-8 xs:gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {services_list.map((service, index) => {
+                {displayedServices.map((service, index) => {
                     const Icon = icons[service.title] || Code
                     return (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="group relative overflow-hidden rounded-xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md dark:hover:shadow-primary/10 dark:hover:border-primary/20"
-                        >
-                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                                <Icon className="h-6 w-6" />
-                            </div>
-                            <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
-                            <p className="mb-4 text-sm text-muted-foreground">{service.description}</p>
-                            <ul className="space-y-1 text-sm text-muted-foreground/80">
-                                {service.includes.slice(0, 3).map((item, i) => (
-                                    <li key={i} className="flex items-center">
-                                        <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary/50" />
-                                        {typeof item === 'string' ? item : item.split(':')[0]}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
+                        <Link href={`/services/${service.slug}`} key={index} className="block group">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="h-full relative overflow-hidden rounded-xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md dark:hover:shadow-primary/10 dark:hover:border-primary/20"
+                            >
+                                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                    <Icon className="h-6 w-6" />
+                                </div>
+                                <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
+                                <p className="mb-4 text-sm text-muted-foreground">{service.description}</p>
+                                <ul className="space-y-1 text-sm text-muted-foreground/80">
+                                    {service.includes.slice(0, 3).map((item, i) => (
+                                        <li key={i} className="flex items-center">
+                                            <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary/50" />
+                                            {typeof item === 'string' ? item : item.split(':')[0]}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </Link>
                     )
                 })}
             </div>
+
+            {showViewAll && (
+                <div className="mt-12 flex justify-center">
+                    <Button asChild size="lg">
+                        <Link href="/services">View All Services</Link>
+                    </Button>
+                </div>
+            )}
         </section>
     )
 }

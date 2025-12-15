@@ -45,7 +45,7 @@ export function Typewriter({ words, delay = 100, deleteDelay = 50, pause = 2000 
 
     return (
         <span className="inline-flex">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
+            <span className="bg-clip-text pb-5 text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
                 {words[index].substring(0, subIndex)}
             </span>
             <span className={`${blink ? "opacity-100" : "opacity-0"} ml-1 text-blue-500 font-light`}>|</span>

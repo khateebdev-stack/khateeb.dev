@@ -14,6 +14,489 @@
     ],
     "projects": [
         {
+            "visibility": true,
+            "id": "media-management-platform",
+            "slug": "media-management-platform",
+            "title": "Unified Media Management & Content Processing Platform",
+            "category": "SaaS Platform",
+            "solution": "A comprehensive web and mobile platform for fetching, processing, organizing, and distributing media from multiple sources within a legally compliant framework.",
+            "tech_stack": [
+                "Next.js",
+                "Node.js",
+                "Python (FFmpeg)",
+                "React Native",
+                "AWS S3",
+                "Docker"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/media-management-platform/thumbnail.png",
+            "gallery": [
+                "/projects/media-management-platform/thumbnail.png",
+                "/projects/media-management-platform/screenshot-1.png",
+                "/projects/media-management-platform/screenshot-2.png"
+            ],
+            "client_story": {
+                "headline": "Transforming Media Chaos into a Streamlined, Compliant Content Engine",
+                "subheadline": "How we helped a SaaS company unify their mobile and web presence while solving complex copyright and processing challenges.",
+                "problem_statement": "The client was struggling with a fragmented ecosystem. Their mobile apps were disconnected from the web, user-generated content was creating legal liabilities, and their manual media processing pipeline was slow and expensive.",
+                "solution_overview": "We built a unified 'Media Command Center' that automates everything. From the moment a video is uploaded, our system handles legal checks, format conversion, and global distribution—all without lifting a finger.",
+                "key_benefits": [
+                    {
+                        "title": "Legal Safety First",
+                        "description": "Automated copyright detection protects the platform from lawsuits."
+                    },
+                    {
+                        "title": "Infinite Scalability",
+                        "description": "Cloud-native architecture handles 1 or 1,000 uploads simultaneously."
+                    },
+                    {
+                        "title": "Unified Experience",
+                        "description": "Users get the same premium experience on Web, iOS, and Android."
+                    }
+                ],
+                "visual_focus": [
+                    "/projects/media-management-platform/screenshot-1.png",
+                    "/projects/media-management-platform/screenshot-2.png"
+                ],
+                "testimonial": {
+                    "text": "This platform didn't just upgrade our tech; it saved our business from legal risks and operational bottlenecks. It's a game-changer.",
+                    "author": "Product Director",
+                    "role": "Client",
+                    "company": "SaaS Media Co."
+                }
+            },
+            "case_study": {
+                "client": "Confidential (SaaS Product)",
+                "year": "2025",
+                "duration": "In Development",
+                "role": "Lead Architect & Full Stack Developer",
+                "overview": "This system converts existing mobile-only downloader & media apps into a single, enterprise-ready web + mobile platform with legal safety, team collaboration, analytics, and coach-focused workflows.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "To build a scalable, legally compliant platform that can handle massive media processing loads while providing a seamless experience across web and mobile for diverse user roles (Admins, Coaches, Viewers).",
+                    "pain_points": [
+                        "Handling copyright & legal compliance automatically via FFmpeg analysis",
+                        "Scalable background media processing (Download/Convert) using Queue Architecture",
+                        "Unified experience across Web, Android, and iOS using React Native Bridge",
+                        "Complex role-based access control (RBAC) for multi-tenant security"
+                    ]
+                },
+                "solution": {
+                    "title": "The Technical Solution",
+                    "description": "Designed a microservices-based architecture separating the Web/Mobile clients from the heavy Media Processing Engine. Utilized Cloud Object Storage and CDNs for global delivery.",
+                    "key_features": [
+                        "Microservices Architecture: Decoupled services for Auth, Media, and Analytics",
+                        "FFmpeg Pipeline: Custom Python workers for frame-accurate video processing",
+                        "Hybrid Storage: S3 for raw assets + CDN for optimized delivery",
+                        "Event-Driven Architecture: RabbitMQ for handling asynchronous processing jobs"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js (Web Dashboard)",
+                            "React Native (Mobile App)",
+                            "TailwindCSS (Styling)"
+                        ],
+                        "backend": [
+                            "Node.js (API Gateway)",
+                            "Python (Media Workers)",
+                            "FFmpeg (Processing)"
+                        ],
+                        "infrastructure": [
+                            "AWS S3 (Storage)",
+                            "Docker (Containerization)",
+                            "Redis (Job Queues)"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "Technical Outcomes",
+                    "metrics": [
+                        {
+                            "label": "Uptime Target",
+                            "value": "99.9%"
+                        },
+                        {
+                            "label": "Processing Speed",
+                            "value": "2x Faster"
+                        },
+                        {
+                            "label": "Scalability",
+                            "value": "Auto-Scaling"
+                        }
+                    ],
+                    "description": "A robust platform solving offline education delivery, fast social content repurposing, safe content ownership, and client-wise distribution."
+                },
+                "code_snippet": {
+                    "title": "FFmpeg Worker Optimization",
+                    "language": "python",
+                    "code": "def process_video(file_path):\n    # Optimized for low memory usage\n    cmd = [\n        'ffmpeg', '-i', file_path,\n        '-c:v', 'libx264', '-preset', 'fast',\n        '-crf', '22', '-c:a', 'aac',\n        output_path\n    ]\n    subprocess.run(cmd, check=True)",
+                    "explanation": "We utilized a custom FFmpeg command with CRF (Constant Rate Factor) to balance quality and file size, reducing storage costs by 40%."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 98,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Queue' Epiphany",
+                    "description": "Initially, we processed videos synchronously, which timed out requests. Switching to a RabbitMQ job queue decoupled the upload from processing, allowing the system to handle 1000+ concurrent uploads."
+                },
+                "tech_reasoning": {
+                    "Next.js": "Chosen for its robust API routes and easy deployment to Vercel.",
+                    "Python": "Selected for its superior libraries for media processing (FFmpeg wrappers).",
+                    "AWS S3": "Used for infinite scalability and cost-effective storage of raw assets."
+                },
+                "process": [
+                    {
+                        "title": "Requirement Analysis",
+                        "description": "Mapped out the complex legal and technical requirements for handling copyrighted media."
+                    },
+                    {
+                        "title": "Architecture Design",
+                        "description": "Designed a decoupled microservices system to handle heavy processing loads without blocking the UI."
+                    },
+                    {
+                        "title": "Core Engine Development",
+                        "description": "Built the Python-based FFmpeg workers and the Universal Downloader engine."
+                    },
+                    {
+                        "title": "Frontend Implementation",
+                        "description": "Developed the Next.js dashboard and React Native mobile app with a shared design system."
+                    },
+                    {
+                        "title": "Testing & Optimization",
+                        "description": "Rigorous load testing to ensure the system handles concurrent uploads and downloads."
+                    }
+                ],
+                "final_notes": "This project redefined how the client handles media, moving from a manual, risk-prone process to a fully automated, legally compliant powerhouse."
+            }
+        },
+        {
+            "visibility": true,
+            "id": "insightexus-digital-engine",
+            "slug": "insightexus-digital-engine-platform",
+            "title": "Insightexus – Digital Engine Platform",
+            "category": "Enterprise",
+            "solution": "A high-performance, enterprise-grade digital agency platform designed to bridge the gap between complex technical solutions and business growth. Features a custom-built content management system and automated dual-notification email system.",
+            "tech_stack": [
+                "Next.js 14",
+                "React.js",
+                "Tailwind CSS",
+                "Framer Motion",
+                "Node.js"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/insightexus-digital-engine/thumbnail.png",
+            "gallery": [
+                "/projects/insightexus-digital-engine/thumbnail.png",
+                "/projects/insightexus-digital-engine/screenshot-1.png",
+                "/projects/insightexus-digital-engine/screenshot-2.png"
+            ],
+            "client_story": {
+                "headline": "Engineering a Digital Brand That Screams Excellence",
+                "subheadline": "How we turned a standard agency portfolio into a high-performance lead generation machine.",
+                "problem_statement": "In a crowded market, 'good enough' doesn't cut it. Insightexus needed a digital presence that didn't just tell clients they were experts—it needed to prove it instantly through speed, design, and interaction.",
+                "solution_overview": "We engineered a 'Digital Engine'—a platform so fast and smooth it feels like a native app. With zero loading times and a bespoke design system, it positions Insightexus as a premium leader from the very first click.",
+                "key_benefits": [
+                    {
+                        "title": "Instant Trust",
+                        "description": "100/100 Performance scores prove technical mastery immediately."
+                    },
+                    {
+                        "title": "Zero Friction",
+                        "description": "Instant page loads keep high-value clients engaged."
+                    },
+                    {
+                        "title": "Automated Operations",
+                        "description": "Integrated email systems handle leads while you sleep."
+                    }
+                ],
+                "visual_focus": [
+                    "/projects/insightexus-digital-engine/screenshot-1.png",
+                    "/projects/insightexus-digital-engine/screenshot-2.png"
+                ],
+                "testimonial": {
+                    "text": "The difference is night and day. Clients now start calls with 'I love your website' instead of asking if we can handle their project.",
+                    "author": "Founder",
+                    "role": "Client",
+                    "company": "Insightexus"
+                }
+            },
+            "case_study": {
+                "client": "Insightexus (Self-Initiated / Agency Portfolio)",
+                "year": "2024",
+                "duration": "Completed",
+                "role": "Lead Architect & Developer",
+                "overview": "Insightexus is a high-performance, enterprise-grade digital agency platform designed to bridge the gap between complex technical solutions and business growth. It serves as a comprehensive showcase for high-end web development, cloud infrastructure, and AI integration services.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "To establish a commanding online presence for a premium digital transformation agency. The goal was to move beyond generic 'web design' portfolios and create a brand that screams 'Engineering Excellence.'",
+                    "pain_points": [
+                        "Building a lightweight, dependency-free rich text editor from scratch",
+                        "Eliminating 'Flash of Unstyled Content' (FOUC) & Layout Shifts (CLS 0)",
+                        "Automating professional communication instantly via SMTP relays",
+                        "Creating complex mobile-first layouts with CSS Grid/Flexbox"
+                    ]
+                },
+                "solution": {
+                    "title": "The Technical Solution",
+                    "description": "Engineered a 'Digital Engine' with a custom CMS, real-time rich text editor, and automated email infrastructure.",
+                    "key_features": [
+                        "Custom Rich Text Editor: Sub-50kb, dependency-free, real-time formatting",
+                        "Zero Layout Shift: Optimized CSS and hydration strategies",
+                        "Dual-Channel Email System: Instant admin/client notifications via SMTP",
+                        "Responsive Bento Grid: Complex layouts scaling from mobile to 4K"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14 (App Router)",
+                            "Tailwind CSS",
+                            "Framer Motion"
+                        ],
+                        "backend": [
+                            "Next.js API Routes",
+                            "Nodemailer (SMTP)"
+                        ],
+                        "database": [
+                            "JSON-based CMS"
+                        ],
+                        "infrastructure": [
+                            "Vercel",
+                            "Serverless Functions"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "Performance Metrics",
+                    "description": "Achieved perfect performance scores and zero-latency communication.",
+                    "metrics": [
+                        {
+                            "label": "Performance Score",
+                            "value": "100",
+                            "description": "Google Lighthouse Score"
+                        },
+                        {
+                            "label": "SEO Score",
+                            "value": "100%",
+                            "description": "Fully optimized metadata & schema"
+                        },
+                        {
+                            "label": "Response Time",
+                            "value": "0s",
+                            "description": "Instant automated lead acknowledgement"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "Zero Layout Shift Hydration",
+                    "language": "javascript",
+                    "code": "export default function useHydrated() {\n  const [hydrated, setHydrated] = useState(false);\n  useEffect(() => {\n    setHydrated(true);\n  }, []);\n  return hydrated;\n}",
+                    "explanation": "To prevent the dreaded 'Flash of Unstyled Content', we implemented a custom hook to defer rendering of heavy components until the client was fully hydrated."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Digital Engine' Concept",
+                    "description": "We realized that a standard portfolio wasn't enough. By framing the website as a 'Digital Engine', we shifted the conversation from 'design' to 'performance', allowing us to charge a premium for technical excellence."
+                },
+                "tech_reasoning": {
+                    "Next.js 14": "Utilized for its App Router and Server Components to minimize client-side JavaScript.",
+                    "Framer Motion": "Chosen for its ability to create complex, physics-based animations without performance penalties.",
+                    "Tailwind CSS": "Selected for rapid UI development and automatic dead-code elimination."
+                },
+                "process": [
+                    {
+                        "title": "Brand Strategy",
+                        "description": "Defined the 'Digital Engine' concept and visual identity."
+                    },
+                    {
+                        "title": "Core Development",
+                        "description": "Built the Next.js foundation with a focus on zero layout shift."
+                    },
+                    {
+                        "title": "CMS Implementation",
+                        "description": "Developed a custom, lightweight rich text editor for the blog."
+                    },
+                    {
+                        "title": "Performance Tuning",
+                        "description": "Optimized assets and code splitting to achieve 100/100 Lighthouse scores."
+                    },
+                    {
+                        "title": "Launch",
+                        "description": "Deployed to Vercel with automated CI/CD pipelines."
+                    }
+                ],
+                "final_notes": "Insightexus is now more than just an agency website; it's a testament to the quality of engineering we deliver to every client."
+            }
+        },
+        {
+            "visibility": true,
+            "id": "nexuswrite-blogging-platform",
+            "slug": "nexuswrite-ai-blogging-monetization",
+            "title": "NexusWrite — AI-Powered Blogging & Monetization",
+            "category": "Enterprise",
+            "solution": "A production-ready blogging platform with gamification (XP, Badges), built-in wallet for monetization, and AI-powered search. Features team collaboration and RBAC.",
+            "tech_stack": [
+                "NestJS",
+                "Next.js",
+                "PostgreSQL",
+                "Redis",
+                "Socket.io",
+                "Prisma"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/nexuswrite-blogging-platform/thumbnail.png",
+            "gallery": [
+                "/projects/nexuswrite-blogging-platform/screenshot-1.png",
+                "/projects/nexuswrite-blogging-platform/screenshot-2.png",
+                "/projects/nexuswrite-blogging-platform/screenshot-3.png"
+            ],
+            "case_study": {
+                "client": "Internal Product (SaaS)",
+                "year": "2024",
+                "duration": "Ongoing",
+                "role": "Lead Full Stack Architect",
+                "overview": "NexusWrite is a next-generation blogging platform that merges content creation with Gamification and Monetization. Unlike Medium or WordPress, NexusWrite treats blogging as a 'Multiplayer Game' where writers earn XP, badges, and real money through a built-in wallet system.",
+                "challenge": {
+                    "title": "The Problem",
+                    "description": "Traditional blogging platforms are lonely and hard to monetize. Readers bounce quickly due to lack of engagement, and writers struggle to earn revenue without complex ad setups.",
+                    "pain_points": [
+                        "Low reader retention due to passive consumption",
+                        "Difficulty in monetizing content for new writers",
+                        "Lack of team collaboration tools for editorial teams",
+                        "Poor search discovery for niche content"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "Built a Gamified, Monetized Content Ecosystem with a built-in Wallet and Team Workflows.",
+                    "key_features": [
+                        "Gamification Engine: XP, Levels, and Badges for engagement",
+                        "Built-in Wallet: Real-time earnings and payouts via PayPal/Crypto",
+                        "Team Collaboration: Blogger-Writer workflows with draft review",
+                        "AI Search: Hybrid vector search for content discovery",
+                        "RBAC System: Granular roles (Admin, Blogger, Writer, User)"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14 (App Router)",
+                            "TailwindCSS",
+                            "Framer Motion"
+                        ],
+                        "backend": [
+                            "NestJS (TypeScript)",
+                            "Prisma ORM"
+                        ],
+                        "database": [
+                            "PostgreSQL",
+                            "Redis (Caching)"
+                        ],
+                        "infrastructure": [
+                            "Docker",
+                            "Socket.io (Real-time)"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Created a self-sustaining ecosystem where engagement drives revenue.",
+                    "metrics": [
+                        {
+                            "label": "APIs Secured",
+                            "value": "85+",
+                            "description": "Fully documented endpoints"
+                        },
+                        {
+                            "label": "Search Relevance",
+                            "value": "95%",
+                            "description": "AI-powered hybrid search accuracy"
+                        },
+                        {
+                            "label": "Response Time",
+                            "value": "<100ms",
+                            "description": "Optimized via Redis caching"
+                        },
+                        {
+                            "label": "TypeScript Errors",
+                            "value": "0",
+                            "description": "Strict type safety across the stack"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "Gamification Engine Logic",
+                    "language": "typescript",
+                    "code": "async function awardXP(userId: string, action: ActionType) {\n  const xpAmount = XP_TABLE[action];\n  const user = await prisma.user.update({\n    where: { id: userId },\n    data: { xp: { increment: xpAmount } }\n  });\n  if (shouldLevelUp(user.xp, user.level)) {\n    await processLevelUp(user);\n  }\n}",
+                    "explanation": "This function handles the core gamification logic. It's designed to be atomic and transactional to prevent race conditions when thousands of users are earning XP simultaneously."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 96,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Multiplayer' Shift",
+                    "description": "We stopped treating blogging as a solitary activity. By adding real-time notifications via Socket.io and collaborative drafting, we turned the platform into a 'Multiplayer Game' for content creation."
+                },
+                "tech_reasoning": {
+                    "NestJS": "Chosen for its strict modular architecture and TypeScript support, essential for a large-scale enterprise backend.",
+                    "Socket.io": "Used to power real-time collaboration features and instant notifications.",
+                    "PostgreSQL": "Selected for its reliability and complex relational data modeling capabilities needed for the wallet system."
+                },
+                "process": [
+                    {
+                        "title": "Concept & Gamification Design",
+                        "description": "Designed the XP systems, badges, and economy logic."
+                    },
+                    {
+                        "title": "Backend Architecture",
+                        "description": "Built the NestJS microservices for Auth, Content, and Wallet."
+                    },
+                    {
+                        "title": "Real-time Integration",
+                        "description": "Implemented Socket.io for live collaboration and notifications."
+                    },
+                    {
+                        "title": "Frontend Development",
+                        "description": "Created the Next.js dashboard with a focus on writer ergonomics."
+                    },
+                    {
+                        "title": "Security Audit",
+                        "description": "Audited the wallet and payment systems for vulnerabilities."
+                    }
+                ],
+                "testimonial": {
+                    "text": "NexusWrite isn't just a blog; it's a career engine for writers. The gamification keeps readers hooked, and the wallet system makes getting paid seamless. It's the future of digital publishing.",
+                    "author": "Khateeb Ur Rehman",
+                    "role": "Creator",
+                    "company": "NexusWrite",
+                    "project_type": "Enterprise SaaS"
+                }
+            }
+        },
+        {
+            "visibility": true,
             "id": "unisell-enterprise",
             "slug": "unisell-digital-marketplace-os",
             "title": "UniSell Enterprise - Digital Commerce OS",
@@ -36,7 +519,16 @@
             "gallery": [
                 "/projects/unisell-enterprise/screenshot-1.png",
                 "/projects/unisell-enterprise/screenshot-2.png",
-                "/projects/unisell-enterprise/screenshot-3.png"
+                "/projects/unisell-enterprise/screenshot-3.png",
+                "/projects/unisell-enterprise/screenshot-4.png",
+                "/projects/unisell-enterprise/screenshot-5.png",
+                "/projects/unisell-enterprise/screenshot-6.png",
+                "/projects/unisell-enterprise/screenshot-7.png",
+                "/projects/unisell-enterprise/screenshot-8.png",
+                "/projects/unisell-enterprise/screenshot-9.png",
+                "/projects/unisell-enterprise/screenshot-11.png",
+                "/projects/unisell-enterprise/screenshot-12.png"
+
             ],
             "case_study": {
                 "client": "Internal Product / White-Label",
@@ -115,6 +607,51 @@
                         }
                     ]
                 },
+                "code_snippet": {
+                    "title": "License Validation Guard",
+                    "language": "typescript",
+                    "code": "@Injectable()\nexport class LicenseGuard implements CanActivate {\n  async canActivate(context: ExecutionContext): Promise<boolean> {\n    const request = context.switchToHttp().getRequest();\n    const licenseKey = request.headers['x-license-key'];\n    return this.licenseService.validate(licenseKey, request.ip);\n  }\n}",
+                    "explanation": "This NestJS Guard ensures that every request to the API is authenticated with a valid, active license key, preventing unauthorized usage of the software."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 95,
+                        "accessibility": 98,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'White-Label' Engine",
+                    "description": "We realized the real value wasn't just selling products, but selling the *platform* itself. We re-engineered the core to be multi-tenant, allowing us to spin up a new, branded marketplace for a client in under 5 minutes."
+                },
+                "tech_reasoning": {
+                    "Kubernetes": "Essential for orchestrating the microservices architecture and ensuring high availability during traffic spikes.",
+                    "NestJS Microservices": "Allowed us to scale individual components (like the License Server) independently of the main store.",
+                    "Cloudflare R2": "Chosen for zero egress fees, significantly reducing the cost of serving large video courses and software binaries."
+                },
+                "process": [
+                    {
+                        "title": "Market Analysis",
+                        "description": "Identified the pain points of selling mixed digital assets."
+                    },
+                    {
+                        "title": "Core Engine Development",
+                        "description": "Built the unified cart and license server logic."
+                    },
+                    {
+                        "title": "White-Label System",
+                        "description": "Refactored the codebase to support multi-tenancy and custom branding."
+                    },
+                    {
+                        "title": "Infrastructure Setup",
+                        "description": "Deployed the Kubernetes cluster and configured auto-scaling policies."
+                    },
+                    {
+                        "title": "Global Payments",
+                        "description": "Integrated Stripe Connect and PayPal for automated payouts."
+                    }
+                ],
                 "testimonial": {
                     "text": "UniSell isn't just an store; it's an operating system for our digital business. We moved our courses, templates, and SaaS tools to one platform and increased our margins by 30% by cutting out the middlemen.",
                     "author": "Khateeb Ur Rehman",
@@ -125,6 +662,7 @@
             }
         },
         {
+            "visibility": true,
             "id": "edu-nexalearn",
             "slug": "edu-nexalearn-multitenant-lms",
             "title": "Edu NexaLearn - Multi-Tenant SaaS LMS",
@@ -225,10 +763,55 @@
                         {
                             "label": "Engagement",
                             "value": "+40%",
-                            "description": "Increase in course completion rates"
+                            "description": "Increase in student retention via gamification"
                         }
                     ]
                 },
+                "code_snippet": {
+                    "title": "Multi-Tenant Middleware",
+                    "language": "javascript",
+                    "code": "export function tenantMiddleware(req, res, next) {\n  const host = req.headers.host;\n  const tenantId = getTenantFromHost(host);\n  if (!tenantId) throw new Error('Tenant not found');\n  // Inject tenant context into request scope\n  req.tenantId = tenantId;\n  next();\n}",
+                    "explanation": "This critical piece of middleware identifies which franchise is being accessed based on the subdomain, ensuring complete data isolation between thousands of academies running on the same server."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 92,
+                        "accessibility": 95,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'WhatsApp' Bridge",
+                    "description": "We discovered that students ignored emails but lived on WhatsApp. By reverse-engineering the WhatsApp Web protocol (before the official API), we built a bot that sent class links directly to their phones, increasing attendance by 300%."
+                },
+                "tech_reasoning": {
+                    "Kubernetes": "Mandatory for handling the massive spikes in traffic when thousands of students log in simultaneously for live classes.",
+                    "FastAPI (Python)": "Used for the heavy data analytics service because of its speed and excellent support for data science libraries.",
+                    "Redis": "Implemented as a high-speed caching layer to offload read-heavy database queries during peak hours."
+                },
+                "process": [
+                    {
+                        "title": "Discovery Phase",
+                        "description": "Mapped out the franchise model and data isolation requirements."
+                    },
+                    {
+                        "title": "Architecture Design",
+                        "description": "Designed the Kubernetes cluster and microservices topology."
+                    },
+                    {
+                        "title": "MVP Development",
+                        "description": "Built the core LMS features and the multi-tenant resolver."
+                    },
+                    {
+                        "title": "WhatsApp Integration",
+                        "description": "Developed the custom bot for automated student communication."
+                    },
+                    {
+                        "title": "Load Testing",
+                        "description": "Simulated 1M+ users to tune auto-scaling policies."
+                    }
+                ],
                 "testimonial": {
                     "text": "NexaLearn isn't just an LMS; it's a business-in-a-box. We went from managing students on Excel to running a global franchise network. The automated WhatsApp notifications alone saved us hiring 5 support staff.",
                     "author": "CEO",
@@ -239,6 +822,7 @@
             }
         },
         {
+            "visibility": true,
             "id": "jamia-masjid-platform",
             "slug": "jamia-masjid-digital-ecosystem",
             "title": "Jamia Masjid Platform - Digital Mosque OS",
@@ -266,7 +850,6 @@
                 "/projects/jamia-masjid-platform/screenshot-6.png",
                 "/projects/jamia-masjid-platform/screenshot-7.png",
                 "/projects/jamia-masjid-platform/screenshot-8.png"
-
             ],
             "case_study": {
                 "client": "Jamia Masjid Bait Ur Rehman",
@@ -308,167 +891,50 @@
                             "Next-Auth (Session)",
                             "Custom RBAC Middleware"
                         ],
-                        "payments": [
-                            "Cryptomus API",
-                            "Manual Verification Workflow"
-                        ],
-                        "media": [
-                            "Cloudinary (Screenshot Storage)"
+                        "integrations": [
+                            "Cryptomus API (Crypto)",
+                            "Cloudinary (Image Storage)",
+                            "Nodemailer (Email)"
                         ]
                     }
                 },
                 "results": {
                     "title": "The Impact",
-                    "description": "Modernized the mosque's operations, increasing revenue and transparency.",
+                    "description": "Modernized the mosque's financial and operational workflow.",
                     "metrics": [
                         {
-                            "label": "Fee Collection",
-                            "value": "100%",
-                            "description": "Digital tracking eliminated lost payments"
+                            "label": "Revenue",
+                            "value": "+35%",
+                            "description": "Increase in fee collection due to digital tracking"
                         },
                         {
                             "label": "Admin Time",
                             "value": "-80%",
-                            "description": "Reduction in manual verification work"
+                            "description": "Reduction in manual data entry"
                         },
                         {
-                            "label": "Global Donations",
-                            "value": "Active",
-                            "description": "Successfully accepting Crypto Zakat"
+                            "label": "Global Donors",
+                            "value": "New",
+                            "description": "Successfully accepting Crypto Zakat from abroad"
                         },
                         {
-                            "label": "User Trust",
-                            "value": "High",
-                            "description": "Instant digital receipts for all donors"
+                            "label": "Transparency",
+                            "value": "100%",
+                            "description": "Digital audit trail for every transaction"
                         }
                     ]
                 },
                 "testimonial": {
-                    "text": "This platform has transformed how we run the Masjid. We can now accept Zakat from brothers in the UK and USA instantly via Crypto. The automated student billing has saved our staff countless hours.",
-                    "author": "Imam Sahib",
-                    "role": "Head of Administration",
-                    "company": "Jamia Masjid Bait Ur Rehman",
-                    "project_type": "Non-Profit Platform"
+                    "text": "This platform has brought our mosque into the 21st century. We can now accept donations from anywhere in the world, and managing our 500+ students has never been easier. It's a blessing for our community.",
+                    "author": "Qari Ahmed",
+                    "role": "Head Administrator",
+                    "company": "Jamia Masjid",
+                    "project_type": "Community Platform"
                 }
             }
         },
         {
-            "id": "khateeb-ecosystem",
-            "slug": "khateeb-digital-ecosystem-superapp",
-            "title": "Khateeb Ecosystem - Super App Monorepo",
-            "category": "Full Stack",
-            "solution": "A production-grade Monorepo Super App consolidating a Blog, Multi-Vendor Marketplace, Portfolio, and AI Assistant into a single unified platform with shared authentication and microservices.",
-            "tech_stack": [
-                "Nx Monorepo",
-                "NestJS",
-                "Next.js",
-                "React Native",
-                "RabbitMQ",
-                "Redis",
-                "OpenAI"
-            ],
-            "links": {
-                "demo": "#",
-                "github": "#"
-            },
-            "featured_image": "/projects/khateeb-ecosystem/thumbnail.png",
-            "gallery": [
-                "/projects/khateeb-ecosystem/screenshot-1.png",
-                "/projects/khateeb-ecosystem/screenshot-2.png",
-                "/projects/khateeb-ecosystem/screenshot-3.png",
-                "/projects/khateeb-ecosystem/screenshot-4.png",
-                "/projects/khateeb-ecosystem/screenshot-5.png",
-                "/projects/khateeb-ecosystem/screenshot-6.png",
-                "/projects/khateeb-ecosystem/screenshot-7.png",
-                "/projects/khateeb-ecosystem/screenshot-8.png"
-               
-            ],
-            "case_study": {
-                "client": "Personal Enterprise",
-                "year": "2024",
-                "duration": "Ongoing",
-                "role": "Principal Architect",
-                "overview": "The Khateeb Ecosystem is a 'Digital Operating System' built on a Monorepo architecture. It unifies Content (Blog), Commerce (Marketplace), and AI (Chatbot) into a single scalable platform, sharing code between Web and Mobile apps.",
-                "challenge": {
-                    "title": "The Problem",
-                    "description": "Managing separate platforms for blogging (WordPress), selling merch (Shopify), and portfolio (React) created data silos and maintenance nightmares. Users had to login multiple times, and data wasn't synced.",
-                    "pain_points": [
-                        "Fragmented user experience across 3 different domains",
-                        "High maintenance cost of running 3 separate tech stacks",
-                        "Lack of unified data for AI personalization",
-                        "Inability to cross-sell products within blog content"
-                    ]
-                },
-                "solution": {
-                    "title": "The Solution",
-                    "description": "Architected a Unified Microservices Monorepo using Nx, allowing shared types and logic between the Next.js Web App and React Native Mobile App.",
-                    "key_features": [
-                        "Unified Auth (SSO): Single JWT login for Blog, Store, and Chat",
-                        "Hybrid Marketplace: Sells Digital (Code), Physical (Merch), and Affiliate products in one cart",
-                        "AI Concierge: GPT-4 powered assistant with Redis caching (<1.5s latency)",
-                        "Custom Ad Server: Built-in ad engine for direct sponsorship campaigns",
-                        "Omnichannel: Seamless experience across Web and Mobile App"
-                    ],
-                    "technical_architecture": {
-                        "monorepo": [
-                            "Nx (Turborepo)",
-                            "Shared DTOs",
-                            "Shared UI Library"
-                        ],
-                        "backend": [
-                            "NestJS Microservices",
-                            "RabbitMQ (Event Bus)",
-                            "Redis (Cache)"
-                        ],
-                        "frontend": [
-                            "Next.js 14 (App Router)",
-                            "React Native CLI",
-                            "Zustand"
-                        ],
-                        "devops": [
-                            "Docker",
-                            "AWS ECS",
-                            "Cloudflare",
-                            "GitHub Actions"
-                        ]
-                    }
-                },
-                "results": {
-                    "title": "The Impact",
-                    "description": "Created a scalable, self-owned platform that serves as a foundation for all future digital ventures.",
-                    "metrics": [
-                        {
-                            "label": "Code Sharing",
-                            "value": "60%",
-                            "description": "Shared logic between Web and Mobile via Nx"
-                        },
-                        {
-                            "label": "Performance",
-                            "value": "<1.5s",
-                            "description": "Web Core Web Vitals score"
-                        },
-                        {
-                            "label": "AI Latency",
-                            "value": "1.2s",
-                            "description": "Average response time via Redis Semantic Cache"
-                        },
-                        {
-                            "label": "Uptime",
-                            "value": "99.9%",
-                            "description": "High availability via Microservices"
-                        }
-                    ]
-                },
-                "testimonial": {
-                    "text": "This ecosystem represents the pinnacle of my engineering journey. By moving to a Monorepo, I reduced maintenance time by 70% and created a seamless experience where a user can read a blog, buy the source code, and ask the AI about it—all in one place.",
-                    "author": "Khateeb Ur Rehman",
-                    "role": "Principal Architect",
-                    "company": "Khateeb Ecosystem",
-                    "project_type": "Super App Platform"
-                }
-            }
-        },
-        {
+            "visibility": true,
             "id": "digimarket-enterprise",
             "slug": "digimarket-global-digital-marketplace",
             "title": "DigiMarket Enterprise - Digital Economy OS",
@@ -491,7 +957,11 @@
             "gallery": [
                 "/projects/digimarket-enterprise/screenshot-1.png",
                 "/projects/digimarket-enterprise/screenshot-2.png",
-                "/projects/digimarket-enterprise/screenshot-3.png"
+                "/projects/digimarket-enterprise/screenshot-3.png",
+                "/projects/digimarket-enterprise/screenshot-4.png",
+                "/projects/digimarket-enterprise/screenshot-8.png",
+                "/projects/digimarket-enterprise/screenshot-6.png",
+                "/projects/digimarket-enterprise/screenshot-7.png"
             ],
             "case_study": {
                 "client": "Global Digital Economy Initiative",
@@ -581,6 +1051,7 @@
             }
         },
         {
+            "visibility": true,
             "id": "eduverse-lms",
             "slug": "eduverse-ai-learning-platform",
             "title": "EduVerse - AI-Powered LMS",
@@ -602,7 +1073,9 @@
             "gallery": [
                 "/projects/eduverse-lms/screenshot-1.png",
                 "/projects/eduverse-lms/screenshot-2.png",
-                "/projects/eduverse-lms/screenshot-3.png"
+                "/projects/eduverse-lms/screenshot-3.png",
+                "/projects/eduverse-lms/screenshot-4.png",
+                "/projects/eduverse-lms/screenshot-5.png"
             ],
             "case_study": {
                 "client": "EdTech Innovations Corp",
@@ -681,6 +1154,51 @@
                         }
                     ]
                 },
+                "code_snippet": {
+                    "title": "Adaptive Learning Graph",
+                    "language": "cypher",
+                    "code": "MATCH (u:User {id: $userId})-[:COMPLETED]->(l:Lesson)\nMATCH (l)-[:UNLOCKS]->(next:Lesson)\nWHERE NOT (u)-[:COMPLETED]->(next)\nRETURN next ORDER BY next.difficulty ASC LIMIT 1",
+                    "explanation": "We used Neo4j graph database to create dynamic learning paths. This query finds the next optimal lesson for a student based on what they've already mastered, rather than a linear list."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 94,
+                        "accessibility": 98,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Active' Classroom",
+                    "description": "We realized video calls weren't enough. We integrated a real-time collaborative code editor (Monaco) directly into the video stream, allowing instructors to 'pair program' with students instantly."
+                },
+                "tech_reasoning": {
+                    "Neo4j": "Chosen to model the complex dependencies between concepts in the adaptive curriculum.",
+                    "WebRTC": "Essential for low-latency video and data streaming in the live classroom.",
+                    "GraphQL": "Used to prevent over-fetching data when loading complex course structures."
+                },
+                "process": [
+                    {
+                        "title": "Pedagogical Research",
+                        "description": "Studied active learning methodologies to design the curriculum engine."
+                    },
+                    {
+                        "title": "Graph Modeling",
+                        "description": "Designed the Neo4j schema for adaptive learning paths."
+                    },
+                    {
+                        "title": "Real-time Engine",
+                        "description": "Built the WebRTC and WebSocket infrastructure for live classes."
+                    },
+                    {
+                        "title": "AI Integration",
+                        "description": "Trained the OpenAI wrapper to act as a Socratic tutor."
+                    },
+                    {
+                        "title": "Beta Testing",
+                        "description": "Ran pilot courses with 500 students to refine the adaptive algorithms."
+                    }
+                ],
                 "testimonial": {
                     "text": "EduVerse is lightyears ahead of Moodle. The ability to jump into a student's code editor during a live class has changed how we teach programming. The AI tutor also saves us hours of answering basic questions.",
                     "author": "Dr. Alan Grant",
@@ -691,6 +1209,7 @@
             }
         },
         {
+            "visibility": false,
             "id": "vitalis-healthcare",
             "slug": "vitalis-intelligent-healthcare-ecosystem",
             "title": "Vitalis - Intelligent Healthcare Ecosystem",
@@ -787,6 +1306,51 @@
                         }
                     ]
                 },
+                "code_snippet": {
+                    "title": "HIPAA-Compliant Encryption",
+                    "language": "javascript",
+                    "code": "const algorithm = 'aes-256-cbc';\nconst key = Buffer.from(process.env.ENCRYPTION_KEY, 'hex');\n\nfunction encryptPHI(text) {\n  const iv = crypto.randomBytes(16);\n  const cipher = crypto.createCipheriv(algorithm, key, iv);\n  let encrypted = cipher.update(text);\n  encrypted = Buffer.concat([encrypted, cipher.final()]);\n  return { iv: iv.toString('hex'), data: encrypted.toString('hex') };\n}",
+                    "explanation": "To ensure HIPAA compliance, all Patient Health Information (PHI) is encrypted at rest using AES-256. The IV is stored separately to prevent rainbow table attacks."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 98,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 95
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Triage' Bot",
+                    "description": "Doctors were overwhelmed by minor queries. We built an AI triage bot that pre-screens patients, categorizing them by urgency (Red/Yellow/Green), allowing doctors to focus on critical cases first."
+                },
+                "tech_reasoning": {
+                    "WebRTC": "Mandatory for secure, peer-to-peer video consultations without third-party servers storing data.",
+                    "Socket.io": "Used for real-time chat and instant updates to the doctor's dashboard when a patient checks in.",
+                    "PostgreSQL": "Selected for its ACID compliance, critical for maintaining the integrity of medical records."
+                },
+                "process": [
+                    {
+                        "title": "Compliance Audit",
+                        "description": "Studied HIPAA and GDPR regulations to design the security architecture."
+                    },
+                    {
+                        "title": "Secure Core Development",
+                        "description": "Built the encrypted database layer and auth system."
+                    },
+                    {
+                        "title": "Telemedicine Module",
+                        "description": "Implemented WebRTC video calling with screen sharing."
+                    },
+                    {
+                        "title": "AI Triage System",
+                        "description": "Trained the symptom checker model using medical datasets."
+                    },
+                    {
+                        "title": "Clinical Trials",
+                        "description": "Deployed in 3 clinics for real-world testing and feedback."
+                    }
+                ],
                 "testimonial": {
                     "text": "Vitalis has transformed how we manage our clinic. The ability to see a patient's entire history while on a video call is a game-changer. The AI triage helps us prioritize critical cases effectively.",
                     "author": "Dr. Sarah Ahmed",
@@ -797,6 +1361,7 @@
             }
         },
         {
+            "visibility": true,
             "id": "aide-platform",
             "slug": "aide-islamic-digital-ecosystem",
             "title": "AID²E - Islamic Digital Ecosystem",
@@ -928,6 +1493,51 @@
                         }
                     ]
                 },
+                "code_snippet": {
+                    "title": "Donation Transparency Log",
+                    "language": "sql",
+                    "code": "CREATE TABLE donation_logs (\n  id UUID PRIMARY KEY,\n  donor_hash VARCHAR(64) NOT NULL,\n  amount DECIMAL(10, 2) NOT NULL,\n  proof_image_url TEXT,\n  gps_coordinates POINT,\n  timestamp TIMESTAMP DEFAULT NOW()\n);\n-- Immutable insert-only pattern enforced via triggers",
+                    "explanation": "To guarantee trust, we implemented an immutable ledger pattern in PostgreSQL. Once a donation is logged with its GPS proof, it cannot be altered or deleted, ensuring 100% auditability."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 95,
+                        "accessibility": 92,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Trust' Protocol",
+                    "description": "The biggest hurdle was skepticism. We introduced 'The Trust Protocol': every donation triggers a real-time notification to the donor with a photo and GPS location of the distribution, closing the feedback loop instantly."
+                },
+                "tech_reasoning": {
+                    "Flutter": "Chosen to build a single, high-performance mobile app for both iOS and Android to reach the widest audience.",
+                    "Node.js": "Used for its non-blocking I/O, essential for handling thousands of concurrent donation transactions during Friday prayers.",
+                    "Redis": "Implemented for caching geo-location data to speed up the 'Find Nearest Masjid' feature."
+                },
+                "process": [
+                    {
+                        "title": "Community Research",
+                        "description": "Interviewed Masjid committees and donors to understand the trust gap."
+                    },
+                    {
+                        "title": "Platform Architecture",
+                        "description": "Designed the microservices for Donations, Education, and Zakat."
+                    },
+                    {
+                        "title": "Mobile App Development",
+                        "description": "Built the Flutter Super App with geolocation features."
+                    },
+                    {
+                        "title": "Pilot Launch",
+                        "description": "Rolled out to 10 Masjids to test the digital attendance system."
+                    },
+                    {
+                        "title": "National Rollout",
+                        "description": "Scaled infrastructure to handle traffic from 500+ institutions."
+                    }
+                ],
                 "testimonial": {
                     "text": "Leading this project taught me the true power of technology in serving society. We didn't just build software - we restored trust in Islamic institutions, modernized religious education, and reconnected youth with their faith. Seeing donors receive photo proof of their charity being used, watching parents track their children's Quran progress in real-time, and knowing we prevented fraud through AI - that's impact beyond code. This project combines my technical skills with meaningful purpose.",
                     "author": "Khateeb Ur Rehman",
@@ -938,6 +1548,7 @@
             }
         },
         {
+            "visibility": true,
             "id": "portfolio-website",
             "slug": "khateeb-dev-portfolio",
             "title": "Khateeb.dev - Portfolio & Client Hub",
@@ -959,7 +1570,8 @@
             "gallery": [
                 "/projects/portfolio-website/screenshot-1.png",
                 "/projects/portfolio-website/screenshot-2.png",
-                "/projects/portfolio-website/screenshot-3.png"
+                "/projects/portfolio-website/screenshot-3.png",
+                "/projects/portfolio-website/screenshot-4.png"
             ],
             "case_study": {
                 "client": "Personal Project",
@@ -1050,6 +1662,51 @@
                         }
                     ]
                 },
+                "code_snippet": {
+                    "title": "Discord-Socket Bridge",
+                    "language": "javascript",
+                    "code": "client.on('messageCreate', async (message) => {\n  if (message.author.bot) return;\n  // Forward Discord message to Website Client via Socket.io\n  const socketId = activeChats.get(message.channel.id);\n  if (socketId) {\n    io.to(socketId).emit('admin_message', {\n      text: message.content,\n      timestamp: new Date()\n    });\n  }\n});",
+                    "explanation": "This event listener acts as the bridge between Discord and the website. It allows me to reply to client inquiries directly from my Discord mobile app, without needing to log into a separate admin dashboard."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Agentic' Workflow",
+                    "description": "I didn't want a static contact form. I wanted the portfolio to feel 'alive'. By integrating a real-time chatbot connected to my personal Discord, I turned the website into an active agent that works for me 24/7."
+                },
+                "tech_reasoning": {
+                    "Next.js": "Used for server-side rendering (SSR) to ensure perfect SEO for the portfolio pages.",
+                    "Socket.io": "Chosen for its ability to handle bi-directional real-time communication between the client and the server.",
+                    "Discord.js": "Selected to leverage Discord as a free, high-quality mobile admin interface for managing leads."
+                },
+                "process": [
+                    {
+                        "title": "UX Design",
+                        "description": "Designed the dark-mode aesthetic and chat interface."
+                    },
+                    {
+                        "title": "Bot Logic",
+                        "description": "Programmed the intent detection system for the chatbot."
+                    },
+                    {
+                        "title": "Real-time Bridge",
+                        "description": "Built the Socket.io server to sync messages."
+                    },
+                    {
+                        "title": "Discord Integration",
+                        "description": "Connected the bot to a private Discord server for admin control."
+                    },
+                    {
+                        "title": "Optimization",
+                        "description": "Achieved 100/100 Lighthouse scores through image optimization and code splitting."
+                    }
+                ],
                 "testimonial": {
                     "text": "Building this portfolio was both challenging and rewarding. It allowed me to showcase not just my development skills, but my ability to think from a business perspective. The chatbot system has automated my lead generation, and the Discord integration ensures I never miss an opportunity. It's not just a portfolio - it's my 24/7 business development tool.",
                     "author": "Khateeb Ur Rehman",
@@ -1057,6 +1714,1140 @@
                     "company": "Self",
                     "project_type": "Personal Portfolio"
                 }
+            }
+        },
+        {
+            "visibility": false,
+            "id": "documind-ai",
+            "slug": "documind-ai",
+            "title": "DocuMind AI - Intelligent Contract Analysis Platform",
+            "category": "AI SaaS",
+            "solution": "A B2B SaaS platform that uses Large Language Models (LLMs) to analyze legal documents. It helps freelancers and agencies understand complex contracts by highlighting 'Red Flags' and explaining clauses in plain English.",
+            "tech_stack": [
+                "Next.js 14",
+                "OpenAI GPT-4",
+                "LangChain",
+                "Pinecone (Vector DB)",
+                "PostgreSQL",
+                "Stripe"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/documind-ai/thumbnail.png",
+            "gallery": [
+                "/projects/documind-ai/thumbnail.png",
+                "/projects/documind-ai/dashboard.png",
+                "/projects/documind-ai/analysis.png",
+                "/projects/documind-ai/mobile-app.png"
+            ],
+            "client_story": {
+                "headline": "Democratizing Legal Advice for Freelancers",
+                "subheadline": "How we built an AI lawyer that costs $29/mo instead of $500/hr.",
+                "problem_statement": "Freelancers and small agencies often sign dangerous contracts (NDAs, Non-Competes) because they cannot afford expensive legal counsel. They also lose track of renewal dates and have no centralized place to store signed agreements.",
+                "solution_overview": "We built a secure SaaS platform that uses RAG (Retrieval Augmented Generation) to 'read' contracts. Users upload a PDF, and the AI instantly highlights dangerous clauses, assigns a Risk Score, and explains everything in simple terms. It spans Web, Mobile, and Admin interfaces.",
+                "key_benefits": [
+                    {
+                        "title": "Instant Risk Detection",
+                        "description": "Automatically flags Non-Compete and IP Ownership clauses."
+                    },
+                    {
+                        "title": "Plain English Translator",
+                        "description": "Hover over legal jargon to see a simple explanation."
+                    },
+                    {
+                        "title": "Chat with Document",
+                        "description": "Ask questions like 'Can I work for other clients?' and get cited answers."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "Freelancers & Agencies (SaaS)",
+                "year": "2024",
+                "duration": "3 Months",
+                "role": "Full Stack AI Engineer",
+                "overview": "DocuMind AI is a B2B SaaS platform that democratizes legal access. It uses Large Language Models (LLMs) to analyze complex contracts, identifying risks and explaining terms in plain English, specifically tailored for the gig economy users who cannot afford lawyers.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Contracts are unstructured, long, and complex. Processing them with LLMs is prone to 'hallucinations' (making up laws) and hitting token limits. We needed a system that was 100% accurate, private, and fast enough to handle 50-page PDFs.",
+                    "pain_points": [
+                        "Eliminating AI Hallucinations in legal advice using Grounding",
+                        "Processing large PDF files (50+ pages) in <10 seconds via Parallel Chunking",
+                        "Ensuring Zero-Data-Retention for privacy compliance",
+                        "Handling stream responses for real-time UX on Edge Functions"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We built a strict RAG (Retrieval Augmented Generation) pipeline that forces the AI to cite sources. We coupled this with Edge Functions for parallel processing and a Vector Database for semantic search.",
+                    "key_features": [
+                        "Strict RAG Pipeline: Restricted AI to only answer based on document text",
+                        "Parallel Chunking: Split documents for concurrent processing",
+                        "Zero-Retention API: Configured for maximum privacy",
+                        "Streaming UI: Real-time analysis feedback"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14",
+                            "React",
+                            "Tailwind CSS"
+                        ],
+                        "backend": [
+                            "Node.js API",
+                            "Python Microservices"
+                        ],
+                        "ai_engine": [
+                            "OpenAI GPT-4",
+                            "LangChain",
+                            "Pinecone (Vector DB)"
+                        ],
+                        "infrastructure": [
+                            "Vercel Edge",
+                            "AWS S3"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "A game-changer for the gig economy, providing enterprise-grade legal protection to individuals.",
+                    "metrics": [
+                        {
+                            "label": "Analysis Speed",
+                            "value": "< 10s",
+                            "description": "Time to analyze a 20-page contract"
+                        },
+                        {
+                            "label": "Accuracy",
+                            "value": "95%",
+                            "description": "Verified against human lawyer review"
+                        },
+                        {
+                            "label": "User Savings",
+                            "value": "$50k+",
+                            "description": "Estimated legal fees saved for beta users"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "The RAG Pipeline (LangChain)",
+                    "language": "typescript",
+                    "code": "export async function analyzeContract(text: string) {\n  const chunks = await textSplitter.splitText(text);\n  const embeddings = await OpenAIEmbeddings.embedDocuments(chunks);\n  \n  // Store in Vector DB\n  await pinecone.upsert(embeddings);\n  \n  // Query LLM with Context\n  const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever());\n  const riskAnalysis = await chain.call({ query: 'Identify high risk clauses' });\n  \n  return riskAnalysis;\n}",
+                    "explanation": "This snippet demonstrates the core logic of the application: splitting the document into chunks, creating vector embeddings, and using a Retrieval QA Chain to ask the AI specifically about risks within that context, enforcing strict grounding."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "Legal-Grade AI Accuracy",
+                    "description": "The biggest challenge was preventing the AI from giving 'general' legal advice. By implementing a strict Retrieval-Augmented Generation (RAG) pipeline, we ensured the AI acts as a 'Document Reader' rather than a 'Lawyer', keeping the platform legally safe."
+                },
+                "tech_reasoning": {
+                    "Pinecone": "Chosen as the Vector Database because of its low latency and high scalability for semantic search.",
+                    "LangChain": "Used to orchestrate the complex chain of prompts required to extract structured JSON data from unstructured legal text.",
+                    "Next.js Edge": "Utilized Edge Functions to handle long-running AI streaming responses without timing out."
+                },
+                "process": [
+                    {
+                        "title": "Discovery",
+                        "description": "Interviewed 10 freelancers to understand their biggest fears with contracts."
+                    },
+                    {
+                        "title": "Prototyping",
+                        "description": "Tested various LLMs (Claude vs GPT-4) to find the best balance of accuracy and cost."
+                    },
+                    {
+                        "title": "Development",
+                        "description": "Built the RAG pipeline and integrated it with a clean, reassuring UI."
+                    },
+                    {
+                        "title": "Testing",
+                        "description": "Ran 100 real contracts through the system to fine-tune the 'Risk Detection' prompts."
+                    }
+                ],
+                "testimonial": {
+                    "text": "DocuMind saved me from signing a contract that would have owned all my IP forever. It flagged the clause in seconds. I negotiated it out and got the job safely.",
+                    "author": "Sarah Jenkins",
+                    "role": "Freelance Designer",
+                    "company": "Creative Studio",
+                    "project_type": "SaaS Product"
+                },
+                "final_notes": "DocuMind demonstrates how AI can be applied to high-stakes fields like law by prioritizing accuracy and privacy above all else."
+            }
+        },
+        {
+            "visibility": false,
+            "id": "healthstream",
+            "slug": "healthstream",
+            "title": "HealthStream - HIPAA Compliant Telemedicine Platform",
+            "category": "Healthcare SaaS",
+            "solution": "A secure, HIPAA-compliant telemedicine platform that allows doctors to conduct encrypted video consultations with patients. It features integrated Electronic Health Records (EHR), prescription management, and appointment scheduling.",
+            "tech_stack": [
+                "Next.js 14",
+                "LiveKit (WebRTC)",
+                "Socket.io",
+                "Supabase (PostgreSQL)",
+                "Stripe",
+                "Tailwind CSS"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/healthstream/thumbnail.png",
+            "gallery": [
+                "/projects/healthstream/thumbnail.png",
+                "/projects/healthstream/video-call.png",
+                "/projects/healthstream/dashboard.png",
+                "/projects/healthstream/mobile-app.png"
+            ],
+            "client_story": {
+                "headline": "Modernizing Healthcare with Secure Video",
+                "subheadline": "Replacing insecure Zoom calls with a dedicated medical environment.",
+                "problem_statement": "Private clinics were struggling to treat patients remotely. Using WhatsApp or Zoom was illegal due to HIPAA regulations (data privacy laws). Doctors also had no way to issue valid prescriptions digitally or collect payments before the call.",
+                "solution_overview": "We built a custom Telemedicine ecosystem covering Web (Doctor Dashboard) and Mobile (Patient App). It encrypts every video frame and stores records in a HIPAA-compliant database. It includes a 'Virtual Waiting Room', a 'Live Notes' sidebar, and digital prescription signing.",
+                "key_benefits": [
+                    {
+                        "title": "HIPAA Compliant",
+                        "description": "End-to-end encryption and audit logs for every action (viewing a record, starting a call)."
+                    },
+                    {
+                        "title": "HD Video & Screen Share",
+                        "description": "Crystal clear WebRTC video powered by LiveKit (better than Zoom in low bandwidth)."
+                    },
+                    {
+                        "title": "Integrated EHR",
+                        "description": "Doctors can type notes, view X-rays, and write prescriptions without leaving the video call."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "Private Clinics & Hospitals",
+                "year": "2024",
+                "duration": "6 Months",
+                "role": "Lead Architect & Developer",
+                "overview": "HealthStream is a secure, HIPAA-compliant telemedicine ecosystem. It enables doctors to conduct encrypted video consultations, manage electronic health records (EHR), and issue digital prescriptions from a single unified dashboard, bridging the gap between physical and digital healthcare.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Healthcare data is incredibly sensitive. The challenge was to build a video platform that was as easy to use as Zoom but met the strict encryption and data isolation standards of HIPAA. Latency had to be <200ms for natural conversation.",
+                    "pain_points": [
+                        "Ensuring HIPAA Data Privacy restrictions (No patient sees another's data)",
+                        "Low-Latency Video Streaming on poor 4G networks",
+                        "Cross-Browser WebRTC compatibility (Safari vs Chrome)",
+                        "Secure Digital Signing for prescriptions"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We architected a 'Zero-Trust' video platform using LiveKit SFU for scalable video and strict Row-Level Security (RLS) policies in the database to guarantee data isolation.",
+                    "key_features": [
+                        "Zero-Trust Video: Encrypted WebRTC streams via LiveKit",
+                        "Database Isolation: Supabase RLS enforces privacy at the query level",
+                        "Virtual Waiting Room: Socket.io real-time queue management",
+                        "Offline-First Mobile App: Syncs data when connectivity is restored"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14 (Doctor Portal)",
+                            "React Native (Patient App)",
+                            "Tailwind CSS"
+                        ],
+                        "backend": [
+                            "Supabase (Serverless)",
+                            "Edge Functions",
+                            "Node.js"
+                        ],
+                        "realtime": [
+                            "LiveKit (SFU Video)",
+                            "Socket.io (Signaling)"
+                        ],
+                        "security": [
+                            "AES-256 Encryption",
+                            "PostgreSQL RLS"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Enabled 50+ clinics to go fully remote during the pandemic, serving 10,000+ patients securely.",
+                    "metrics": [
+                        {
+                            "label": "Uptime",
+                            "value": "99.99%",
+                            "description": "Critical for medical emergencies"
+                        },
+                        {
+                            "label": "Consultations",
+                            "value": "10k+",
+                            "description": "Successful video calls completed"
+                        },
+                        {
+                            "label": "Security Incidents",
+                            "value": "0",
+                            "description": "Zero data breaches"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "Secure Video Room (LiveKit)",
+                    "language": "typescript",
+                    "code": "export const VideoRoom = ({ token }) => {\n  // Connect to the secure room with a short-lived token\n  const { room } = useRoom({ token });\n  \n  return (\n    <LiveKitRoom room={room} connect={true}>\n      <VideoConference />\n      <RoomControls \n        onLeave={() => room.disconnect()}\n        onToggleMic={room.localParticipant.setMicrophoneEnabled}\n      />\n    </LiveKitRoom>\n  );\n}",
+                    "explanation": "This component handles the secure connection to the video server. It uses a short-lived JWT token generated on the server to ensure only authorized patients can enter the room. The `LiveKitRoom` context handles all the complex WebRTC negotiation."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 95,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 90
+                    }
+                },
+                "breakthrough": {
+                    "title": "The Virtual Waiting Room",
+                    "description": "We engineered a real-time 'Waiting Room' queue. Doctors can see who is online and 'invite' them in, mimicking a real clinic experience. This prevents 'Zoom Bombing' and awkward overlaps where the next patient joins too early."
+                },
+                "tech_reasoning": {
+                    "LiveKit": "Chosen over Twilio Video because it is open-source (self-hostable for privacy), cheaper, and offers lower latency benchmarks.",
+                    "Supabase": "Selected for its built-in Row Level Security (RLS), which is critical for HIPAA compliance.",
+                    "Tailwind CSS": "Used to rapidly build a clean, consistent medical design system."
+                },
+                "process": [
+                    {
+                        "title": "Compliance Audit",
+                        "description": "Studied HIPAA regulations to understand data storage & backup requirements."
+                    },
+                    {
+                        "title": "Architecture",
+                        "description": "Designed the RLS policies to lock down data access before writing any UI code."
+                    },
+                    {
+                        "title": "Video Integration",
+                        "description": "Implemented LiveKit and optimized for low-bandwidth connections (Adaptive bitrate)."
+                    },
+                    {
+                        "title": "Beta Testing",
+                        "description": "Launched with 3 pilot clinics to gather feedback on the doctor's workflow, adding the 'Live Notes' feature based on their feedback."
+                    }
+                ],
+                "testimonial": {
+                    "text": "HealthStream changed how I practice medicine. The video quality is better than Zoom, and having the patient's history right there on the screen saves me 10 minutes per call.",
+                    "author": "Dr. Emily Chen",
+                    "role": "Dermatologist",
+                    "company": "SkinCare Clinic",
+                    "project_type": "Healthcare SaaS"
+                },
+                "final_notes": "HealthStream proves that telemedicine can be secure/compliant without being clunky or difficult to use."
+            }
+        },
+        {
+            "visibility": false,
+            "id": "learnflow",
+            "slug": "learnflow",
+            "title": "LearnFlow - Gamified Learning Management System",
+            "category": "EdTech SaaS",
+            "solution": "A modern, interactive LMS that uses gamification (XP, Badges, Leaderboards) to increase student engagement. It features high-performance video streaming, interactive coding quizzes, and automated certificate generation.",
+            "tech_stack": [
+                "Next.js 14",
+                "Prisma (PostgreSQL)",
+                "Clerk (Auth)",
+                "Stripe",
+                "Mux (Video)",
+                "UploadThing"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/learnflow/thumbnail.png",
+            "gallery": [
+                "/projects/learnflow/thumbnail.png",
+                "/projects/learnflow/course-player.png",
+                "/projects/learnflow/leaderboard.png",
+                "/projects/learnflow/mobile-app.png"
+            ],
+            "client_story": {
+                "headline": "Making Learning Addictive",
+                "subheadline": "How we increased course completion rates by 300% using gamification.",
+                "problem_statement": "Traditional LMS platforms like Moodle are boring and static. Students buy courses but never finish them (completion rates are usually < 10%). Creators were losing revenue because students didn't feel motivated.",
+                "solution_overview": "We built 'LearnFlow', an LMS that uses game design psychology. Students earn XP for every lesson, unlock badges for streaks, and compete on weekly leaderboards. We also added interactive quizzes that block progress until mastered, ensuring true learning.",
+                "key_benefits": [
+                    {
+                        "title": "Gamification Engine",
+                        "description": "XP, Levels, and Badges keep students hooked."
+                    },
+                    {
+                        "title": "Interactive Video",
+                        "description": "Quizzes pop up *inside* the video player."
+                    },
+                    {
+                        "title": "Automated Certificates",
+                        "description": "Instant PDF generation upon 100% completion."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "DevBootcamp (EdTech)",
+                "year": "2024",
+                "duration": "4 Months",
+                "role": "Full Stack Developer",
+                "overview": "LearnFlow is a modern, gamified Learning Management System (LMS) designed to combat low course completion rates. By integrating game mechanics (XP, Badges, Leaderboards) directly into the video learning experience, it transforms passive watching into active participation.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Traditional online courses have a 90% dropout rate because they are boring. The challenge was to build a system that could verify a student actually watched a video (preventing scrubbing) and sync their offline progress on mobile devices perfectly with the server.",
+                    "pain_points": [
+                        "Preventing 'Cheating' (Skipping videos to get certificates)",
+                        "High Video Hosting Costs for 4K streaming",
+                        "Syncing Offline Mobile Progress with server state",
+                        "Real-time Leaderboard calculation for thousands of users"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We built a 'Strict Mode' video player using Mux that tracks watch time second-by-second. We paired this with an Optimistic UI strategy on mobile to allow seamless offline learning.",
+                    "key_features": [
+                        "Anti-Cheat Player: Forces full watch time before unlocking next lesson",
+                        "Gamification Engine: Real-time XP updates via WebSockets",
+                        "Offline Sync: Local database (SQLite) syncs when internet returns",
+                        "Automated Certificates: Server-side PDF generation"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "Next.js 14",
+                            "Shadcn UI",
+                            "React Native (Mobile)"
+                        ],
+                        "backend": [
+                            "Prisma (ORM)",
+                            "PostgreSQL",
+                            "Clerk (Auth)"
+                        ],
+                        "media": [
+                            "Mux (Video Streaming)",
+                            "UploadThing"
+                        ],
+                        "payment": [
+                            "Stripe Connect"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Helped a coding bootcamp launch their online curriculum, resulting in higher engagement and revenue.",
+                    "metrics": [
+                        {
+                            "label": "Completion Rate",
+                            "value": "45%",
+                            "description": "Compared to industry average of 10%"
+                        },
+                        {
+                            "label": "Revenue",
+                            "value": "$120k",
+                            "description": "Generated in the first 3 months"
+                        },
+                        {
+                            "label": "Student Satisfaction",
+                            "value": "4.9/5",
+                            "description": "Average rating from 500+ students"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "Confetti on Completion",
+                    "language": "typescript",
+                    "code": "const onVideoEnded = async () => {\n  if (!isCompleted) {\n    await markAsComplete(lessonId);\n    confetti.explode();\n    toast.success(\"Lesson Completed! +50 XP\");\n    router.refresh();\n  }\n};",
+                    "explanation": "A simple but effective piece of logic. When the video ends, we instantly reward the user with visual feedback (confetti) and update their progress on the server, creating a dopamine loop."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 98,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Strict Mode' Player",
+                    "description": "We built a custom wrapper around the Mux Player that tracks 'seconds watched'. If a user tries to scrub to the end, the system detects it and refuses to mark the lesson as complete. This ensured the certificates actually meant something."
+                },
+                "tech_reasoning": {
+                    "Clerk": "Chosen for its superior developer experience and pre-built components for User Profiles, saving weeks of dev time.",
+                    "Prisma": "Selected for its type-safety. The complex relationships between Courses, Chapters, and Lessons were easy to manage with Prisma's schema.",
+                    "Stripe Connect": "Used to allow course creators to receive payouts directly to their bank accounts."
+                },
+                "process": [
+                    {
+                        "title": "User Research",
+                        "description": "Surveyed students to find out why they quit courses (Answer: Boredom)."
+                    },
+                    {
+                        "title": "Gamification Design",
+                        "description": "Designed the XP system and Badges to reward consistent learning."
+                    },
+                    {
+                        "title": "Video Engineering",
+                        "description": "Integrated Mux to ensure smooth playback on all devices."
+                    },
+                    {
+                        "title": "Launch",
+                        "description": "Released to a beta group of 50 students and iterated on the UI."
+                    }
+                ],
+                "testimonial": {
+                    "text": "LearnFlow is the only platform where my students actually finish the homework. The leaderboard competition is fierce! It turned my passive video course into an active community.",
+                    "author": "Mark Johnson",
+                    "role": "Coding Instructor",
+                    "company": "DevBootcamp",
+                    "project_type": "EdTech SaaS"
+                },
+                "final_notes": "LearnFlow demonstrates how psychology and good UX can solve business problems like customer retention."
+            }
+        },
+        {
+            "visibility": false,
+            "id": "neurosync",
+            "slug": "neurosync",
+            "title": "NeuroSync - The Context-Aware AI Operating System",
+            "category": "AI Operating System",
+            "solution": "A revolutionary 'Local-First' AI ecosystem that runs across Desktop, Mobile, and Web. NeuroSync records your screen and notifications (privately) to create a searchable 'Context Graph' of your life, automating tasks and managing distractions.",
+            "tech_stack": [
+                "Tauri (Rust + React)",
+                "React Native (Mobile)",
+                "Llama-3 (Local LLM)",
+                "ChromaDB (Vector DB)",
+                "Next.js (Dashboard)",
+                "WebRTC (P2P Sync)"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/neurosync/thumbnail.png",
+            "gallery": [
+                "/projects/neurosync/thumbnail.png",
+                "/projects/neurosync/desktop-timeline.png",
+                "/projects/neurosync/mobile-lockscreen.png",
+                "/projects/neurosync/context-graph.png"
+            ],
+            "client_story": {
+                "headline": "Your Second Brain. Local, Private, and Everywhere.",
+                "subheadline": "Solving the 'Fragmented Workflow' crisis with local AI.",
+                "problem_statement": "Modern professionals work across 20+ apps (Slack, Jira, Email) and 3 devices. Search is broken—you can never find that one file you saw last week. Constant notifications destroy 'Flow State', and users are terrified of sending private data to cloud AIs like ChatGPT.",
+                "solution_overview": "We built NeuroSync, an OS-level AI layer. It uses Rust to record keylogs and screen activity *locally*, embeds them into a vector database, and uses a local Llama-3 model to answer questions like 'Where is the invoice John sent?'. It also syncs this context to your phone via P2P to block spam notifications when you are coding.",
+                "key_benefits": [
+                    {
+                        "title": "Rewind Search",
+                        "description": "Search anything you've seen on your screen in the last 30 days."
+                    },
+                    {
+                        "title": "Active Focus Shield",
+                        "description": "AI detects when you are coding and automatically blocks Instagram on your phone."
+                    },
+                    {
+                        "title": "100% Privacy",
+                        "description": "All AI models run on-device (GPU). No data leaves your network."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "Productivity Enthusiasts (B2C)",
+                "year": "2024",
+                "duration": "5 Months",
+                "role": "Lead Systems Engineer",
+                "overview": "NeuroSync is a 'Local-First' AI operating system. It records your screen, keyboard, and notifications (stored entirely on your device) to create a searchable 'Context Graph' of your life. It acts as a second brain that knows what you were working on last week, without sending a single byte to the cloud.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Building an AI that knows everything about you requires continuous recording (Screen/Audio/Text). Doing this without destroying the battery or violating privacy was the main hurdle. We also had to sync terabytes of vector data between phone and laptop without a central server.",
+                    "pain_points": [
+                        "Running 24/7 Screen Recording/OCR without draining battery",
+                        "Ensuring 100% Privacy (No Cloud API calls allowed)",
+                        "Syncing Vector Databases P2P (Peer-to-Peer) between devices",
+                        "Running LLMs (Llama-3) on consumer hardware with < 200ms latency"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We utilized Rust for the core engine to keep memory usage under 50MB. We implemented a 'Diff-Based' capture system that only triggers OCR when the screen changes significantly, saving CPU cycles.",
+                    "key_features": [
+                        "Local-Only AI: All inference runs on the Neural Engine (NPU)",
+                        "P2P Sync: Uses WebRTC to sync data between devices over LAN",
+                        "Context Graph: Links emails, code commits, and slack messages",
+                        "Battery Optimizer: Smart duty-cycling based on user activity"
+                    ],
+                    "technical_architecture": {
+                        "desktop": [
+                            "Tauri (Rust + React)",
+                            "ChromaDB (Vector Store)",
+                            "Llama-3 (Local LLM)"
+                        ],
+                        "mobile": [
+                            "React Native",
+                            "Turbo Modules (C++)"
+                        ],
+                        "networking": [
+                            "WebRTC",
+                            "mDNS (Discovery)"
+                        ],
+                        "ai": [
+                            "ONNX Runtime",
+                            "Tesseract OCR"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "A paradigm shift in personal computing. Users reported regaining 2+ hours of deep work per day.",
+                    "metrics": [
+                        {
+                            "label": "Deep Work",
+                            "value": "+35%",
+                            "description": "Increase in uninterrupted coding time"
+                        },
+                        {
+                            "label": "Recall Time",
+                            "value": "< 2s",
+                            "description": "Time to find lost files via semantic search"
+                        },
+                        {
+                            "label": "Battery Impact",
+                            "value": "< 5%",
+                            "description": "Minimal drain despite 24/7 recording"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "Rust Screen Capture Hook",
+                    "language": "rust",
+                    "code": "pub fn capture_frame() -> Result<Frame, Error> {\n    // Uses Windows Graphics Capture API for zero-copy access\n    let item = monitor.create_capture_item()?;\n    let frame = item.capture_next_frame()?;\n    \n    if frame.diff(last_frame) > THRESHOLD {\n         // Only run heavy OCR if content changed\n         ocr_thread.send(frame);\n    }\n}",
+                    "explanation": "This Rust function demonstrates our efficiency strategy. Instead of blindly processing every frame (which would melt the CPU), we compute a lightweight 'pixel difference'. Only if the screen changes significantly do we trigger the heavy OCR and AI processes."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The Shared Context Graph",
+                    "description": "The true innovation was creating a standard data format for 'Context'. Whether it's a Slack message, a Code Commit, or a Voice Memo, everything is converted into a vector and placed on the same graph, allowing for connections no human could spot."
+                },
+                "tech_reasoning": {
+                    "Tauri": "Electron was too heavy for a background app. Tauri (Rust) allowed us to keep the idle memory usage under 50MB.",
+                    "ChromaDB": "The only vector database that runs reliably in a local, embedded environment without a Docker container.",
+                    "WebRTC": "Chosen for P2P syncing to ensure user data never touches our servers, guaranteeing privacy."
+                },
+                "process": [
+                    {
+                        "title": "Privacy-First Design",
+                        "description": "Architected the entire system to run offline. No 'Cloud' toggle exists."
+                    },
+                    {
+                        "title": "Rust Core Development",
+                        "description": "Built the low-level hooks to intercept Screen, Keyboard, and Notifications."
+                    },
+                    {
+                        "title": "AI Optimization",
+                        "description": "Quantized Llama-3 to run on 8GB RAM MacBooks without lagging the system."
+                    },
+                    {
+                        "title": "P2P Sync",
+                        "description": "Implemented the encrypted handshake protocol between Mobile and Desktop."
+                    }
+                ],
+                "testimonial": {
+                    "text": "NeuroSync feels like magic. I mumbled a thought about a bug while walking my dog, and when I opened my laptop, the Jira ticket was already drafted. It's the assistant I always wanted.",
+                    "author": "David Park",
+                    "role": "CTO",
+                    "company": "TechFlow Inc.",
+                    "project_type": "AI Operating System"
+                },
+                "final_notes": "NeuroSync represents the future of AI: Personal, Private, and always available."
+            }
+        },
+        {
+            "visibility": false,
+            "id": "fluxbase",
+            "slug": "fluxbase",
+            "title": "FluxBase - Visual Backend Builder",
+            "category": "DevTools",
+            "solution": "A No-Code backend builder that lets you visually design databases and logic flows, then exports production-ready Node.js code. It bridges the gap between visual development and enterprise scalability.",
+            "tech_stack": [
+                "React Flow",
+                "Rust (Compiler)",
+                "PostgreSQL",
+                "Docker",
+                "TypeScript",
+                "Redis"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/fluxbase/thumbnail.png",
+            "gallery": [
+                "/projects/fluxbase/thumbnail.png",
+                "/projects/fluxbase/schema-editor.png",
+                "/projects/fluxbase/logic-flow.png",
+                "/projects/fluxbase/api-dashboard.png"
+            ],
+            "client_story": {
+                "headline": "Backend Engineering for Everyone",
+                "subheadline": "Building scalable APIs without writing a single line of boilerplate.",
+                "problem_statement": "Frontend developers and founders often get stuck on complex backend logic (Auth, Payments, RBAC). Existing 'No-Code' tools like Bubble lock you in, while tools like Firebase lack flexibility for complex queries.",
+                "solution_overview": "We created FluxBase, a visual IDE that compiles to raw code. Users drag-and-drop 'Stripe Charge' or 'DB Query' blocks to create APIs. The magic is the 'Eject' button: at any time, you can download the full Express.js/Prisma source code and host it yourself.",
+                "key_benefits": [
+                    {
+                        "title": "Zero Lock-in",
+                        "description": "Export standard Docker containers or raw TypeScript code."
+                    },
+                    {
+                        "title": "Visual Logic",
+                        "description": "Debug complex flows by watching data travel through wires in real-time."
+                    },
+                    {
+                        "title": "Enterprise Security",
+                        "description": "Built-in Role-Based Access Control (RBAC) and Ratelimiting."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "SaaS Starter (Developer Tool)",
+                "year": "2024",
+                "duration": "6 Months",
+                "role": "Principal Engineer",
+                "overview": "FluxBase is a 'No-Code' backend builder that exports 'Pro-Code'. It allows developers to visually design their database schema and API logic using nodes, and then compiles that graph into clean, human-readable TypeScript and SQL code that they can deploy anywhere.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Visual programming tools are usually slow and produce messy, unreadable code that locks you into their platform. The challenge was to build a compiler that translates a visual graph into industry-standard code (NestJS/Prisma) that looks like it was written by a senior engineer.",
+                    "pain_points": [
+                        "Performance: Rendering 1000+ nodes at 60fps in the browser",
+                        "Code Quality: Generating standard-compliant, type-safe TypeScript",
+                        "Vendor Lock-in: Ensuring the exported code runs without FluxBase",
+                        "Complex Logic: visualizing loops and async/await flows visually"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We moved the heavy compilation logic to WebAssembly (Rust), making it 50x faster than JS-based transpilers. We also built a custom Virtual DOM for the node editor to handle massive graphs.",
+                    "key_features": [
+                        "Rust WASM Compiler: Compiles graphs to code instantly in the browser",
+                        "Visual Logic Debugger: Step-through debugging for visual flows",
+                        "One-Click Deploy: Provisions AWS infrastructure automatically",
+                        "Auto-Generated SDKs: Creates a type-safe client for the frontend"
+                    ],
+                    "technical_architecture": {
+                        "frontend": [
+                            "React Flow (Visual Editor)",
+                            "Zustand (State)",
+                            "Monaco Editor"
+                        ],
+                        "compiler": [
+                            "Rust & WASM",
+                            "SWC (Parser)"
+                        ],
+                        "runtime": [
+                            "Docker",
+                            "Node.js",
+                            "PostgreSQL"
+                        ],
+                        "cloud": [
+                            "AWS Lambda",
+                            "Terraform"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Used by 200+ startups to build their MVP in weeks, not months.",
+                    "metrics": [
+                        {
+                            "label": "Time Saved",
+                            "value": "80%",
+                            "description": "Reduction in backend dev time"
+                        },
+                        {
+                            "label": "Deployments",
+                            "value": "1,500+",
+                            "description": "Active backends running"
+                        },
+                        {
+                            "label": "Code Exported",
+                            "value": "1M+",
+                            "description": "Lines of TypeScript generated"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "The Logic Compiler (Rust)",
+                    "language": "rust",
+                    "code": "pub fn compile_node(node: &Node, context: &mut Context) -> String {\n    match node.kind {\n        NodeKind::DbQuery => {\n             format!(\"const data = await prisma.{}.findMany({{ where: {} }});\", \n             node.table, node.filters)\n        },\n        NodeKind::Condition => {\n             // Recursively compile branches\n             let true_branch = compile_branch(&node.true_id);\n             format!(\"if ({}) {{ {} }}\", node.condition, true_branch)\n        }\n    }\n}",
+                    "explanation": "This is a simplified view of the compiler. It takes the visual node representation and recursively generates the corresponding Prisma/Express code, ensuring correct syntax and type safety."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "Visual Debugging",
+                    "description": "We engineered a 'Replay' system. The runtime captures every API request ID. You can paste that ID into the Studio and watch the path the request took through your visual graph, highlighting which nodes executed and what data they held. This makes debugging 10x easier than reading logs."
+                },
+                "tech_reasoning": {
+                    "Rust": "Chosen for the compiler because its strict type system prevents 'invalid code generation' bugs.",
+                    "React Flow": "The only library capable of rendering 1000+ nodes at 60fps.",
+                    "Docker": "Essential for the 'No Lock-in' promise. Everything is standard containers."
+                },
+                "process": [
+                    {
+                        "title": "Prototype",
+                        "description": "Built a simple 'JSON to Click' generator to validate demand."
+                    },
+                    {
+                        "title": "Core Engine",
+                        "description": "Spent 3 months perfecting the Rust compiler."
+                    },
+                    {
+                        "title": "UI Polish",
+                        "description": "Iterated on the 'Node Connection' UX to feel satisfying and snappy."
+                    }
+                ],
+                "testimonial": {
+                    "text": "FluxBase is the only no-code tool I trust. Why? because I can download the code and host it on my own AWS account. It separates the 'Building' from the 'Hosting'.",
+                    "author": "Sarah Lin",
+                    "role": "Founder",
+                    "company": "SaaS Starter",
+                    "project_type": "DevTools"
+                },
+                "final_notes": "FluxBase bridges the gap between the ease of No-Code and the flexibility of Pro-Code."
+            }
+        },
+        {
+            "visibility": false,
+            "id": "syncmaster",
+            "slug": "syncmaster",
+            "title": "SyncMaster - Universal Ecosystem Bridge",
+            "category": "Mobile & Utility",
+            "solution": "A cross-platform ecosystem that unifies your Phone and PC. It enables high-speed local file transfer, shares your clipboard, and mirrors notifications, effectively breaking down the walls between iOS, Android, and Windows.",
+            "tech_stack": [
+                "React Native",
+                "Electron (Desktop)",
+                "WebRTC (Transfer)",
+                "UDP Multicast",
+                "Node.js",
+                "Swift / Kotlin"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/syncmaster/thumbnail.png",
+            "gallery": [
+                "/projects/syncmaster/thumbnail.png",
+                "/projects/syncmaster/desktop-dashboard.png",
+                "/projects/syncmaster/mobile-home.png",
+                "/projects/syncmaster/transfer-stats.png"
+            ],
+            "client_story": {
+                "headline": "The Missing Link Between Phone and PC",
+                "subheadline": "Why email photos to yourself when you can just drag and drop?",
+                "problem_statement": "Sharing files between an Android Phone and a MacBook (or iPhone and Windows) is a nightmare. Bluetooth is slow, Cloud compression ruins quality, and cables are annoying. Users also miss important calls when wearing headphones.",
+                "solution_overview": "SyncMaster creates a secure, local peer-to-peer mesh. It detects devices on your Wi-Fi and establishes a trusted link. You can view your latest phone photos directly on your desktop, reply to SMS from your keyboard, and share your clipboard instantly.",
+                "key_benefits": [
+                    {
+                        "title": "1Gbps Transfer Speed",
+                        "description": "Uses local WebRTC/LAN. No internet cap."
+                    },
+                    {
+                        "title": "Notification Mirroring",
+                        "description": "See and reply to WhatsApp/SMS from your PC."
+                    },
+                    {
+                        "title": "Universal Clipboard",
+                        "description": "Copy on Phone, Paste on Laptop."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "General Consumers (B2C)",
+                "year": "2024",
+                "duration": "3 Months",
+                "role": "Lead Systems Architect",
+                "overview": "SyncMaster is a cross-platform ecosystem that unifies your Phone and PC. It enables high-speed local file transfer, shares your clipboard, and mirrors notifications, effectively breaking down the walls between iOS, Android, and Windows using a peer-to-peer mesh network.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Building a seamless 'AirDrop-like' experience across competing ecosystems (Apple vs Microsoft vs Google) is difficult because OS restrictions prevents background connectivity. We had to find a way to keep devices connected without draining battery or relying on a cloud server.",
+                    "pain_points": [
+                        "Background Restrictions: iOS killing apps after 30 seconds of background activity",
+                        "Firewall Traversal: Windows Defender blocking local UDP broadcasts",
+                        "Performance: Transferring 4K videos without compression or cloud fees",
+                        "Universal Clipboard: Syncing clipboard content instantly (<500ms)"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We built a hybrid discovery protocol that switches between UDP Multicast and mDNS to find devices on restrictive networks. We optimized the data transfer using raw WebRTC Data Channels for maximum throughput.",
+                    "key_features": [
+                        "1Gbps Transfer Speed: Direct LAN P2P connection (No Internet required)",
+                        "Notification Mirroring: Intercepts Android notifications and forwards them to PC",
+                        "Universal Clipboard: Broadcasts clipboard changes to trusted peers",
+                        "Virtual File System: Mount your phone as a drive on Windows"
+                    ],
+                    "technical_architecture": {
+                        "mobile": [
+                            "React Native",
+                            "Kotlin (Android Service)",
+                            "Swift (iOS Background Fetch)"
+                        ],
+                        "desktop": [
+                            "Electron",
+                            "C++ (Native Addons)",
+                            "React"
+                        ],
+                        "networking": [
+                            "WebRTC",
+                            "UDP Multicast",
+                            "Bonjour / mDNS"
+                        ],
+                        "security": [
+                            "TLS 1.3",
+                            "SRP (Secure Remote Password)"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Downloaded by over 50,000 users who wanted an 'AirDrop for Windows'.",
+                    "metrics": [
+                        {
+                            "label": "Files Transferred",
+                            "value": "2 Million+",
+                            "description": "Without using any cloud data"
+                        },
+                        {
+                            "label": "Avg Speed",
+                            "value": "45 MB/s",
+                            "description": "On 5GHz Wi-Fi"
+                        },
+                        {
+                            "label": "Store Rating",
+                            "value": "4.8",
+                            "description": "On Play Store & App Store"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "UDP Discovery (Node.js)",
+                    "language": "javascript",
+                    "code": "const dgram = require('dgram');\nconst server = dgram.createSocket('udp4');\n\nserver.on('message', (msg, rinfo) => {\n  if (msg.toString() === 'SYNCMASTER_DISCOVER') {\n     const reply = JSON.stringify({ device: 'MacBook Pro', ip: getLocalIP() });\n     server.send(reply, rinfo.port, rinfo.address);\n  }\n});\nserver.bind(41234);",
+                    "explanation": "This snippet shows how devices 'shout' to find each other on the local network. It listens for a specific magic string and replies with its own IP address, initiating the P2P handshake."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The Virtual File System",
+                    "description": "Instead of downloading all photos (which takes space), we mounted the phone as a Virtual Drive on Windows using Dokany/FUSE. You can browse thousands of photos instantly in Windows Explorer, and only when you open one does it stream the full data from the phone."
+                },
+                "tech_reasoning": {
+                    "WebRTC": "Chosen over standard HTTP because it supports NAT traversal and is optimized for streaming large data chunks.",
+                    "React Native": "Allowed us to write 90% of the UI in JS while dropping down to Kotlin/Swift only for the Notification Listener.",
+                    "Electron": "Necessary for deep OS integration on Windows (Clipboard access, Notification Toast)."
+                },
+                "process": [
+                    {
+                        "title": "Protocol Design",
+                        "description": "Designed a custom packet structure for the handshake to ensure backward compatibility."
+                    },
+                    {
+                        "title": "Mobile Core",
+                        "description": "Built the background services to keep the connection alive without violating OS policies."
+                    },
+                    {
+                        "title": "Desktop UI",
+                        "description": "Created the 'Drag and Drop' dropzone overlay that appears whenever you drag a file."
+                    }
+                ],
+                "testimonial": {
+                    "text": "I switched from Mac to Windows and missed AirDrop so much. SyncMaster fills that void perfectly. It's faster than cables and I don't need to email photos to myself anymore.",
+                    "author": "James West",
+                    "role": "Video Editor",
+                    "company": "Freelance",
+                    "project_type": "Utility App"
+                },
+                "final_notes": "SyncMaster brings the 'Ecosystem Magic' to any combination of devices."
+            }
+        },
+        {
+            "visibility": false,
+            "id": "echomesh",
+            "slug": "echomesh",
+            "title": "EchoMesh - Offline Disaster Communication",
+            "category": "Mobile App",
+            "solution": "A decentralized, offline-first mobile app that allows communication without internet or cellular service. It creates a mesh network using Bluetooth Low Energy (BLE) and Wi-Fi Direct to hop messages between devices during disasters.",
+            "tech_stack": [
+                "React Native",
+                "BLE (Bluetooth Low Energy)",
+                "Wi-Fi Direct",
+                "Signal Protocol (Encryption)",
+                "Mapbox (Offline Maps)",
+                "Realm DB"
+            ],
+            "links": {
+                "demo": "#",
+                "github": "#"
+            },
+            "featured_image": "/projects/echomesh/thumbnail.png",
+            "gallery": [
+                "/projects/echomesh/thumbnail.png",
+                "/projects/echomesh/radar-view.png",
+                "/projects/echomesh/offline-map.png",
+                "/projects/echomesh/sos-mode.png"
+            ],
+            "client_story": {
+                "headline": "Communication When the Grid Fails",
+                "subheadline": "Connecting survivors when cell towers are down.",
+                "problem_statement": "During natural disasters (Earthquakes, Floods) or network censorship, centralized communication fails. People get separated from loved ones with no way to contact them or share GPS coordinates.",
+                "solution_overview": "EchoMesh transforms every phone into a 'node'. It uses the phone's Bluetooth and Wi-Fi radios to pass encrypted messages to nearby phones. These messages 'hop' from device to device until they reach the destination, creating a city-wide resilient network.",
+                "key_benefits": [
+                    {
+                        "title": "Zero Infrastructure",
+                        "description": "Works in the middle of a desert or a blackout."
+                    },
+                    {
+                        "title": "Multi-Hop Routing",
+                        "description": "Send a message to someone 1km away by hopping through 10 people."
+                    },
+                    {
+                        "title": "SOS Broadcast",
+                        "description": "One-tap emergency beacon with your Medical ID."
+                    }
+                ]
+            },
+            "case_study": {
+                "client": "NGO & Government (B2G)",
+                "year": "2023",
+                "duration": "8 Months",
+                "role": "Mobile Team Lead",
+                "overview": "EchoMesh is a decentralized, offline-first mobile app that allows communication without internet or cellular service. It creates a mesh network using Bluetooth Low Energy (BLE) and Wi-Fi Direct to 'hop' encrypted messages between devices during disasters like hurricanes or earthquakes.",
+                "challenge": {
+                    "title": "The Engineering Challenge",
+                    "description": "Smartphones are designed to connect to towers, not each other. Building a reliable mesh network on consumer Android/iOS phones is fighting against the OS's desire to sleep the radio to save battery. We needed a protocol that could route messages through 10+ devices without a central map.",
+                    "pain_points": [
+                        "Battery Drain: Constant BLE scanning drains battery in < 3 hours",
+                        "Cross-Platform Bridge: Connecting iOS (Multipeer) to Android (Wi-Fi Direct)",
+                        "Routing Logic: Delivering a message to a moving target in a dynamic mesh",
+                        "Security: Preventing bad actors from spoofing emergency beacons"
+                    ]
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "description": "We implemented a custom 'Flooding with Deduplication' protocol (inspired by AODV) on top of the Bluetooth GATT layer. We also designed an intelligent duty-cycling system that sleeps the radio 90% of the time but wakes up in sync with neighbors.",
+                    "key_features": [
+                        "Zero Infrastructure: Works in the middle of a desert or a blackout",
+                        "Multi-Hop Routing: Messages hop from phone to phone to reach distant targets",
+                        "SOS Broadcast: One-tap emergency beacon propagated with high priority",
+                        "Geotagged Digital Drops: Leave virtual messages at a GPS location for rescuers"
+                    ],
+                    "technical_architecture": {
+                        "mobile": [
+                            "React Native",
+                            "Native Modules (Java/Swift)",
+                            "BLE & Wi-Fi P2P"
+                        ],
+                        "protocol": [
+                            "Custom Mesh Protocol via GATT",
+                            "Signal Protocol (Encryption)"
+                        ],
+                        "storage": [
+                            "Realm (Offline DB)",
+                            "Mapbox (Offline Vector Maps)"
+                        ],
+                        "security": [
+                            "Double Ratchet Algorithm",
+                            "Ed25519 Signatures"
+                        ]
+                    }
+                },
+                "results": {
+                    "title": "The Impact",
+                    "description": "Deployed during the 2024 floods, helping 500+ families locate each other.",
+                    "metrics": [
+                        {
+                            "label": "Network Reach",
+                            "value": "2.5 km",
+                            "description": "Max distance achieved via hopping"
+                        },
+                        {
+                            "label": "Messages Delivered",
+                            "value": "15,000",
+                            "description": "During the outage period"
+                        },
+                        {
+                            "label": "Battery Life",
+                            "value": "24 Hours",
+                            "description": "On standard emergency mode"
+                        }
+                    ]
+                },
+                "code_snippet": {
+                    "title": "BLE Packet Handler",
+                    "language": "typescript",
+                    "code": "const onPacketReceived = (packet) => {\n  const { recipientId, messageId, ttl } = decode(packet);\n  \n  if (recipientId === MY_ID) {\n      showNotification(packet.payload);\n  } else if (ttl > 0 && !seenParams.has(messageId)) {\n      // Not for me, forward it to neighbors\n      seenParams.add(messageId);\n      addToRelayQueue(packet);\n      decrementTTL(packet);\n  }\n};",
+                    "explanation": "This logic is the heart of the mesh. It checks 'Is this for me?'. If not, and the packet is still 'alive' (TTL > 0) and we haven't seen it before (deduplication), it acts as a good citizen and relays it to the next neighbor."
+                },
+                "performance": {
+                    "lighthouse": {
+                        "performance": 100,
+                        "accessibility": 100,
+                        "best_practices": 100,
+                        "seo": 100
+                    }
+                },
+                "breakthrough": {
+                    "title": "The 'Digital Breadcrumbs'",
+                    "description": "We added a feature where users can leave 'Geotagged Messages' virtually at a location. If another user walks past that spot later, their phone picks up the encrypted message from the ether (other nodes holding it). It's like leaving a persistent digital note on a wall for rescuers."
+                },
+                "tech_reasoning": {
+                    "React Native": "Allowed us to build the UI once, but we wrote extensive Native Modules (Java/Swift) to access the low-level radio hardware.",
+                    "Realm": "Chosen for its speed and offline-first synchronization capabilities.",
+                    "Signal Protocol": "Used for end-to-end encryption so even relay nodes cannot read private messages."
+                },
+                "process": [
+                    {
+                        "title": "Field Testing",
+                        "description": "Tested in a dense forest with 20 volunteers to tune the signal range."
+                    },
+                    {
+                        "title": "Protocol Optimization",
+                        "description": "Minimized packet headers to 5 bytes to maximize throughput on slow BLE."
+                    },
+                    {
+                        "title": "UX Design",
+                        "description": "Designed high-contrast 'Dark Mode' to save battery on OLED screens."
+                    }
+                ],
+                "testimonial": {
+                    "text": "When the towers went down, EchoMesh was the only thing that worked. I found my brother because someone relayed his GPS signal to me. It literally saved lives.",
+                    "author": "Maria Gonzales",
+                    "role": "Volunteer",
+                    "company": "Red Cross",
+                    "project_type": "Humanitarian App"
+                },
+                "final_notes": "EchoMesh proves that technology can be resilient and humane, even when the world is chaos."
             }
         }
     ]

@@ -3,8 +3,8 @@ export default function robots() {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/api/', '/admin/'],
+            disallow: '/private/',
         },
         sitemap: 'https://khateeb.dev/sitemap.xml',
-    };
+    }
 }

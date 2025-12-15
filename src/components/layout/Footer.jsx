@@ -8,7 +8,7 @@ export function Footer() {
 
     return (
         <footer className="border-t bg-background text-foreground">
-            <div className="container px-4 py-12 md:px-8 md:py-16 max-w-screen-2xl">
+            <div className="container px-4 py-10 md:px-8 md:py-16 max-w-screen-2xl">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {/* Brand Column */}
                     <div className="space-y-4">
@@ -80,10 +80,11 @@ export function Footer() {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+                <div className="mt-12 border-t pt-5 text-center text-sm text-muted-foreground">
                     <p>{footer.copyright}</p>
                 </div>
             </div>
-        </footer>
+    
+        </footer >
     )
 }

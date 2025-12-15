@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { content } from "@/lib/content"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,6 +12,7 @@ import { Mail, MessageSquare, CheckCircle2, ArrowRight, ArrowLeft, UploadCloud }
 import { motion, AnimatePresence } from "framer-motion"
 
 export function ContactSection() {
+    const searchParams = useSearchParams()
     const { hero, form, direct_contact } = content.contact
     const [step, setStep] = useState(1)
     const [formData, setFormData] = useState({
@@ -19,12 +21,25 @@ export function ContactSection() {
         phone: "",
         service: "",
         budget: "",
+        subject: "",
         description: "",
-        file: null
+        files: [] // Changed from file to files array
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
 
+    useEffect(() => {
+        const subjectParam = searchParams.get("subject")
+        const bodyParam = searchParams.get("body")
+
+        if (subjectParam || bodyParam) {
+            setFormData(prev => ({
+                ...prev,
+                subject: subjectParam || prev.subject,
+                description: bodyParam || prev.description
+            }))
+        }
+    }, [searchParams])
     const handleInputChange = (e) => {
         const { id, value } = e.target
         setFormData(prev => ({ ...prev, [id]: value }))
@@ -41,18 +56,59 @@ export function ContactSection() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // Simulate API call
         try {
+            // Convert all files to base64 if exist
+            let filesData = []
+            if (formData.files && formData.files.length > 0) {
+                for (const file of formData.files) {
+                    const reader = new FileReader()
+                    const fileData = await new Promise((resolve, reject) => {
+                        reader.onload = () => resolve({
+                            data: reader.result,
+                            name: file.name,
+                            type: file.type
+                        })
+                        reader.onerror = reject
+                        reader.readAsDataURL(file)
+                    })
+                    filesData.push(fileData)
+                }
+            }
+
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    service: formData.service,
+                    budget: formData.budget,
+                    subject: formData.subject,
+                    description: formData.description,
+                    files: filesData // Send array of file objects
+                })
             })
+
             if (res.ok) {
-                setIsSuccess(true)
+                setIsSuccess(true);
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    service: "",
+                    budget: "",
+                    subject: "",
+                    description: "",
+                    files: []
+                })
+
+            } else {
+                throw new Error('Failed to send message')
             }
         } catch (error) {
             console.error(error)
+            alert('Failed to send message. Please try again or contact me directly via email.')
         } finally {
             setIsSubmitting(false)
         }
@@ -61,7 +117,7 @@ export function ContactSection() {
     if (isSuccess) {
         return (
             <section id="contact" className="w-full max-w-7xl mx-auto px-4 py-12 xs:py-16 md:px-8 overflow-hidden">
-                <div className="flex flex-col items-center justify-center text-center py-20 bg-card border rounded-2xl shadow-sm">
+                <div className="flex flex-col items-center justify-center text-center py-20 bg-card rounded-2xl shadow-sm">
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -120,6 +176,21 @@ export function ContactSection() {
 
                 {/* Right: Multi-step Form */}
                 <div className="rounded-xl border bg-card p-4 sm:p-8 shadow-sm relative overflow-hidden w-full">
+                    {/* Quote Detected Alert */}
+                    {(searchParams.get("subject") || searchParams.get("body")) && (
+                        <div className="mb-6 mt-3 p-4 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 rounded-lg flex items-start gap-3">
+                            <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 shrink-0 mt-0.5" />
+                            <div className="flex-1">
+                                <p className="text-sm font-semibold text-green-900 dark:text-green-300">
+                                    Quote Details Auto-filled
+                                </p>
+                                <p className="text-xs text-green-700 dark:text-green-400 mt-1">
+                                    We've pre-filled your project details from the calculator. Please review and complete the remaining fields.
+                                </p>
+                            </div>
+                        </div>
+                    )}
+
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <AnimatePresence mode="wait">
                             {step === 1 && (
@@ -203,17 +274,95 @@ export function ContactSection() {
                                     className="space-y-4"
                                 >
                                     <div className="space-y-2">
+                                        <Label htmlFor="subject">Subject</Label>
+                                        <Input id="subject" value={formData.subject} onChange={handleInputChange} placeholder="Project Inquiry" required className="w-full" />
+                                    </div>
+
+                                    <div className="space-y-2">
                                         <Label htmlFor="description">Project Details</Label>
                                         <Textarea id="description" value={formData.description} onChange={handleInputChange} placeholder="Tell me more about your project..." className="min-h-[120px] w-full" required />
                                     </div>
 
                                     <div className="space-y-2">
-                                        <Label>Attachments (Optional)</Label>
-                                        <div className="border-2 border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-muted/50 transition-colors cursor-pointer w-full">
-                                            <UploadCloud className="h-8 w-8 text-muted-foreground mb-2" />
-                                            <p className="text-sm text-muted-foreground">Click to upload or drag & drop</p>
-                                            <p className="text-xs text-muted-foreground mt-1">(PDF, DOCX, Images up to 5MB)</p>
-                                        </div>
+                                        <Label>Attachments (Optional - Max 3 files)</Label>
+                                        <input
+                                            type="file"
+                                            id="file-upload"
+                                            className="hidden"
+                                            multiple
+                                            accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                                            onChange={(e) => {
+                                                const newFiles = Array.from(e.target.files || [])
+                                                const validFiles = []
+
+                                                for (const file of newFiles) {
+                                                    if (file.size > 5 * 1024 * 1024) {
+                                                        alert(`${file.name} is too large. Max size is 5MB`)
+                                                        continue
+                                                    }
+                                                    validFiles.push(file)
+                                                }
+
+                                                if (formData.files.length + validFiles.length > 3) {
+                                                    alert("Maximum 3 files allowed")
+                                                    return
+                                                }
+
+                                                if (validFiles.length > 0) {
+                                                    setFormData(prev => ({
+                                                        ...prev,
+                                                        files: [...prev.files, ...validFiles]
+                                                    }))
+                                                }
+                                            }}
+                                        />
+
+                                        {/* Show uploaded files */}
+                                        {formData.files.length > 0 && (
+                                            <div className="space-y-2 mb-3">
+                                                {formData.files.map((file, index) => (
+                                                    <div key={index} className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 rounded-lg">
+                                                        <div className="flex items-center gap-2">
+                                                            <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+                                                            <div>
+                                                                <p className="text-sm font-medium">{file.name}</p>
+                                                                <p className="text-xs text-muted-foreground">
+                                                                    {(file.size / 1024).toFixed(0)} KB
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => {
+                                                                setFormData(prev => ({
+                                                                    ...prev,
+                                                                    files: prev.files.filter((_, i) => i !== index)
+                                                                }))
+                                                            }}
+                                                            className="text-red-600 hover:text-red-700 text-sm"
+                                                        >
+                                                            Remove
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {/* Upload area */}
+                                        {formData.files.length < 3 && (
+                                            <label
+                                                htmlFor="file-upload"
+                                                className="border-2 border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-muted/50 transition-colors cursor-pointer w-full block"
+                                            >
+                                                <UploadCloud className="h-8 w-8 text-muted-foreground mb-2" />
+                                                <p className="text-sm text-muted-foreground">
+                                                    {formData.files.length > 0 ? "Add more files" : "Click to upload or drag & drop"}
+                                                </p>
+                                                <p className="text-xs text-muted-foreground mt-1">
+                                                    (PDF, DOCX, Images up to 5MB - Max 3 files)
+                                                </p>
+                                            </label>
+                                        )}
                                     </div>
 
                                     <div className="flex gap-3 mt-4">

@@ -53,7 +53,21 @@ build_log.txt
 Thumbs.db
 Desktop.ini
  
-# Ignore all markdown files except README
+# Ignore all markdown files except README and Project Docs
 *.md
 !README.md
 !readme.md
+!SRS.md
+!PROMPTS.md
+!PROJECT_PROMPT.md
+!MARKETING_KIT.md
+!DEPLOYMENT_GUIDE.md
+!CHATBOT_TECHNICAL_DOCS.md
+!CHATBOT_INTEGRATION_GUIDE.md
+!fiverr/*.md
+!fiverr/*.md
+!upwork/*.md
+!fiverr/*.md
+!upwork/*.md
+!marketing/*.md
+!public/projects/**/*.md

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: khateeb-portfolio-backend
+    env: docker
+    plan: free
+    buildCommand: docker build -t backend .
+    startCommand: docker run -p 3001:3001 backend
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production

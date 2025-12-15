@@ -20,7 +20,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 <div className="grid gap-12 max-w-4xl mx-auto">
-                    {projects.map((project, index) => (
+                    {projects.filter(p => p.visibility === true).map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 20 }}
@@ -38,18 +38,18 @@ export default function CaseStudiesPage() {
                                         {project.category}
                                     </div>
                                     <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                                        {project.role}
+                                        {project.case_study?.role || "Developer"}
                                     </div>
                                     <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                                        {project.duration}
+                                        {project.case_study?.duration || "Ongoing"}
                                     </div>
                                 </div>
                                 <h2 className="text-2xl font-bold">{project.title}</h2>
                                 <p className="text-muted-foreground line-clamp-3">
-                                    {project.long_description}
+                                    {project.solution || project.long_description}
                                 </p>
                                 <Button asChild variant="link" className="px-0 text-primary">
-                                    <Link href={`/portfolio/${project.slug}`}>
+                                    <Link href={`/case-study/${project.slug}`}>
                                         Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
                                     </Link>
                                 </Button>

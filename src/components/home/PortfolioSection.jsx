@@ -7,8 +7,12 @@ import { ExternalLink, Github } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
-export function PortfolioSection() {
+export function PortfolioSection({ limit = null }) {
     const { hero, projects, categories } = content.portfolio
+
+    const displayedProjects = projects
+        .filter(p => p.visibility === true)
+        .slice(0, limit || projects.length)
 
     return (
         <section id="portfolio" className="bg-muted/30 py-24 xs:py-16 dark:bg-muted/10">
@@ -27,7 +31,7 @@ export function PortfolioSection() {
                 </div>
 
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project, index) => (
+                    {displayedProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -63,14 +67,14 @@ export function PortfolioSection() {
                                     ))}
                                 </div>
                                 <div className="flex gap-4">
-                                    <Button asChild variant="outline" size="sm" className="w-full">
-                                        <Link href={project.links.demo}>
-                                            <ExternalLink className="mr-2 h-4 w-4" /> Demo
+                                    <Button asChild size="sm" className="w-full">
+                                        <Link href={`/project/${project.slug}`}>
+                                            View Project
                                         </Link>
                                     </Button>
                                     <Button asChild variant="outline" size="sm" className="w-full">
-                                        <Link href={project.links.github}>
-                                            <Github className="mr-2 h-4 w-4" /> Code
+                                        <Link href={`/case-study/${project.slug}`}>
+                                            Case Study
                                         </Link>
                                     </Button>
                                 </div>
@@ -79,11 +83,13 @@ export function PortfolioSection() {
                     ))}
                 </div>
 
-                <div className="mt-12 text-center">
-                    <Button asChild size="lg">
-                        <Link href="/portfolio">{hero.cta}</Link>
-                    </Button>
-                </div>
+                {limit && (
+                    <div className="mt-12 text-center">
+                        <Button asChild size="lg">
+                            <Link href="/portfolio">{hero.cta}</Link>
+                        </Button>
+                    </div>
+                )}
             </div>
         </section>
     )

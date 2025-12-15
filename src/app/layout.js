@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SafeAdContainer } from "@/components/ads/SafeAdContainer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -66,7 +68,7 @@ export const metadata = {
   },
 };
 
-import ChatWidget from "@/components/chat/ChatWidget";
+// import ChatWidget from "@/components/chat/ChatWidget";
 
 export default function RootLayout({ children }) {
   return (
@@ -86,9 +88,34 @@ export default function RootLayout({ children }) {
             <Navbar />
             <main className="flex-1 w-full">{children}</main>
             <Footer />
-            <ChatWidget />
+            {/* <ChatWidget /> */}
           </div>
         </ThemeProvider>
+
+        {/* --- AD NETWORK INTEGRATION (Safe: Only loads on /tools/ URLs) --- */}
+
+        {/* 1. Google AdSense (Auto Ads) */}
+        <SafeAdContainer
+          scriptSrc="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5348419488742899"
+          scriptId="google-adsense"
+        />
+
+        {/* 2. Monetag (Service Worker Registration for Push Ads) */}
+        <SafeAdContainer>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                        if ('serviceWorker' in navigator) {
+                            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                                console.log('✅ Monetag Service Worker Registered for scope:', registration.scope);
+                            }).catch(function(err) {
+                                console.log('❌ Monetag Service Worker failed:', err);
+                            });
+                        }
+                    `
+            }}
+          />
+        </SafeAdContainer>
       </body>
     </html>
   );

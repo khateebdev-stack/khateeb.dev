@@ -6,100 +6,477 @@
     "services_list": [
         {
             "id": "web-app",
+            "slug": "web-and-app-development",
             "title": "Web & App Development",
-            "tagline": "Modern & Fast",
-            "description": "Responsive websites using React and Next.js",
-            "includes": [
-                "Responsive design",
-                "SEO optimization",
-                "Fast loading",
-                "Modern UI/UX"
+            "tagline": "Modern, Fast & Scalable",
+            "description": "High-performance websites and web applications built with Next.js and React.",
+            "long_description": "I build modern web applications that are not just visually stunning but also engineered for performance and scalability. Using the latest technologies like Next.js 14, React, and TailwindCSS, I create digital experiences that load instantly, rank high on Google, and convert visitors into customers. Whether you need a simple landing page or a complex SaaS platform, I deliver code that is clean, maintainable, and future-proof.",
+            "benefits": [
+                {
+                    "title": "Blazing Fast Performance",
+                    "description": "Optimized for core web vitals with near-instant page loads."
+                },
+                {
+                    "title": "SEO Built-In",
+                    "description": "Structured data, semantic HTML, and meta tags included by default."
+                },
+                {
+                    "title": "Mobile First",
+                    "description": "Flawless experience across all devices, from phones to 4K monitors."
+                },
+                {
+                    "title": "Easy Management",
+                    "description": "Integrated CMS (Sanity/Contentful) so you can update content easily."
+                }
             ],
-            "price": "$500+",
+            "includes": [
+                "Custom UX/UI Design",
+                "Next.js (React) Development",
+                "Mobile Responsive Layouts",
+                "SEO Optimization & Sitemap",
+                "CMS Integration",
+                "Deployment (Vercel/AWS)"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Discovery",
+                    "desc": "We define the scope, target audience, and business goals."
+                },
+                {
+                    "step": "02",
+                    "title": "Design",
+                    "desc": "I create high-fidelity mockups for your approval."
+                },
+                {
+                    "step": "03",
+                    "title": "Develop",
+                    "desc": "I build the application using clean, modern code."
+                },
+                {
+                    "step": "04",
+                    "title": "Launch",
+                    "desc": "We go live, aiming for 100/100 performance scores."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "Do you use templates?",
+                    "a": "No, I build custom solutions tailored to your specific brand and needs to ensure uniqueness and performance."
+                },
+                {
+                    "q": "Will I be able to edit the text myself?",
+                    "a": "Yes! I integrate user-friendly Content Management Systems (CMS) so you can edit text and images without touching code."
+                }
+            ],
+            "price": "$299+",
             "delivery": "1-3 weeks"
         },
         {
             "id": "mobile",
+            "slug": "mobile-app-development",
             "title": "Mobile App Development",
-            "tagline": "Cross-Platform",
-            "description": "React Native apps for iOS and Android",
-            "includes": [
-                "Cross-platform",
-                "Native performance",
-                "Push notifications",
-                "API integration"
+            "tagline": "iOS & Android",
+            "description": "Native-quality mobile apps built with React Native.",
+            "long_description": "Get two apps for the price of one. Using React Native, I build cross-platform mobile applications that work flawlessly on both iOS and Android. These aren't just 'web views' - they are true native apps with access to camera, location, push notifications, and high-performance animations. I handle everything from the initial logic to the submission process on the App Store and Play Store.",
+            "benefits": [
+                {
+                    "title": "Cross-Platform",
+                    "description": "One codebase runs on both iOS and Android, saving 40% of budget."
+                },
+                {
+                    "title": "Native Performance",
+                    "description": "Smooth 60fps animations and native gesture handling."
+                },
+                {
+                    "title": "Offline Capable",
+                    "description": "Apps that work even when the user has no internet connection."
+                },
+                {
+                    "title": "Store Submission",
+                    "description": "I handle the complex review process for Apple and Google."
+                }
             ],
-            "price": "$3,000+",
+            "includes": [
+                "iOS & Android Versions",
+                "Push Notification Setup",
+                "User Authentication",
+                "Google Maps/Location",
+                "App Store Submission",
+                "3 Months Support"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Wireframing",
+                    "desc": "Mapping out the user flow and screens."
+                },
+                {
+                    "step": "02",
+                    "title": "Development",
+                    "desc": "Building the app logic and UI components."
+                },
+                {
+                    "step": "03",
+                    "title": "Testing",
+                    "desc": " rigorous testing on real devices (not just simulators)."
+                },
+                {
+                    "step": "04",
+                    "title": "Publishing",
+                    "desc": "Managing the upload and review process for stores."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "Is React Native good enough for my app?",
+                    "a": "Absolutely. It's used by Facebook, Instagram, Uber, and Shopify. It delivers native performance with faster development cycles."
+                },
+                {
+                    "q": "Do you handle the Apple Developer account?",
+                    "a": "I guide you through setting it up so you own your app, but I handle the technical submission."
+                }
+            ],
+            "price": "$1,499+",
             "delivery": "4-8 weeks"
         },
         {
             "id": "ecommerce",
+            "slug": "ecommerce-solutions",
             "title": "E-commerce Solutions",
-            "tagline": "Online Stores",
-            "description": "Complete stores with payments and inventory",
-            "includes": [
-                "Product catalog",
-                "Secure checkout",
-                "Inventory management",
-                "Admin dashboard"
+            "tagline": "Sell Everywhere",
+            "description": "Custom online stores optimized for sales and conversion.",
+            "long_description": "Stop losing sales to a slow or confusing website. I build custom e-commerce experiences that guide visitors from landing page to checkout layout. Whether using Shopify for ease of use or a custom Next.js + Stripe solution for total control, I focus on one thing: Conversion Rate. My stores are secure, fast, and designed to look trustworthy.",
+            "benefits": [
+                {
+                    "title": "High Conversion",
+                    "description": "Checkout flows designed to minimize cart abandonment."
+                },
+                {
+                    "title": "Secure Payments",
+                    "description": "Integration with Stripe, PayPal, and local payment gateways."
+                },
+                {
+                    "title": "Inventory Sync",
+                    "description": "Real-time stock management and order notifications."
+                },
+                {
+                    "title": "Admin Dashboard",
+                    "description": "Full control over your products, orders, and customers."
+                }
             ],
-            "price": "$2,000+",
+            "includes": [
+                "Custom Storefront Design",
+                "Product Catalog Setup",
+                "Shopping Cart & Checkout",
+                "Payment Gateway Integration",
+                "Order Management Emails",
+                "Analytics Dashboard"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Strategy",
+                    "desc": "Choosing the right platform (Shopify vs Custom)."
+                },
+                {
+                    "step": "02",
+                    "title": "Setup",
+                    "desc": "Configuring payments, shipping, and taxes."
+                },
+                {
+                    "step": "03",
+                    "title": "Build",
+                    "desc": "Designing the store and adding products."
+                },
+                {
+                    "step": "04",
+                    "title": "Training",
+                    "desc": "Teaching you how to fulfill orders and add items."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "Which platform is best?",
+                    "a": "Shopify is great for quick starts. Custom Next.js is best if you want specific features or no monthly fees."
+                },
+                {
+                    "q": "Is it secure?",
+                    "a": "Yes, we use industry-standard encryption and PCI-compliant payment processors like Stripe."
+                }
+            ],
+            "price": "$999+",
             "delivery": "3-5 weeks"
         },
         {
             "id": "seo",
+            "slug": "seo-and-digital-marketing",
             "title": "SEO & Digital Marketing",
-            "tagline": "Get Found",
-            "description": "SEO and performance optimization",
-            "includes": [
-                "Technical SEO",
-                "Page speed",
-                "Meta tags",
-                "Analytics"
+            "tagline": "Rank Higher",
+            "description": "Technical SEO and content strategy to grow organic traffic.",
+            "long_description": "A beautiful website is useless if no one sees it. My SEO services go beyond just keywords. I find and fix technical issues that prevent Google from ranking your site (Technical SEO), optimize your content for relevance (On-Page SEO), and improve your site speed. I don't just promise rankings; I focus on bringing you 'High Intent' traffic—people actually looking to buy.",
+            "benefits": [
+                {
+                    "title": "Technical Audit",
+                    "description": "I fix broken links, bad redirects, and slow loading scripts."
+                },
+                {
+                    "title": "Keyword Strategy",
+                    "description": "Targeting terms your customers actually search for."
+                },
+                {
+                    "title": "Local SEO",
+                    "description": "Helping you dominate Google Maps and local search results."
+                },
+                {
+                    "title": "Performance Boost",
+                    "description": "Improving Core Web Vitals to please Google's algorithms."
+                }
             ],
-            "price": "$500+",
+            "includes": [
+                "Comprehensive Site Audit",
+                "Keyword Research Report",
+                "On-Page Optimization",
+                "Google Business Profile Setup",
+                "Schema Markup Implementation",
+                "Monthly Progress Report"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Audit",
+                    "desc": "A complete health check of your current online presence."
+                },
+                {
+                    "step": "02",
+                    "title": "Fix",
+                    "desc": "Resolving critical technical errors immediately."
+                },
+                {
+                    "step": "03",
+                    "title": "Optimize",
+                    "desc": "Updating content and tags for target keywords."
+                },
+                {
+                    "step": "04",
+                    "title": "Monitor",
+                    "desc": "Tracking rankings and traffic growth over time."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "How long until I see results?",
+                    "a": "SEO is a long-term game. Typically, significant improvements are seen in 3-6 months, but technical fixes can have immediate impact."
+                },
+                {
+                    "q": "Do you buy backlinks?",
+                    "a": "No, I focus on white-hat techniques that build sustainable, safe growth without risking penalties."
+                }
+            ],
+            "price": "$299+",
             "delivery": "1 week"
         },
         {
             "id": "design",
+            "slug": "ui-ux-design",
             "title": "UI/UX Design",
-            "tagline": "Beautiful Interfaces",
-            "description": "Clean, modern interfaces in Figma",
-            "includes": [
-                "Wireframing",
-                "Mockups",
-                "Design system",
-                "Figma files"
+            "tagline": "User-Centric",
+            "description": "Prototyping and design for web and mobile products.",
+            "long_description": "Design is how it works, not just how it looks. I create user interfaces that are intuitive, accessible, and delightful to use. Starting with low-fidelity wireframes to iterate on logic, moving to high-fidelity prototypes in Figma that look exactly like the final app. I ensure developers have everything they need to build pixel-perfect products.",
+            "benefits": [
+                {
+                    "title": "User Research",
+                    "description": "Designs based on real user needs and behaviors."
+                },
+                {
+                    "title": "Interactive Prototypes",
+                    "description": "Clickable demos to test the flow before writing code."
+                },
+                {
+                    "title": "Design Systems",
+                    "description": "Reusable components to ensure consistency across pages."
+                },
+                {
+                    "title": "Developer Ready",
+                    "description": "Files ready for handoff with all assets and specs."
+                }
             ],
-            "price": "$800+",
+            "includes": [
+                "User Journey Mapping",
+                "Wireframing",
+                "High-Fidelity UI Design",
+                "Interactive Clickable Prototype",
+                "Design System & Style Guide",
+                "Asset Export"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Research",
+                    "desc": "Understanding user pain points and competitor analysis."
+                },
+                {
+                    "step": "02",
+                    "title": "Wireframe",
+                    "desc": "Sketching the layout and information architecture."
+                },
+                {
+                    "step": "03",
+                    "title": "Visual",
+                    "desc": "Applying colors, typography, and branding."
+                },
+                {
+                    "step": "04",
+                    "title": "Prototype",
+                    "desc": "Creating the interactive simulation."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "What tools do you use?",
+                    "a": "I work primarily in Figma, the industry standard for collaborative interface design."
+                },
+                {
+                    "q": "Do you design logos?",
+                    "a": "I can do basic branding, but my expertise is in Product Interface Design (Websites, Dashboards, Apps)."
+                }
+            ],
+            "price": "$399+",
             "delivery": "1-2 weeks"
         },
         {
             "id": "education",
-            "title": "Educational Services & Student Support",
-            "tagline": "Tutoring",
-            "description": "Programming and CS tutoring",
-            "includes": [
-                "Tutoring sessions",
-                "Assignment help",
-                "Career guidance",
-                "Interview prep"
+            "slug": "educational-services-and-student-support",
+            "title": "Educational Services & Support",
+            "tagline": "Learn & Grow",
+            "description": "Mentorship and tutoring for computer science students.",
+            "long_description": "Navigate your CS degree or coding bootcamp with confidence. I offer personalized tutoring in programming (JavaScript, Python, C++, Java), help with complex assignments, and career guidance. My goal isn't just to help you pass, but to help you actually understand the concepts so you can become a self-sufficient developer.",
+            "benefits": [
+                {
+                    "title": "1-on-1 Mentorship",
+                    "description": "Personalized attention adapted to your learning style."
+                },
+                {
+                    "title": "Code Reviews",
+                    "description": "Learn significantly faster by having your code critiqued."
+                },
+                {
+                    "title": "Project Help",
+                    "description": "Guidance on architecture and debugging for final projects."
+                },
+                {
+                    "title": "Interview Prep",
+                    "description": "Mock technical interviews and resume reviews."
+                }
             ],
-            "price": "$30/hour",
+            "includes": [
+                "Live Coding Sessions (Zoom/Discord)",
+                "Assignment & Project Assistance",
+                "Code Debugging & Explanation",
+                "Career & Resume Advice",
+                "Resource Recommendations"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Assess",
+                    "desc": "Identifying your current skill level and goals."
+                },
+                {
+                    "step": "02",
+                    "title": "Plan",
+                    "desc": "Creating a targeted roadmap or study plan."
+                },
+                {
+                    "step": "03",
+                    "title": "Session",
+                    "desc": "Focused 60-minute sessions on specific topics."
+                },
+                {
+                    "step": "04",
+                    "title": "Review",
+                    "desc": "Feedback on your progress and next steps."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "Can you do my homework for me?",
+                    "a": "No. I will help you *understand* and solve it yourself. I support learning, not academic dishonesty."
+                },
+                {
+                    "q": "What levels do you teach?",
+                    "a": "From absolute beginner to advanced topics like Data Structures and Algorithms."
+                }
+            ],
+            "price": "$25/hour",
             "delivery": "Flexible"
         },
         {
             "id": "maintenance",
-            "title": "Website Maintenance & Support",
-            "tagline": "Keep Running",
-            "description": "Ongoing maintenance packages",
-            "includes": [
-                "Backups",
-                "Security updates",
-                "Bug fixes",
-                "Support"
+            "slug": "website-maintenance-and-support",
+            "title": "Website Maintenance",
+            "tagline": "Secure & Stable",
+            "description": "Keep your website secure, updated, and running smoothly.",
+            "long_description": "Websites are not 'set it and forget it'. They need care. I provide peace of mind by handling all the technical updates, security patches, and backups. If something breaks, I fix it. If you need a text change, I handle it. It's like having an IT department for a fraction of the cost.",
+            "benefits": [
+                {
+                    "title": "Security First",
+                    "description": "Regular scanning for malware and vulnerabilities."
+                },
+                {
+                    "title": "Uptime Monitoring",
+                    "description": "I know if your site goes down before you do."
+                },
+                {
+                    "title": "Regular Backups",
+                    "description": "Daily/Weekly backups stored securely off-site."
+                },
+                {
+                    "title": "Priority Support",
+                    "description": "Skip the line when you need urgent help."
+                }
             ],
-            "price": "$150/month",
+            "includes": [
+                "Weekly Plugin/Theme Updates",
+                "Daily Cloud Backups",
+                "Security Monitoring",
+                "Uptime Monitoring",
+                "Monthly Performance Report",
+                "1 Hour of Content Edits"
+            ],
+            "process": [
+                {
+                    "step": "01",
+                    "title": "Onboard",
+                    "desc": "Getting access and setting up monitoring tools."
+                },
+                {
+                    "step": "02",
+                    "title": "Secure",
+                    "desc": "Initial hardening and backup creation."
+                },
+                {
+                    "step": "03",
+                    "title": "Maintain",
+                    "desc": "Weekly routine checks and updates."
+                },
+                {
+                    "step": "04",
+                    "title": "Report",
+                    "desc": "Monthly PDF showing you what was done."
+                }
+            ],
+            "faq": [
+                {
+                    "q": "Does this include hosting?",
+                    "a": "No, but I can manage your hosting provider for you."
+                },
+                {
+                    "q": "What if I get hacked?",
+                    "a": "Cleanup is included. I will restore from a safe backup and secure the vulnerability."
+                }
+            ],
+            "price": "$99/month",
             "delivery": "Ongoing"
         }
     ]

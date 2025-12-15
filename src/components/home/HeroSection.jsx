@@ -33,7 +33,7 @@ export function HeroSection() {
                                 <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
                                 Available for new projects
                             </div>
-                            <h1 className="text-3xl font-bold pb-5 tracking-tighter xs:text-2xl sm:text-5xl xl:text-7xl/none text-slate-900 dark:text-white">
+                            <h1 className="text-3xl font-bold pb-2 tracking-tighter xs:text-2xl sm:text-5xl xl:text-7xl/none text-slate-900 dark:text-white">
                                 Building <br className="hidden sm:block" />
                                 <Typewriter
                                     words={["Scalable SaaS", "Mobile Apps", "Digital Empires", "Enterprise Systems"]}

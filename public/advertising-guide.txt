@@ -1,0 +1,61 @@
+AD NETWORK & INTEGRATION GUIDE
+================================
+
+PART 1: BEST AD NETWORKS FOR DEVELOPER TOOLS
+--------------------------------------------
+
+1. GOOGLE ADSENSE (Recommended)
+   - Pros: Highest reliable fill rate, "Safe" ads (no crypto scams usually).
+   - Best Units: "Auto Ads" (let Google decide) or "Responsive Display Units".
+   - Payment: Monthly wire transfer.
+
+2. MONETAG (High Revenue Alternative)
+   - Pros: Very high CPM for utility sites/tools.
+   - Best Units: "Vignette Banner" (Interstitials) - these pay the most.
+   - Warning: Disable "Direct Link" and "Popunder" to maintain a professional look for recruiters.
+
+3. CARBON ADS
+   - Pros: Extremely professional look (designed for dev tools).
+   - Cons: Hard to get approved (needs high traffic).
+
+--------------------------------------------
+
+PART 2: INTEGRATION (HOW TO USE SAFE-AD-CONTAINER)
+--------------------------------------------
+
+We created a custom component `SafeAdContainer` that acts as a firewall. 
+It ensures ads ONLY appear on `/tools/...` pages URLs.
+
+LOCATION: src/components/ads/SafeAdContainer.jsx
+
+SCENARIO A: GLOBAL SCRIPT (Monetag Vignette / AdSense Auto)
+Add this to `src/app/layout.js`:
+
+import { SafeAdContainer } from '@/components/ads/SafeAdContainer'
+
+// Inside <body>:
+<SafeAdContainer 
+    scriptSrc="https://alwingulla.com/88/tag.min.js" 
+    scriptId="monetag-main" 
+/>
+
+SCENARIO B: SPECIFIC BANNER (In Page)
+Add this to tool pages like `src/app/tools/speed-analyzer/page.js`:
+
+// Inside JSX:
+<SafeAdContainer className="my-8 flex justify-center">
+    {/* Paste Ad Code Here */}
+    <div id="ad-slot-123"></div>
+</SafeAdContainer>
+
+--------------------------------------------
+
+PART 3: TESTING
+--------------------------------------------
+1. Run `npm run dev`
+2. Open Console (F12)
+3. Go to Home Page -> Console should be CLEAN (No ad logs)
+4. Go to /tools/speed-analyzer -> Console should say:
+   "✅ Ad Network Script Loaded: [id] on page: /tools/speed-analyzer"
+
+This confirms your portfolio is safe and ads are running on tools!

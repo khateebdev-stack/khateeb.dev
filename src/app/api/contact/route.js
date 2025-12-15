@@ -7,7 +7,7 @@ const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 export async function POST(req) {
     try {
         const data = await req.json();
-        const { name, email, phone, service, budget, description, fileUrl } = data;
+        const { name, email, phone, service, budget, subject, description, files } = data;
 
         // 1. Send to Discord via Webhook
         if (DISCORD_WEBHOOK_URL) {
@@ -21,10 +21,11 @@ export async function POST(req) {
                         fields: [
                             { name: 'Email', value: email, inline: true },
                             { name: 'Phone', value: phone, inline: true },
-                            { name: 'Service', value: service, inline: true },
-                            { name: 'Budget', value: budget, inline: true },
+                            { name: 'Service', value: service || 'Not specified', inline: true },
+                            { name: 'Budget', value: budget || 'Not specified', inline: true },
+                            { name: 'Subject', value: subject || 'No subject' },
                             { name: 'Description', value: description || 'N/A' },
-                            { name: 'File', value: fileUrl || 'No file attached' }
+                            { name: 'Files', value: files && files.length > 0 ? files.map(f => f.name).join(', ') : 'No files attached' }
                         ],
                         timestamp: new Date().toISOString()
                     }]
@@ -41,11 +42,28 @@ export async function POST(req) {
             },
         });
 
+        // Prepare file attachments if exist
+        let attachments = [];
+        if (files && files.length > 0) {
+            files.forEach(fileObj => {
+                // Extract base64 data
+                const base64Data = fileObj.data.split(',')[1];
+                const mimeType = fileObj.data.split(',')[0].split(':')[1].split(';')[0];
+
+                attachments.push({
+                    filename: fileObj.name,
+                    content: base64Data,
+                    encoding: 'base64',
+                    contentType: mimeType
+                });
+            });
+        }
+
         // 3. Admin Notification Email Template
         const adminMailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.ADMIN_EMAIL,
-            subject: `🚀 New Project Lead: ${name}`,
+            subject: `🚀 New Project Lead: ${subject || service || 'Contact Form'}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
                     <div style="background-color: #000; color: #fff; padding: 20px; text-align: center;">
@@ -66,26 +84,31 @@ export async function POST(req) {
                                 <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Phone</td>
                                 <td style="padding: 10px; border-bottom: 1px solid #ddd;">${phone}</td>
                             </tr>
-                            <tr>
+                            ${subject ? `<tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Subject</td>
+                                <td style="padding: 10px; border-bottom: 1px solid #ddd;">${subject}</td>
+                            </tr>` : ''}
+                            ${service ? `<tr>
                                 <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Service</td>
                                 <td style="padding: 10px; border-bottom: 1px solid #ddd;">${service}</td>
-                            </tr>
-                            <tr>
+                            </tr>` : ''}
+                            ${budget ? `<tr>
                                 <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Budget</td>
                                 <td style="padding: 10px; border-bottom: 1px solid #ddd;">${budget}</td>
-                            </tr>
+                            </tr>` : ''}
                         </table>
                         <div style="margin-top: 20px;">
                             <p style="font-weight: bold; margin-bottom: 5px;">Project Description:</p>
-                            <p style="background-color: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">${description}</p>
+                            <p style="background-color: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${description}</p>
                         </div>
-                        ${fileUrl ? `<p style="margin-top: 20px;"><strong>Attachment:</strong> <a href="${fileUrl}" style="color: #0070f3;">View File</a></p>` : ''}
+                        ${files && files.length > 0 ? `<p style="margin-top: 20px;"><strong>Attachments (${files.length}):</strong> ${files.map(f => f.name).join(', ')}</p>` : ''}
                     </div>
                     <div style="background-color: #eee; padding: 10px; text-align: center; font-size: 12px; color: #666;">
                         Sent from your Portfolio Website
                     </div>
                 </div>
             `,
+            attachments
         };
 
         // 4. Client Confirmation Email Template
@@ -100,16 +123,18 @@ export async function POST(req) {
                     </div>
                     <div style="padding: 30px; background-color: #fff;">
                         <p style="font-size: 16px; color: #333; line-height: 1.5;">Hi <strong>${name}</strong>,</p>
-                        <p style="font-size: 16px; color: #333; line-height: 1.5;">Thank you for reaching out! I have received your inquiry regarding <strong>${service}</strong>.</p>
+                        <p style="font-size: 16px; color: #333; line-height: 1.5;">Thank you for reaching out! I have received your inquiry${subject ? ` about "${subject}"` : service ? ` regarding <strong>${service}</strong>` : ''}.</p>
                         <p style="font-size: 16px; color: #333; line-height: 1.5;">I review all requests personally and will get back to you within 24 hours to discuss how we can bring your vision to life.</p>
                         
                         <div style="margin: 30px 0; padding: 20px; background-color: #f5f5f5; border-left: 4px solid #000; border-radius: 4px;">
                             <p style="margin: 0; font-weight: bold; color: #555; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Your Request Summary</p>
-                            <p style="margin: 10px 0 0 0; font-size: 14px; color: #333;"><strong>Service:</strong> ${service}</p>
-                            <p style="margin: 5px 0 0 0; font-size: 14px; color: #333;"><strong>Budget:</strong> ${budget}</p>
+                            ${subject ? `<p style="margin: 10px 0 0 0; font-size: 14px; color: #333;"><strong>Subject:</strong> ${subject}</p>` : ''}
+                            ${service ? `<p style="margin: 10px 0 0 0; font-size: 14px; color: #333;"><strong>Service:</strong> ${service}</p>` : ''}
+                            ${budget ? `<p style="margin: 5px 0 0 0; font-size: 14px; color: #333;"><strong>Budget:</strong> ${budget}</p>` : ''}
+                            ${files && files.length > 0 ? `<p style="margin: 5px 0 0 0; font-size: 14px; color: #333;"><strong>Attachments (${files.length}):</strong> ${files.map(f => f.name).join(', ')}</p>` : ''}
                         </div>
 
-                        <p style="font-size: 16px; color: #333; line-height: 1.5;">In the meantime, feel free to browse my <a href="https://yourportfolio.com/portfolio" style="color: #000; text-decoration: underline;">portfolio</a> or connect with me on <a href="https://linkedin.com" style="color: #000; text-decoration: underline;">LinkedIn</a>.</p>
+                        <p style="font-size: 16px; color: #333; line-height: 1.5;">In the meantime, feel free to browse my <a href="https://khateeb.dev/portfolio" style="color: #000; text-decoration: underline;">portfolio</a> or connect with me on <a href="https://linkedin.com/in/khateeb-dev" style="color: #000; text-decoration: underline;">LinkedIn</a>.</p>
                         
                         <p style="margin-top: 30px; font-size: 16px; color: #333;">Best regards,<br><strong>Khateeb</strong></p>
                     </div>

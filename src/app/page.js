@@ -1,7 +1,10 @@
+import { Suspense } from "react";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ContactSection } from "@/components/home/ContactSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
+import { InteractiveSection } from "@/components/home/InteractiveSection";
 
 export default function Home() {
   return (
@@ -24,7 +27,7 @@ export default function Home() {
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
-              "price": "500",
+              "price": "299",
               "description": "Starting price for web development services"
             }
           }),
@@ -32,8 +35,12 @@ export default function Home() {
       />
       <HeroSection />
       <ServicesSection />
-      <PortfolioSection />
-      <ContactSection />
+      <PortfolioSection limit={6} />
+      <InteractiveSection />
+      <ProcessSection />
+      <Suspense fallback={<div className="container py-20" />}>
+        <ContactSection />
+      </Suspense>
     </div>
   );
 }

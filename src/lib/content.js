@@ -7,9 +7,11 @@ import resume from "@/data/resume.json"
 import services from "@/data/services.json"
 import technical from "@/data/technical.json"
 import faq from "@/data/faq.json"
+import blog from "@/data/blog.json"
 
 export const content = {
   about,
+  blog,
   contact,
   global: globalData,
   home,
