@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { SafeAdContainer } from "@/components/ads/SafeAdContainer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

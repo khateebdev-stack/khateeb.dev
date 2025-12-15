@@ -17,6 +17,51 @@ export const metadata = {
     }
 }
 
+import { SafeAdContainer } from "@/components/ads/SafeAdContainer";
+
 export default function ToolsLayout({ children }) {
-    return children
+    return (
+        <>
+            {children}
+
+            {/* --- AD NETWORK INTEGRATION (Strictly Scoped to /tools/) --- */}
+
+            {/* 1. Google AdSense */}
+            <SafeAdContainer
+                scriptSrc="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5348419488742899"
+                scriptId="google-adsense"
+            />
+
+            {/* 2. Monetag (Push/Multi-Tag) */}
+            <SafeAdContainer
+                scriptSrc="https://al5sm.com/tag.min.js"
+                scriptId="monetag-multitag"
+                attributes={{ 'data-zone': '10327103' }}
+            />
+
+            {/* 3. Monetag (Vignette) */}
+            <SafeAdContainer
+                scriptSrc="https://gizokraijaw.net/vignette.min.js"
+                scriptId="monetag-vignette"
+                attributes={{ 'data-zone': '10327118' }}
+            />
+
+            {/* 4. Monetag (Service Worker Registration) */}
+            <SafeAdContainer>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            if ('serviceWorker' in navigator) {
+                                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                                    console.log('✅ Monetag Service Worker Registered for scope:', registration.scope);
+                                }).catch(function(err) {
+                                    console.log('❌ Monetag Service Worker failed:', err);
+                                });
+                            }
+                        `
+                    }}
+                />
+            </SafeAdContainer>
+        </>
+    )
 }
