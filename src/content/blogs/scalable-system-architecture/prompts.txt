@@ -1,0 +1,9 @@
+[Header Image]
+A detailed isometric server architecture diagram glowing in neon blue on a dark background. Nodes connecting to a central database. 8k resolution, technical style.
+
+[Diagrams]
+1. Image of a generic monolith server labeled "Monolith" breaking under weight.
+2. Image of scattered microservices communicating efficiently.
+
+[Video]
+A timelapse of a whiteboard session drawing the architecture.

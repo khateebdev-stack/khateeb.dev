@@ -1,0 +1,5 @@
+[Header Image]
+Split screen layout. On left: React Logo spinning. On right: Next.js Logo static and solid. Background represents speed/motion blur.
+
+[Video]
+Screen recording showing the Network tab comparison between a CRA app and a Next.js app.

@@ -1,0 +1,79 @@
+{
+    "_id": "post_oss_006",
+    "slug": "open-source-journey",
+    "status": "published",
+    "dates": {
+        "published_at": "2025-12-14T09:00:00Z"
+    },
+    "seo": {
+        "meta_title": "My Journey into Open Source: From fixing Typos to Maintainer",
+        "meta_description": "A practical roadmap for developers who want to contribute to Open Source but don't know where to start. Includes a timeline of my contributions.",
+        "og_image": "/blog/oss-journey.jpg",
+        "keywords": [
+            "open source",
+            "github",
+            "career",
+            "coding",
+            "software engineering",
+            "contributing"
+        ],
+        "canonical_url": "https://khateeb.dev/blog/open-source-journey"
+    },
+    "page_config": {
+        "theme_color": "#10b981",
+        "social_sharing_display": {
+            "sticky_bar": true,
+            "show_copy_link": true,
+            "show_github": true
+        }
+    },
+    "blocks": [
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<p class='lead'>The biggest lie developers tell themselves is: <em>'I'm not good enough for Open Source yet.'</em> I told myself this for two years. When I finally made my first PR, I realized that Open Source isn't a club for elites—it's a massive collaboration where help is desperately needed.</p>"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>How I Started (The Timeline)</h2><p>Here is exactly how I progressed. Use this as your roadmap.</p><ul class='list-none space-y-4 my-6'><li><strong class='text-primary'>Month 1: The 'Typo' Phase</strong><br/>I found documentation errors in libraries I used. My first PR was literally fixing 'recieved' to 'received'. Maintainers merged it in 1 hour. That green 'Merged' badge gave me confidence.</li><li><strong class='text-primary'>Month 3: The 'Reproducer' Phase</strong><br/>I didn't fix bugs, I <em>found</em> them. I would create minimal reproduction repos for issues reported by others. Maintainers love this because it saves them hours of debugging.</li><li><strong class='text-primary'>Month 6: The 'Bug Fix' Phase</strong><br/>I tackled a `good first issue` in a UI library. It was a one-line CSS fix for a z-index issue.</li><li><strong class='text-primary'>Year 1: The 'Feature' Phase</strong><br/>I implemented a new hook for a state management library. This involved discussing the API design with the core team.</li></ul>"
+            }
+        },
+        {
+            "type": "code_snippet",
+            "data": {
+                "language": "diff",
+                "code": "// My first real code contribution\n- if (isLoading) return null;\n+ if (isLoading) return <SkeletonLoader />;\n// Small change, huge UX improvement.",
+                "show_line_numbers": false
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>Imposter Syndrome and Rejection</h2><p>It wasn't all smooth sailing. My 3rd PR was closed without merging. The maintainer said, <em>'This feature is out of scope.'</em></p><p>I felt crushed. But then I realized: <strong>Rejection is part of the engineering process.</strong> It forces you to align with the product vision. I learned to open an Issue <em>before</em> writing code to discuss the idea first.</p>"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>Tools to Find Issues</h2><p>Don't just browse random repos. Use these tools:</p><ul><li><strong>GoodFirstIssue.dev:</strong> Curated easy issues.</li><li><strong>Quine.sh:</strong> Finds repos matching your language skills.</li><li><strong>CodeTriage:</strong> Sends you one issue a day.</li></ul>"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>Actionable Steps for You</h2><ol class='list-decimal pl-6 space-y-2'><li><strong>Pick a tool you use daily.</strong> (e.g., Tailwind, React, a VS Code extension).</li><li><strong>Read the CONTRIBUTING.md.</strong> This file is the law.</li><li><strong>Filter issues by 'good first issue'.</strong></li><li><strong>Don't ghost.</strong> If you claim an issue, communicate.</li></ol>"
+            }
+        },
+        {
+            "type": "cta_banner",
+            "data": {
+                "headline": "Follow my contributions",
+                "button_text": "Check GitHub Profile",
+                "action_url": "https://github.com/khateebdev",
+                "style_variant": "light"
+            }
+        }
+    ]
+}

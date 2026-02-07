@@ -1,0 +1,5 @@
+[Header Image]
+A glowing GitHub contribution graph in 3D perspective. Green dots representing activity.
+
+[Video]
+Screen recording of navigating a large codebase on GitHub.

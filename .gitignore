@@ -62,4 +62,6 @@ Desktop.ini
 !readme.md
 
 
-!src/content/blogs/*.txt
+!PROJECT_REQUIREMENTS.md
+!MODULAR_BLOG_ARCHITECTURE.md
+!src/content/blogs/**/*.txt

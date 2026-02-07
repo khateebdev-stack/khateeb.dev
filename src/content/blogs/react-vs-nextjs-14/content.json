@@ -1,0 +1,104 @@
+{
+    "_id": "post_react_next_002",
+    "slug": "react-vs-nextjs-14",
+    "status": "published",
+    "dates": {
+        "published_at": "2025-11-15T09:00:00Z"
+    },
+    "author": {
+        "name": "Khateeb",
+        "avatar": "/avatars/khateeb.jpg"
+    },
+    "seo": {
+        "meta_title": "React vs Next.js 14: The Definitive Guide for 2025",
+        "meta_description": "Should you learn standard React (Vite) or jump straight into Next.js App Router? We analyze the performance, SEO, and Developer Experience differences.",
+        "og_image": "/blog/react-vs-next.jpg",
+        "keywords": [
+            "react",
+            "nextjs",
+            "app router",
+            "server components",
+            "frontend development",
+            "web performance"
+        ],
+        "canonical_url": "https://khateeb.dev/blog/react-vs-nextjs-14"
+    },
+    "page_config": {
+        "theme_color": "#000000",
+        "social_sharing_display": {
+            "sticky_bar": true,
+            "show_twitter": true,
+            "show_copy_link": true,
+            "show_github": true
+        }
+    },
+    "blocks": [
+        {
+            "type": "video_block",
+            "data": {
+                "url": "https://www.youtube.com/watch?v=Sklc_fQB85g",
+                "caption": "Video: The Era of Server Components"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<p class='lead'>The debate is over: Next.js is not just a framework for React; it is the <strong>production grade</strong> definition of React today. But why? The answer lies in the fundamental shift from Client-Side Rendering (CSR) to Server Components (RSC).</p>"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>1. The Waterfall Problem (React)</h2><p>In a traditional Vite + React app, the browser downloads a blank HTML file, then a massive JS bundle, then executes the JS, <em>then</em> fetches data. This creates a waterfall effect.</p><h2>2. The Server Component Solution (Next.js)</h2><p>With Next.js App Router, components fetch data <strong>on the server</strong>. The browser receives HTML that is fully populated. No waterfalls. No massive bundle.</p>"
+            }
+        },
+        {
+            "type": "code_snippet",
+            "data": {
+                "language": "jsx",
+                "code": "// ⚠️ Standard React (Client Side)\n// TTI (Time to Interactive) suffers here\nfunction UserProfile({ id }) {\n  const [user, setUser] = useState(null);\n  const [posts, setPosts] = useState(null);\n  \n  // Waterfall: Fetches user, THEN fetches posts\n  useEffect(() => {\n    fetchUser(id).then(u => {\n      setUser(u);\n      fetchPosts(u.id).then(p => setPosts(p));\n    });\n  }, [id]);\n  \n  if (!user) return <Spinner />;\n  return <div>{user.name}</div>;\n}",
+                "show_line_numbers": true
+            }
+        },
+        {
+            "type": "code_snippet",
+            "data": {
+                "language": "jsx",
+                "code": "// ✅ Next.js (Server Component)\n// Parallel data fetching on the server\nasync function UserProfile({ id }) {\n  // Both start fetching instantly in parallel\n  const userPromise = db.user.findUnique({ id });\n  const postsPromise = db.posts.findMany({ userId: id });\n  \n  const [user, posts] = await Promise.all([userPromise, postsPromise]);\n  \n  return (\n    <div>\n      <h1>{user.name}</h1>\n      <PostList posts={posts} />\n    </div>\n  );\n}",
+                "show_line_numbers": true
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>3. Server Actions: The Death of the API Route</h2><p>In the expansive Next.js 14 update, we gained <strong>Server Actions</strong>. You no longer need to manually create an API endpoint (`/api/submit-form`) just to handle a form submission. You can define a function running on the server and call it directly from your button.</p><blockquote>\"This brings the simplicity of PHP back to the modern web, but with type safety.\"</blockquote>"
+            }
+        },
+        {
+            "type": "code_snippet",
+            "data": {
+                "language": "javascript",
+                "code": "// actions.js (Server Side)\n'use server'\n\nexport async function updateProfile(formData) {\n  const name = formData.get('name')\n  await db.user.update({ where: { id }, data: { name } })\n  revalidatePath('/profile')\n}",
+                "show_line_numbers": true
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>4. Image Optimization and Middleware</h2><p>Next.js isn't just about React. It's a full stack framework.</p><ul><li><strong>Next/Image:</strong> Automatically serves images in WebP/AVIF formats and prevents layout shift (CLS).</li><li><strong>Middleware:</strong> execute logic <em>before</em> a request completes. Perfect for Authentication redirects or Geo-blocking.</li></ul>"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>Benchmarks: Real World Difference</h2><p>For a marketing site with dynamic content, Next.js outperforms standard React significantly in Core Web Vitals:</p><div class='overflow-x-auto'><table class='w-full text-left border-collapse my-6'><thead><tr class='bg-muted'><th class='p-3 border'>Metric</th><th class='p-3 border'>React (CSR)</th><th class='p-3 border'>Next.js (SSR/RSC)</th></tr></thead><tbody><tr><td class='p-3 border'>First Contentful Paint (FCP)</td><td class='p-3 border text-destructive'>1.8s</td><td class='p-3 border text-green-500'>0.4s</td></tr><tr><td class='p-3 border'>Larger Contentful Paint (LCP)</td><td class='p-3 border text-destructive'>2.5s</td><td class='p-3 border text-green-500'>0.8s</td></tr><tr><td class='p-3 border'>SEO Crawlability</td><td class='p-3 border text-amber-500'>Partial</td><td class='p-3 border text-green-500'>Perfect</td></tr></tbody></table></div>"
+            }
+        },
+        {
+            "type": "rich_text",
+            "data": {
+                "html_content": "<h2>Verdict: When to use what?</h2><p>If you are building a highly interactive dashboard behind a login (like Jira or Trello) where SEO doesn't matter, **Vite + React** is perfectly fine and maybe simpler.</p><p>But for anything public-facing—E-commerce, Blogs, Portfolios, SaaS Landing Pages—**Next.js is non-negotiable**. The SEO benefits and initial load speed directly impact conversion rates.</p>"
+            }
+        }
+    ]
+}
